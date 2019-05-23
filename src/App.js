@@ -9,6 +9,9 @@ import Login from "./pages/Login";
 import PrivateRoute from "./components/PrivateRoute";
 import AnonRoute from "./components/AnonRoute";
 import AuthProvider from "./lib/AuthProvider";
+import TournamentList from "./components/TournamentList";
+import PlayersList from "./components/PlayersList";
+import GamesList from "./components/GamesList";
 
 class App extends Component {
   render() {
@@ -21,6 +24,9 @@ class App extends Component {
             <AnonRoute path="/signup" component={Signup} />
             <AnonRoute path="/login" component={Login} />
             <PrivateRoute path="/private" component={Private} />
+            <TournamentList path="/tournament" component={TournamentList} />
+            <PlayersList path="/players" component={PlayersList}/>
+            <GamesList path="/games" component={GamesList}/>
           </Switch>
         </div>
       </AuthProvider>
