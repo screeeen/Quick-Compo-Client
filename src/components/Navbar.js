@@ -1,12 +1,27 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
+import './Navbar.css';
+
+
+
 class Navbar extends Component {
+
+
+
   render() {
-    const { user, logout, isLoggedin } = this.props;
+    const { user, isLoggedin } = this.props;
     return (
-      <div>
+      <div className='divStyle'>
+        <Link to={"/"}> previous </Link>
+        <p>name of the page</p>
         {isLoggedin ? (
+          <p>{user.username}</p>
+        ) : null
+        }
+
+
+        {/* {isLoggedin ? (
           <>
             <p>username: {user.username}</p>
             <button onClick={logout}>Logout</button>
@@ -16,7 +31,7 @@ class Navbar extends Component {
             <Link to="/login">Login</Link>
             <Link to="/signup">Signup</Link>
           </>
-        )}
+        )} */}
       </div>
     );
   }
