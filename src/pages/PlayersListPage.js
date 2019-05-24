@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withAuth } from "../lib/AuthProvider";
-import Navbar from './Navbar';
-import AddPlayerBlock from './AddPlayerBlock'
+import Navbar from './../components/Navbar';
+import AddPlayerBlock from './../components/AddPlayerBlock'
 
 class PlayersListPage extends Component {
   render() {

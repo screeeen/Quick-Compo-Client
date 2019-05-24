@@ -5,12 +5,12 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 
 import PrivateRoute from "./components/PrivateRoute";
-import AnonRoute from "./components/AnonRoute";
+import AnonRoute from "./lib/AnonRoute";
 import AuthProvider from "./lib/AuthProvider";
 import TournamentList from "./components/Lists/TournamentList";
 import AddTournamentPage from "./pages/AddTournamentPage";
-import PlayersListPage from "./components/PlayersListPage";
-import GamesList from "./components/GamesList";
+import PlayersListPage from "./pages/PlayersListPage";
+import GamesList from "./components/Lists/GamesList";
 import Brackets  from "./components/Brackets";
 
 // import './App.css';

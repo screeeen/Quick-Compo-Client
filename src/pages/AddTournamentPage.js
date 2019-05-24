@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import { withAuth } from "../lib/AuthProvider";
 import { Redirect } from "react-router-dom";
-import Navbar from './Navbar';
+import Navbar from './../components/Navbar';
 import './AddTournamentPage.css'
 
 

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { withAuth } from "../lib/AuthProvider";
+import { withAuth } from "../../lib/AuthProvider";
 import { Route, Redirect } from 'react-router';
 import { Link } from "react-router-dom";
-import Navbar from './Navbar';
-import TournamentCell from './TournamentCell';
+import Navbar from '../Navbar';
+import TournamentCell from '../TournamentCell';
 // import AddTournamentPage from './AddTournamentPage';
 
 import axios from 'axios';
