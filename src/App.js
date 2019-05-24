@@ -8,7 +8,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import AnonRoute from "./components/AnonRoute";
 import AuthProvider from "./lib/AuthProvider";
 import TournamentList from "./components/TournamentList";
-import AddTournamentPage from "./components/AddTournamentPage";
+import AddTournamentPage from"./components/AddTournamentPage";
 import PlayersListPage from "./components/PlayersListPage";
 import GamesList from "./components/GamesList";
 import Brackets  from "./components/Brackets";

@@ -20,7 +20,7 @@ class AddTournamentPage extends Component {
 
   renderRedirect = () => {
     if (this.state.redirect) {
-    return <Redirect to='/tournaments' />
+    return <Redirect to='/players' />
     }
 }
 
@@ -29,7 +29,8 @@ class AddTournamentPage extends Component {
     const { name, img } = this.state;
 
     axios.post("http://localhost:5000/api/tournaments/add-tournament", { name, img })
-      .then(() => {
+      .then((newTournament) => {
+        this.props.setCurrentTournament(newTournament.data._id,'set');
         this.setState({ name: "", img: "",redirect:true });
         this.renderRedirect();
       })

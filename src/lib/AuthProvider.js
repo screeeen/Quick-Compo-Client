@@ -9,14 +9,16 @@ export const withAuth = Comp => {
     render() {
       return (
         <Consumer>
-          {authStore => {
+          {value => {
             return (
               <Comp
-                login={authStore.login}
-                signup={authStore.signup}
-                user={authStore.user}
-                logout={authStore.logout}
-                isLoggedin={authStore.isLoggedin}
+                currentTournament={value.currentTournament}
+                setCurrentTournament={value.setCurrentTournament}
+                login={value.login}
+                signup={value.signup}
+                user={value.user}
+                logout={value.logout}
+                isLoggedin={value.isLoggedin}
                 {...this.props}
               />
             );
@@ -31,8 +33,17 @@ class AuthProvider extends Component {
   state = {
     isLoggedin: false,
     user: null,
-    isLoading: true
+    isLoading: true,
+    currentTournament: undefined
   };
+
+  setCurrentTournament = (id, action) => {
+    if (action === 'set') {
+      this.setState({ currentTournament: id });
+    } else if (action === 'clear') {
+      this.setState({ currentTournament: undefined });
+    }
+  }
 
   componentDidMount() {
     auth
@@ -80,7 +91,7 @@ class AuthProvider extends Component {
           user
         });
       })
-      .catch(() => {});
+      .catch(() => { });
   };
 
   logout = () => {
@@ -92,25 +103,27 @@ class AuthProvider extends Component {
           user: null
         });
       })
-      .catch(() => {});
+      .catch(() => { });
   };
   render() {
-    const { isLoading, isLoggedin, user } = this.state;
+    const { isLoading, isLoggedin, user, currentTournament } = this.state;
     return isLoading ? (
       <div>Loading</div>
     ) : (
-      <Provider
-        value={{
-          isLoggedin,
-          user,
-          login: this.login,
-          logout: this.logout,
-          signup: this.signup
-        }}
-      >
-        {this.props.children}
-      </Provider>
-    );
+        <Provider
+          value={{
+            isLoggedin,
+            user,
+            currentTournament,
+            setCurrentTournament: this.setCurrentTournament,
+            login: this.login,
+            logout: this.logout,
+            signup: this.signup
+          }}
+        >
+          {this.props.children}
+        </Provider>
+      );
   }
 }
 

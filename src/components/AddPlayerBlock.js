@@ -10,7 +10,7 @@ class AddPlayerBlock extends Component {
       img: '',
       position: [],
       score:[],
-      tournamentId: '',
+      tournament: '',
       redirect: false
     }
   }
@@ -23,7 +23,7 @@ class AddPlayerBlock extends Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    const { name, img } = this.state;
+    const { name, img , tournamentId } = this.state;
 
     axios.post("http://localhost:5000/api/players/add-player", { name, img })
       .then(() => {

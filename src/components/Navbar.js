@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { withRouter } from 'react-router'
 import { withAuth } from "../lib/AuthProvider";
 import './Navbar.css';
 
@@ -13,7 +14,7 @@ class Navbar extends Component {
     const { user, isLoggedin } = this.props;
     return (
       <div className='divStyle'>
-        <Link to={"/"}> previous </Link>
+      <button onClick={() => this.props.history.go(-1)}>go back </button>
         <p>name of the page</p>
         {isLoggedin ? (
           <p>{user.username}</p>
@@ -37,4 +38,5 @@ class Navbar extends Component {
   }
 }
 
-export default withAuth(Navbar);
+const navbarWithRouter = withRouter(Navbar);
+export default withAuth(navbarWithRouter);
