@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { withAuth } from "../lib/AuthProvider";
 import Navbar from './../components/Navbar';
-import AddPlayerBlock from './../components/AddPlayerBlock'
+import AddPlayerBlock from './../components/AddPlayerBlock';
+import PlayersListBlock from './../components/Lists/PlayersListBlock';
 
 class PlayersListPage extends Component {
   render() {
@@ -10,7 +11,7 @@ class PlayersListPage extends Component {
         <Navbar />
       <h1>Add players here</h1>
       <AddPlayerBlock />
-      
+      <PlayersListBlock />
       </div>
     )
   }

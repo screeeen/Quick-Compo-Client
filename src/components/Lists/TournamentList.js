@@ -45,11 +45,6 @@ class TournamentList extends Component {
         <div>
           <Navbar />
           <h1>tournaments page</h1>
-
-          {/* <Link to={"/games"}> games</Link>
-          <Link to={"/players"}> players</Link> */}
-          {/* <button className="button"onClick={this.AddTournament}>New Compo</button> */}
-          {/* <Link to={`/projects/${project._id}`}> */}
           <button className="button"><Link to="/tournaments/add-tournament">add a ccccompo</Link></button>
 
           <table>

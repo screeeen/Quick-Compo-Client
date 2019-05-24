@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import {Redirect} from 'react-router-dom';
-import axios from 'axios';
 
 class AddPlayerBlock extends Component {
   constructor() {
@@ -21,17 +19,7 @@ class AddPlayerBlock extends Component {
 //     }
 // }
 
-  handleFormSubmit = (event) => {
-    event.preventDefault();
-    const { name, img , tournamentId } = this.state;
-
-    axios.post("http://localhost:5000/api/players/add-player", { name, img })
-      .then(() => {
-        this.setState({ name: "", img: "",redirect:true });
-        // this.renderRedirect();
-      })
-      .catch((err) => console.log(err))    
-  }
+//helper handle for submit
 
 
 
@@ -45,7 +33,7 @@ class AddPlayerBlock extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleFormSubmit}>
+        <form onSubmit={this.handleFormSubmitAddPlayer}>
           <label>Player Name</label>
           <input type="text"
             name="name"

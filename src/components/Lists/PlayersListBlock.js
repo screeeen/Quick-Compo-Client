@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { withAuth } from "../lib/AuthProvider";
+import { withAuth } from "../../lib/AuthProvider";
 import axios from 'axios';
 
 
@@ -13,9 +13,12 @@ import axios from 'axios';
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:5000/api/players`)
+    console.log('id fuck',this.props);
+    axios.get(`http://localhost:5000/api//players/intoTournament/${this.props.currentTournament}`)
       .then(res => {
         const tournaments = res.data;
+        console.log('res.data',res.data);
+        console.log('tournaments',this.tournaments);
         this.setState({ tournaments });
       })
   }
