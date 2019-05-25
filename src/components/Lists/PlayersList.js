@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { withAuth } from "../../lib/AuthProvider";
-import axios from 'axios';
-
+import calls from './../helpers/Calls'
 
  class PlayersList extends Component {
   constructor(props) {
@@ -13,22 +12,28 @@ import axios from 'axios';
   }
 
   componentDidMount() {
-    // console.log('id fuck',this.props);
-    axios.get(`http://localhost:5000/api//players/intoTournament/${this.props.currentTournament}`)
+    this.refreshList();
+  }
+
+  refreshList(){
+    console.log('this props player list c',this.props);
+    calls.getPlayersOfTournament(`${this.props.currentTournament}`)
       .then(res => {
         const tournaments = res.data;
-        // console.log('res.data in player list',res.data);
-        // console.log('state in players list',this.state);
+        console.log('response data in player list c',res.data);
+        console.log('state in players list c',this.state);
         this.setState({ tournaments });
-        // console.log('state in players list AFTER',this.state);
+        console.log('state in players list c AFTER set',this.state);
       })
   }
 
   generatePlayersList(){
+    console.log('Phere?!?!?')
     return this.state.playersIntoTournament.forEach((onePlayer)=>{
+      console.log('Player List calling???', name)
        const {name,img,position,score} = onePlayer;
        return (
-         <p>´{name}</p>
+         <p>{name}</p>
        )
     })
   }
@@ -37,6 +42,7 @@ import axios from 'axios';
   render() {
     return (
       <div>
+        <h1>players</h1>
         {this.generatePlayersList()}
       </div>
     )

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
 
+import './../App.css';
+
 class Login extends Component {
   state = {
     username: "",
@@ -21,25 +23,25 @@ class Login extends Component {
   render() {
     const { username, password } = this.state;
     return (
-      <div>
+      <div className='login'>
         <h1>Quick Compo</h1>
-      <form onSubmit={this.handleFormSubmit}>
-        <label>Username:</label>
-        <input
-          type="text"
-          name="username"
-          value={username}
-          onChange={this.handleChange}
-        />
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={this.handleChange}
-        />
-        <input type="submit" value="Login" />
-      </form>
+        <form onSubmit={this.handleFormSubmit}>
+          <input
+            type="text"
+            name="username"
+            value={username}
+            placeholder="username"
+            onChange={this.handleChange}
+          />
+          <input
+            type="password"
+            name="password"
+            value={password}
+            placeholder="password"
+            onChange={this.handleChange}
+          />
+          <input className="button" type="submit" value="Login" />
+        </form>
       </div>
     );
   }

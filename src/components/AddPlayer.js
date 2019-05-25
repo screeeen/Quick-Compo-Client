@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
 import { withAuth } from "../lib/AuthProvider";
 import calls from './helpers/Calls';
 
@@ -17,18 +16,25 @@ class AddPlayer extends Component {
     }
   }
 
-  renderRedirect = () => {
-    if (this.state.redirect) {
-      return <Redirect to='/brackets' />
-    }
-  }
+  // renderRedirect = () => {
+  //   if (this.state.redirect) {
+  //     return <Redirect to='/brackets' />
+  //   }
+  // }
+
+  // renderRefresh = () => {
+  //   if (this.state.redirect) {
+  //     return <Redirect to='/players' />
+  //   }
+  // }
 
   handleSubmit = (event) => {
     event.preventDefault();
     calls.handleFormSubmitAddPlayer(this.state)
-      .then((data) => {
-        this.setState({ name: "", img: "", redirect: true });
-      })
+    .then((data) => {
+      this.props.getPlayers();
+      this.setState({ name: "", img: "", redirect: false });
+    })
   }
 
 
@@ -42,11 +48,13 @@ class AddPlayer extends Component {
   render() {
     return (
       <div>
+        <h1>Add players here:</h1>
         <form onSubmit={this.handleSubmit}>
-          <label>Player Name</label>
+          {/* <label>Player Name</label> */}
           <input type="text"
             name="name"
             value={this.state.name}
+            placeholder='name of player'
             onChange={(e) => this.handleChange(e)} />
           <input type="submit" value="Submit" />
         </form>

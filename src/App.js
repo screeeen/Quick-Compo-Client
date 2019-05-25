@@ -11,9 +11,10 @@ import TournamentList from "./components/Lists/TournamentList";
 import AddTournament from "./components/AddTournament";
 import PlayersListPage from "./pages/PlayersListPage";
 import GamesList from "./components/Lists/GamesList";
-import Brackets  from "./components/Brackets";
+import Brackets from "./components/Brackets";
 
-// import './App.css';
+import './App.css';
+import './reset.css';
 
 
 class App extends Component {

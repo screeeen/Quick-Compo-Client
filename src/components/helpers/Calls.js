@@ -9,6 +9,12 @@ class Calls {
     });
   }
 
+  getPlayersOfTournament(id){
+    return this.calls.get(`http://localhost:5000/api/players/intoTournament/` + id)
+    .then((data) => data)
+    .catch((err) => console.log(err))   
+  }
+
   handleFormSubmitAddPlayer(playerData){
     return this.calls.post("http://localhost:5000/api/players/add-player", playerData)
       .then((data) => data)
