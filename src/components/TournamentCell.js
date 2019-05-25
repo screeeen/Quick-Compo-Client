@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
 
 class TournamentCell extends Component {
 
@@ -20,7 +21,7 @@ class TournamentCell extends Component {
       // console.log('games', games[0]);
       // console.log(player1, player2);
       return (
-        <td key={i}>{player1} vs. {player2}</td>
+        <p key={i}>{player1} vs. {player2}</p>
       )
     })
   }
@@ -28,12 +29,14 @@ class TournamentCell extends Component {
 
   render() {
     return (
-          <tr>
-            <td>{this.props.name}</td>
-            <td>{this.props.img}img here</td>
-            {/* {this.generateListOfPlayers(this.props.players)} */}
-            {this.generateListOfGames(this.props.games)}
-          </tr>
+      <div className="tournament-cell">
+        <Link to="/tournaments/edit-tournament">
+          {/* <img src={this.props.img}/> */}
+          <p>{this.props.name}</p>
+          {/* {this.generateListOfPlayers(this.props.players)} */}
+          {/* {this.generateListOfGames(this.props.games)} */}
+        </Link>
+      </div>
     )
   }
 }

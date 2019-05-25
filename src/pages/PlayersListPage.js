@@ -52,7 +52,7 @@ generatePlayersList(){
       <AddPlayer getPlayers={this.generatePlayersList} />
       {/* <PlayersList /> */}
       <div>
-        <h1>players</h1>
+        <h2>PLAYERS</h2>
         {this.generatePlayersList()}
       </div>
       </div>

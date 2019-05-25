@@ -48,7 +48,7 @@ class AddPlayer extends Component {
   render() {
     return (
       <div>
-        <h1>Add players here:</h1>
+        <h2>ADD A NEW PLAYER</h2>
         <form onSubmit={this.handleSubmit}>
           {/* <label>Player Name</label> */}
           <input type="text"

@@ -23,7 +23,7 @@ class Login extends Component {
   render() {
     const { username, password } = this.state;
     return (
-      <div className='login'>
+      <div className="container login">
         <h1>Quick Compo</h1>
         <form onSubmit={this.handleFormSubmit}>
           <input

@@ -9,12 +9,12 @@ import AnonRoute from "./lib/AnonRoute";
 import AuthProvider from "./lib/AuthProvider";
 import TournamentList from "./components/Lists/TournamentList";
 import AddTournament from "./components/AddTournament";
+import EditTournament from "./components/EditTournament";
 import PlayersListPage from "./pages/PlayersListPage";
 import GamesList from "./components/Lists/GamesList";
 import Brackets from "./components/Brackets";
 
 import './App.css';
-import './reset.css';
 
 
 class App extends Component {
@@ -29,6 +29,7 @@ class App extends Component {
             <PrivateRoute exact path="/tournaments" component={TournamentList} />
             <PrivateRoute exact path="/brackets" component={Brackets} />
 
+            <PrivateRoute exact path="/tournaments/edit-tournament" component={EditTournament} />
             <PrivateRoute exact path="/tournaments/add-tournament" component={AddTournament} />
             <PrivateRoute exact path="/players" component={PlayersListPage} />
             <PrivateRoute exact path="/games" component={GamesList} />

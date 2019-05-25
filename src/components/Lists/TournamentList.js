@@ -7,7 +7,6 @@ import TournamentCell from '../TournamentCell';
 // import AddTournamentPage from './AddTournamentPage';
 
 import axios from 'axios';
-import './TournamentList.css';
 
 
 class TournamentList extends Component {
@@ -41,27 +40,11 @@ class TournamentList extends Component {
   checkIfLogged = () => {
     if (this.state.loggedIn) {
       return (
-        <div>
+        <div className="container tournamentList">
           <Navbar />
-          <h1>tournaments page</h1>
-          <button className="button"><Link to="/tournaments/add-tournament">add a ccccompo</Link></button>
-
-          <table>
-            <tbody>
-              <tr>
-                <th>
-                  COMPO
-          </th>
-                <th>
-                  IMAGES
-          </th>
-                <th>
-                  GAMES
-          </th>
-              </tr>
-              {this.generateTournamentsList()}
-            </tbody>
-          </table>
+          <h2>TOURNAMENTS</h2>
+          <button><Link to="/tournaments/add-tournament">ADD A NEW TOURNAMENT</Link></button>
+          {this.generateTournamentsList()}
         </div>)
 
     } else { return <Redirect to="/error" /> };
