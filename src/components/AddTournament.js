@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { withAuth } from "../lib/AuthProvider";
 import { Redirect } from "react-router-dom";
-import Navbar from './../components/Navbar';
-import calls from './../components/helpers/Calls'
-import './AddTournamentPage.css'
+import Navbar from './Navbar';
+import calls from './helpers/Calls'
+import './AddTournament.css'
 
 
-class AddTournamentPage extends Component {
-  constructor() {
-    super();
+class AddTournament extends Component {
+  constructor(props) {
+    super(props);
     this.state = {
       name: '',
       img: '',
@@ -20,12 +20,9 @@ class AddTournamentPage extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    // const { name, img } = this.state;
     calls.handleFormSubmitAddTournament(this.state)
       .then((newTournament) => {
-
         this.props.setCurrentTournament(newTournament.data._id, 'set');
-        console.log('setting the tournament id', this.props);
         this.setState({ name: "", img: "", redirect: true });
       })
   }
@@ -65,4 +62,4 @@ class AddTournamentPage extends Component {
   }
 }
 
-export default withAuth(AddTournamentPage);
+export default withAuth(AddTournament);

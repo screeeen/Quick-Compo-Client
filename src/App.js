@@ -8,7 +8,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import AnonRoute from "./lib/AnonRoute";
 import AuthProvider from "./lib/AuthProvider";
 import TournamentList from "./components/Lists/TournamentList";
-import AddTournamentPage from "./pages/AddTournamentPage";
+import AddTournament from "./components/AddTournament";
 import PlayersListPage from "./pages/PlayersListPage";
 import GamesList from "./components/Lists/GamesList";
 import Brackets  from "./components/Brackets";
@@ -28,7 +28,7 @@ class App extends Component {
             <PrivateRoute exact path="/tournaments" component={TournamentList} />
             <PrivateRoute exact path="/brackets" component={Brackets} />
 
-            <PrivateRoute exact path="/tournaments/add-tournament" component={AddTournamentPage} />
+            <PrivateRoute exact path="/tournaments/add-tournament" component={AddTournament} />
             <PrivateRoute exact path="/players" component={PlayersListPage} />
             <PrivateRoute exact path="/games" component={GamesList} />
           </Switch>

@@ -29,7 +29,6 @@ class TournamentList extends Component {
 
 
   generateTournamentsList = () => {
-
     return this.state.tournaments.map((oneTournament, i) => {
       const { name, img, players, games } = oneTournament;
 
