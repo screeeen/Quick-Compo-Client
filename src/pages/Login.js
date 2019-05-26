@@ -24,7 +24,9 @@ class Login extends Component {
     const { username, password } = this.state;
     return (
       <div className="container login">
-        <img src={court} alt='img'/>
+        <div className="splashImg">
+          <img src={court} alt='img' />
+        </div>
         <h1>Quick Compo</h1>
         <form onSubmit={this.handleFormSubmit}>
           <input
