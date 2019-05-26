@@ -3,7 +3,8 @@ import React, { Component } from "react";
 import { withRouter } from 'react-router'
 import { withAuth } from "../lib/AuthProvider";
 
-
+import backIcon from './../images/back.svg'
+import userIcon from './../images/user.svg'
 
 class Navbar extends Component {
 
@@ -13,10 +14,13 @@ class Navbar extends Component {
     const { user, isLoggedin } = this.props;
     return (
       <div className='navBar'>
-      <button onClick={() => this.props.history.go(-1)}>go back </button>
+      <button onClick={() => this.props.history.go(-1)}><img src={backIcon} alt='back'/></button>
         {/* <p className="pageTitle">name of the page</p> */}
         {isLoggedin ? (
+          <div className="userDiv">
           <p>{user.username}</p>
+          <img className="userPic" src={userIcon} alt='user'/>
+          </div>
         ) : null
         }
 
