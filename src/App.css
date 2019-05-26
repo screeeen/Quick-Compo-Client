@@ -68,14 +68,19 @@ a {
   text-decoration: none;
 }
 
-/* button {
+input{
+  color: white;
+  border: none;
+}
+
+button {
   width: 90%;
   height: 10vh;
   border-color: white;
   background-color: #0d0d0d;
   border-radius: 5px;
   box-sizing: content-box;
-} */
+}
 
 .navBar {
   background-color: whitesmoke;
@@ -133,10 +138,10 @@ a {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: nowrap;
-  overflow: hidden;
   flex-shrink: 0 */
   margin: auto 0;
   text-align: center;
+  overflow: scroll;
 }
 
 .tournament-cell {
