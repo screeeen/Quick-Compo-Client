@@ -56,6 +56,7 @@ class EditTournament extends Component {
   }
 
   render() {
+    console.log('edit tour props;: ',this.props);
     return (
       <div className="container">
         {this.renderRedirect()}

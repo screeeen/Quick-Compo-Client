@@ -29,7 +29,7 @@ class Login extends Component {
         </div>
         <h1>Quick Compo</h1>
         <form onSubmit={this.handleFormSubmit}>
-          <input
+          <input className="input-field"
             type="text"
             name="username"
             value={username}
