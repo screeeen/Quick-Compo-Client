@@ -6,6 +6,7 @@ import calls from './helpers/Calls';
 class AddPlayer extends Component {
   constructor(props) {
     super(props);
+    console.log('this props in add player: ', props);
     this.state = {
       name: '',
       img: '',
@@ -48,6 +49,7 @@ class AddPlayer extends Component {
   render() {
     return (
       <div>
+        <h2>---{this.props.currentTournamentName}---</h2>
         <h2>ADD A NEW PLAYER</h2>
         <form onSubmit={this.handleSubmit}>
           {/* <label>Player Name</label> */}

@@ -31,8 +31,9 @@ class TournamentCell extends Component {
     return (
       <div className="tournament-cell">
         <Link to="/tournaments/edit-tournament">
-          {/* <img src={this.props.img}/> */}
+          <img src={this.props.img} alt='pic'/>
           <p>{this.props.name}</p>
+          <p>PLAYERS IN: {this.props.players.length}</p>
           {/* {this.generateListOfPlayers(this.props.players)} */}
           {/* {this.generateListOfGames(this.props.games)} */}
         </Link>

@@ -28,11 +28,16 @@ class TournamentList extends Component {
 
 
   generateTournamentsList = () => {
-    return this.state.tournaments.map((oneTournament, i) => {
+    return this.state.tournaments.slice(0).reverse().map((oneTournament, i) => {
       const { name, img, players, games } = oneTournament;
 
       return (
-        <TournamentCell key={i} name={name} img={img} players={players} games={games} />
+        <TournamentCell
+          key={i}
+          name={name}
+          img={img}
+          players={players}
+          games={games} />
       )
     })
   }

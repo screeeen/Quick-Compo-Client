@@ -21,21 +21,15 @@ componentDidMount() {
 }
 
 refreshList(){
-  console.log('this props player list c',this.props);
-  console.log('state PHere: ',this.state);
   calls.getPlayersOfTournament(`${this.props.currentTournament}`)
     .then(res => {
       const tournaments = res.data;
-      console.log('response data in player list c',res.data);
-      console.log('state in players list c',this.state);
       this.setState({ tournaments });
-      console.log('state in players list c AFTER set',this.state);
     })
 }
 
 generatePlayersList(){
-  console.log('state PHere: ',this.state);
-
+  console.log('state Players list generate list: ',this.state);
   return this.state.playersIntoTournament.forEach((onePlayer)=>{
      const {name} = onePlayer;
      return (
