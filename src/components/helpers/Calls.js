@@ -11,28 +11,34 @@ class Calls {
 
   // players
   getPlayersOfTournament(id){
-    return this.calls.get(`http://localhost:5000/api/players/intoTournament/` + id)
+    return this.calls.get(`/api/players/intoTournament/` + id)
     .then((data) => data)
     .catch((err) => console.log(err))   
   }
 
   handleFormSubmitAddPlayer(playerData){
-    return this.calls.post("http://localhost:5000/api/players/add-player", playerData)
+    return this.calls.post("/api/players/add-player", playerData)
       .then((data) => data)
       .catch((err) => console.log(err))    
   }
 
   //tournament
-  handleFormSubmitAddTournament(id){
-    return this.calls.post(`http://localhost:5000/api/tournaments/edit/` + id)
-      .then((newTournament) => newTournament)
-      .catch((err) => console.log(err))    
+  handleFormSubmitEditTournament(id){
+    return this.calls.put(`/api/tournaments/edit/` + id)
+    .then((data) => data)
+    .catch((err) => console.log(err))    
   }
 
-  handleFormSubmitEditTournament(nameAndImg){
-    return this.calls.put("http://localhost:5000/api/tournaments/add-tournament", nameAndImg)
-      .then((newTournament) => newTournament)
-      .catch((err) => console.log(err))    
+  handleFormSubmitAddTournament(nameAndImg){
+    return this.calls.post("/api/tournaments/add-tournament", nameAndImg)
+    .then((data) => data)
+    .catch((err) => console.log(err))      
+  }
+
+  getTournaments(){
+    return this.calls.get(`http://localhost:5000/api/tournaments`)
+    .then((data) => data)
+    .catch((err) => console.log(err))    
   }
 
 

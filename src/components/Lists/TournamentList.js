@@ -4,9 +4,8 @@ import { Route, Redirect } from 'react-router';
 import { Link } from "react-router-dom";
 import Navbar from '../Navbar';
 import TournamentCell from '../TournamentCell';
-// import AddTournamentPage from './AddTournamentPage';
+import calls from './../helpers/Calls';
 
-import axios from 'axios';
 
 
 class TournamentList extends Component {
@@ -19,11 +18,12 @@ class TournamentList extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:5000/api/tournaments`)
-      .then(res => {
-        const tournaments = res.data;
-        this.setState({ tournaments });
-      })
+   calls.getTournaments()
+    .then(res => {
+      const tournaments = res.data;
+      this.setState({ tournaments });
+    })
+
   }
 
 
@@ -37,7 +37,8 @@ class TournamentList extends Component {
           name={name}
           img={img}
           players={players}
-          games={games} />
+          games={games}
+           />
       )
     })
   }
@@ -45,10 +46,10 @@ class TournamentList extends Component {
   checkIfLogged = () => {
     if (this.state.loggedIn) {
       return (
-        <div className="container tournamentList">
+        <div className="tournamentList">
           <Navbar />
-          <h2>TOURNAMENTS</h2>
           <button><Link to="/tournaments/add-tournament">ADD A NEW TOURNAMENT</Link></button>
+          <h2>TOURNAMENTS</h2>
           {this.generateTournamentsList()}
         </div>)
 

@@ -9,7 +9,7 @@ import imageUploader from './helpers/ImageUploader'
 class AddTournament extends Component {
   constructor(props) {
     super(props);
-    console.log('this props: ',props);
+    console.log('ADD TOURNAMENT props: ', props);
     this.state = {
       name: '',
       img: '',
@@ -22,12 +22,9 @@ class AddTournament extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log('this state: ',this.state)
     calls.handleFormSubmitAddTournament(this.state)
       .then((newTournament) => {
-        console.log('this data: ',newTournament)
-
-        this.props.setCurrentTournament(newTournament.data._id,newTournament.data.name, 'set');
+        this.props.setCurrentTournament(newTournament.data._id, newTournament.data.name, 'set');
         this.setState({ name: "", img: "", redirect: true });
       })
   }
@@ -48,7 +45,6 @@ class AddTournament extends Component {
     const file = event.target.files[0];
     const uploadData = new FormData()
     uploadData.append('photo', file)
-    console.log('shit', uploadData, file);
 
     imageUploader.uploadImage(uploadData)
       .then((img) => {
@@ -73,12 +69,10 @@ class AddTournament extends Component {
             value={this.state.name}
             onChange={(e) => this.handleChange(e)} />
           <input type="file" onChange={this.fileOnchange}></input>
+          
+          {this.disable ? <img src={this.state.img} alt=''  disabled /> : <img src={this.state.img} alt='' disabled />}
           {this.disable ? <input type="submit" disabled></input> : <input type="submit"></input>}
-
-          {/* <input type="submit" value="Submit" /> */}
         </form>
-
-
       </div>
     )
   }

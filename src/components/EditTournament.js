@@ -9,6 +9,8 @@ import imageUploader from './helpers/ImageUploader'
 class EditTournament extends Component {
   constructor(props) {
     super(props);
+    console.log('EDIT TOURNAMENT props: ', props);
+    
     this.state = {
       name: '',
       img: '',
@@ -16,6 +18,7 @@ class EditTournament extends Component {
       games: [],
       redirect: false
     }
+    console.log('EDIT TOURNAMENT state: ', this.state);
   }
 
   handleSubmit = (event) => {
@@ -56,7 +59,6 @@ class EditTournament extends Component {
   }
 
   render() {
-    console.log('edit tour props;: ',this.props);
     return (
       <div className="container">
         {this.renderRedirect()}

@@ -10,11 +10,10 @@ import AuthProvider from "./lib/AuthProvider";
 import TournamentList from "./components/Lists/TournamentList";
 import AddTournament from "./components/AddTournament";
 import EditTournament from "./components/EditTournament";
-import PlayersListPage from "./pages/PlayersListPage";
+import PlayersListPage from "./components/Lists/PlayersList";
 import GamesList from "./components/Lists/GamesList";
 import Brackets from "./components/Brackets";
 
-import './App.css';
 
 
 class App extends Component {

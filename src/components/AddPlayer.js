@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import { withAuth } from "../lib/AuthProvider";
 import calls from './helpers/Calls';
+import imageUploader from './helpers/ImageUploader'
 
 
 class AddPlayer extends Component {
   constructor(props) {
     super(props);
-    console.log('this props in add player: ', props);
+    console.log('PLAYER props: ', props);
     this.state = {
       name: '',
       img: '',
       position: -1,
       score: [],
       tournament: this.props.currentTournament,
-      redirect: false
+      redirect: false,
+      disable: false
     }
   }
 
@@ -29,13 +31,16 @@ class AddPlayer extends Component {
   //   }
   // }
 
+
+  
+
   handleSubmit = (event) => {
     event.preventDefault();
     calls.handleFormSubmitAddPlayer(this.state)
-    .then((data) => {
-      this.props.getPlayers();
-      this.setState({ name: "", img: "", redirect: false });
-    })
+      .then((data) => {
+        this.props.getPlayers();
+        this.setState({ name: "", img: "", redirect: false });
+      })
   }
 
 
@@ -44,12 +49,28 @@ class AddPlayer extends Component {
     this.setState({ [name]: value });
   }
 
+  fileOnchange = (event) => {
+    const file = event.target.files[0];
+    const uploadData = new FormData()
+    uploadData.append('photo', file)
+
+    imageUploader.uploadImage(uploadData)
+      .then((img) => {
+        this.setState({
+          img,
+          disable: false,
+        })
+      })
+      .catch((error) => console.log(error))
+  }
 
 
   render() {
     return (
       <div>
-        <h2>---{this.props.currentTournamentName}---</h2>
+        <img src={this.props.img} alt='' />
+        <h2>{this.props.currentTournamentName}</h2>
+
         <h2>ADD A NEW PLAYER</h2>
         <form onSubmit={this.handleSubmit}>
           {/* <label>Player Name</label> */}
@@ -58,8 +79,9 @@ class AddPlayer extends Component {
             value={this.state.name}
             placeholder='name of player'
             onChange={(e) => this.handleChange(e)} />
-          <input type="submit" value="Submit" />
-        </form>
+          <input type="file" onChange={this.fileOnchange}></input>
+          {this.disable ? <img src={this.state.img} alt=''  disabled /> : <img src={this.state.img} alt='' disabled />}
+          {this.disable ? <input type="submit" disabled></input> : <input type="submit"></input>}        </form>
       </div>
     )
   }
