@@ -14,16 +14,15 @@ class Navbar extends Component {
     const { user, isLoggedin } = this.props;
     return (
       <div className='navBar'>
-      <button onClick={() => this.props.history.go(-1)}><img src={backIcon} alt='back'/></button>
-        {/* <p className="pageTitle">name of the page</p> */}
+        <button className="back-button" onClick={() => this.props.history.go(-1)}><img src={backIcon} alt='back' /></button>
+        {/* <p className="pageTitle">{this.constructor.name}</p> */}
         {isLoggedin ? (
           <div className="userDiv">
-          <p>{user.username}</p>
-          <img className="userPic" src={userIcon} alt='user'/>
+            <p>{user.username}</p>
+            <img className="userPic" src={userIcon} alt='user' />
           </div>
         ) : null
         }
-
 
         {/* {isLoggedin ? (
           <>

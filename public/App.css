@@ -38,13 +38,6 @@ form {
   align-items: center;
 }
 
-input.input-field {
-  /* margin: 2vh; */
-  /* height: 4em;
-  border-radius: 5px;
-  border-color: whitesmoke;
-  background-color: #0d0d0d !important; */
-}
 
 input[type='text'],
 input[type='password'] {
@@ -108,40 +101,43 @@ button {
   height: 12vh;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
   justify-content: space-between;
 }
 
 .userDiv {
   display: flex;
   flex-direction: row;
+  margin: 10px;
 }
 
 .userPic {
-  height: 60px;
-  width: 60px;
-  margin: 10px;
+  height: 66px;
+  width: 66px;
+  margin-left: 10px;
 }
 
 .navBar img {
   max-width: 100%;
   max-height: 100%;
-  margin: 10px;
+  /* margin: 10px; */
 }
 
 .navBar p {
   font-weight: bold;
   font-size: 1.2em;
-  margin: 10px;
+  /* margin: 10px; */
 }
 
-.navBar button {
+.navBar button.back-button {
   text-align: left;
+  width: 20%;
+  vertical-align: center;
   border: none;
   background-color: rgba(0, 0, 0, 0);
+  margin: 0;
 }
 
-.navBar button > img {
+.navBar button img {
   height: 70px;
   width: 70px;
   margin: 10px;
@@ -153,11 +149,11 @@ button {
 }
 
 .tournamentList {
-  /* display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center; */
-  /* margin: auto 0; */
+  margin: auto 0;
   overflow: scroll;
 }
 

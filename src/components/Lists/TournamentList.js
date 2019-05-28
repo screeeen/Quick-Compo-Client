@@ -18,11 +18,11 @@ class TournamentList extends Component {
   }
 
   componentDidMount() {
-   calls.getTournaments()
-    .then(res => {
-      const tournaments = res.data;
-      this.setState({ tournaments });
-    })
+    calls.getTournaments()
+      .then(res => {
+        const tournaments = res.data;
+        this.setState({ tournaments });
+      })
 
   }
 
@@ -38,7 +38,7 @@ class TournamentList extends Component {
           img={img}
           players={players}
           games={games}
-           />
+        />
       )
     })
   }
@@ -46,11 +46,13 @@ class TournamentList extends Component {
   checkIfLogged = () => {
     if (this.state.loggedIn) {
       return (
-        <div className="tournamentList">
+        <div >
           <Navbar />
-          <button><Link to="/tournaments/add-tournament">ADD A NEW TOURNAMENT</Link></button>
-          <h2>TOURNAMENTS</h2>
-          {this.generateTournamentsList()}
+          <div className="tournamentList">
+            <button><Link to="/tournaments/add-tournament">ADD A NEW TOURNAMENT</Link></button>
+            <h2>TOURNAMENTS</h2>
+            {this.generateTournamentsList()}
+          </div>
         </div>)
 
     } else { return <Redirect to="/error" /> };
