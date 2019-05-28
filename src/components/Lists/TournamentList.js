@@ -23,14 +23,12 @@ class TournamentList extends Component {
         const tournaments = res.data;
         this.setState({ tournaments });
       })
-
   }
 
 
   generateTournamentsList = () => {
     return this.state.tournaments.slice(0).reverse().map((oneTournament, i) => {
-      const { name, img, players, games } = oneTournament;
-
+      const { name, img, players, games, _id } = oneTournament;
       return (
         <TournamentCell
           key={i}
@@ -38,6 +36,7 @@ class TournamentList extends Component {
           img={img}
           players={players}
           games={games}
+          _id={_id}
         />
       )
     })

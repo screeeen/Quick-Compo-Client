@@ -10,23 +10,37 @@ class EditTournament extends Component {
   constructor(props) {
     super(props);
     console.log('EDIT TOURNAMENT props: ', props);
-    
+
     this.state = {
       name: '',
       img: '',
       players: [],
       games: [],
-      redirect: false
+      redirect: false,
+      tournamentId: props.location.state
     }
     console.log('EDIT TOURNAMENT state: ', this.state);
   }
 
+  componentDidMount() {
+    calls.getTournamentbyId(this.state.tournamentId)
+      .then(res => {
+        const {name,img,players,games,_id} = res.data;
+        this.setState({ name,img,players,games,tournamentId:_id });
+        console.log('updated state',this.state);
+      })
+
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log('event: ',event);
-    calls.handleFormSubmitEditTournament(`${this.props.setCurrentTournament}`)
-      .then((newTournament) => {
-        this.props.setCurrentTournament(newTournament.data._id,newTournament.name, 'set');
+
+    const {name,img,players,games,tournamentId} = event.target;
+
+    calls.editTournament(this.state.tournamentId,this.state)
+      .then((updatedTournament) => {
+        console.log('new torunament', updatedTournament);
+        this.props.setCurrentTournament(updatedTournament.data._id, updatedTournament.name, 'set');
         this.setState({ name: "", img: "", redirect: true });
       })
   }
@@ -60,7 +74,7 @@ class EditTournament extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
         {this.renderRedirect()}
         <Navbar />
         <h2>EDIT TOURNAMENT</h2>
@@ -69,9 +83,11 @@ class EditTournament extends Component {
           <input type="text"
             name="name"
             value={this.state.name}
-            placeholder={this.props.name}
+            placeholder={this.state.name}
             onChange={(e) => this.handleChange(e)} />
           <input type="file" onChange={this.fileOnchange}></input>
+                
+          {this.disable ? <img src={this.state.img} alt=''  disabled /> : <img className="tournament-image" src={this.state.img} alt='' disabled />}
           {this.disable ? <input type="submit" disabled></input> : <input type="submit"></input>}
         </form>
 

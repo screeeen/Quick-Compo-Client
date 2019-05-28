@@ -38,6 +38,15 @@ form {
   align-items: center;
 }
 
+label{
+  margin: 10px;
+}
+
+
+.tournament-image{
+  width: 30vw;
+  margin: 10vw;
+}
 
 input[type='text'],
 input[type='password'] {
@@ -49,7 +58,7 @@ input[type='password'] {
   margin: 10px;
 }
 
-/* input[type='submit']{ */
+input[type='submit'],
 input[class='button'] {
   width: 90%;
   height: 10vh;

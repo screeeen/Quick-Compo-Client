@@ -4,7 +4,8 @@ import axios from "axios";
 class Calls {
   constructor(){
     this.calls = axios.create({
-      baseURL: "http://localhost:5000",
+      // baseURL: "http://localhost:5000",
+      baseURL: process.env.REACT_APP_API_URL,
       withCredentials: true
     });
   }
@@ -23,8 +24,16 @@ class Calls {
   }
 
   //tournament
-  handleFormSubmitEditTournament(id){
-    return this.calls.put(`/api/tournaments/edit/` + id)
+  getTournamentbyId(id){
+    return this.calls.get(`/api/tournaments/` + id)
+    .then((data) => data)
+    .catch((err) => console.log(err))    
+  }
+
+
+  editTournament(id,thing){
+    console.log('thing ',thing)
+    return this.calls.put((`/api/tournaments/edit/` + id),thing)
     .then((data) => data)
     .catch((err) => console.log(err))    
   }
