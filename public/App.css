@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:100&display=swap');
 
 .container {
-  margin: 0;
+  margin: 12vh;
   padding: 0;
   height: 100vh;
   width: 100vw;
@@ -38,21 +38,21 @@ form {
   align-items: center;
 }
 
-label{
+label {
   margin: 10px;
 }
 
-.tournament-image{
+.tournament-image {
   width: 30vw;
   margin: 10vw;
 }
 
-.tournament-image-small{
+.tournament-image-small {
   width: 10vw;
   margin: 2vw;
 }
 
-.tournament-tally{
+.tournament-tally {
   height: 10vw;
   display: flex;
   flex-direction: row;
@@ -103,6 +103,37 @@ a {
   text-decoration: none;
 }
 
+.footer {
+  background-color: whitesmoke;
+  color: black;
+  height: -12vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /* z-index: -1; */
+}
+
+.footer-button{
+  height: -12vh;
+  background-color: whitesmoke;
+  margin:5px;
+  align-self: center;
+  justify-content: center;
+}
+
+.footer-button img{
+  max-width: 20%;
+  max-height: 20%;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 input {
   color: white;
   border: none;
@@ -118,15 +149,15 @@ button {
   margin: 20px;
 }
 
-.navBar {
+.nav-bar {
   background-color: whitesmoke;
   color: black;
   height: 12vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  position: sticky;
-
+  position: unset;
+  width:100%;
 }
 
 .userDiv {
@@ -141,19 +172,19 @@ button {
   margin-left: 10px;
 }
 
-.navBar img {
+.nav-bar img {
   max-width: 100%;
   max-height: 100%;
-  /* margin: 10px; */
+  margin: 20px;
 }
 
-.navBar p {
+.nav-bar p {
   font-weight: bold;
   font-size: 1.2em;
   /* margin: 10px; */
 }
 
-.navBar button.back-button {
+.nav-bar button.back-button {
   text-align: left;
   width: 20%;
   vertical-align: center;
@@ -162,7 +193,7 @@ button {
   margin: 0;
 }
 
-.navBar button img {
+.nav-bar button img {
   height: 70px;
   width: 70px;
   margin: 10px;
@@ -174,12 +205,13 @@ button {
 }
 
 .tournamentList {
+  margin: 12vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   margin: auto 0;
-  /* overflow: scroll; */
+  overflow: scroll;
 }
 
 .tournament-cell {
@@ -191,7 +223,6 @@ button {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .tournament-cell p {

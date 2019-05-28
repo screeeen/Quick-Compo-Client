@@ -1,19 +1,20 @@
 import React, { Component } from 'react'
-import { withAuth } from "../../lib/AuthProvider";
-import Navbar from '../Navbar';
-import calls from './../helpers/Calls'
-import PlayerCell from './../PlayerCell'
-import AddPlayer from '../AddPlayer';
+import { withAuth } from "../../../lib/AuthProvider";
+import Navbar from '../../Navbar';
+import calls from './../../helpers/Calls'
+import PlayerCell from './PlayerCell'
+import AddPlayer from './AddPlayer';
 
 
 class PlayersList extends Component {
   constructor(props) {
     super(props);
-    console.log('PLAYER LIST props', this.props);
+    console.log('PLAYER LIST props', props);
 
     this.state = {
       loggedIn: true,
       tournament: this.props.currentTournament,
+      tournamentId: this.props.location.state,
       playersIntoTournament: [],
     }
     console.log('PLAYER LIST state', this.state);

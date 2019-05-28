@@ -7,13 +7,12 @@ import Login from "./pages/Login";
 import PrivateRoute from "./components/PrivateRoute";
 import AnonRoute from "./lib/AnonRoute";
 import AuthProvider from "./lib/AuthProvider";
-import TournamentList from "./components/Lists/TournamentList";
-import AddTournament from "./components/AddTournament";
-import EditTournament from "./components/EditTournament";
-import PlayersList from "./components/Lists/PlayersList";
-import GamesList from "./components/Lists/GamesList";
+import TournamentList from "./components/Tournaments/TournamentList";
+import AddTournament from "./components/Tournaments/AddTournament.js";
+import EditTournament from "./components/Tournaments/EditTournament";
+import PlayersList from "./components/Tournaments/Players/PlayersList";
+import GamesList from "./components/Tournaments/Games/GamesList";
 import Brackets from "./components/Brackets";
-
 
 
 class App extends Component {

@@ -13,7 +13,7 @@ class Navbar extends Component {
   render() {
     const { user, isLoggedin } = this.props;
     return (
-      <div className='navBar'>
+      <div className="nav-bar">
         <button className="back-button" onClick={() => this.props.history.go(-1)}><img src={backIcon} alt='back' /></button>
         {/* <p className="pageTitle">{this.constructor.name}</p> */}
         {isLoggedin ? (

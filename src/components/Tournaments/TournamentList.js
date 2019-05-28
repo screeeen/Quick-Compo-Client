@@ -3,7 +3,8 @@ import { withAuth } from "../../lib/AuthProvider";
 import { Route, Redirect } from 'react-router';
 import { Link } from "react-router-dom";
 import Navbar from '../Navbar';
-import TournamentCell from '../TournamentCell';
+import Footer from '../Footer';
+import TournamentCell from './TournamentCell';
 import calls from './../helpers/Calls';
 
 
@@ -11,10 +12,18 @@ import calls from './../helpers/Calls';
 class TournamentList extends Component {
   constructor(props) {
     super(props);
+    console.log("tournaments props ", props);
     this.state = {
       loggedIn: true,
-      tournaments: []
+      tournaments: [],
+      currentTournamentId: '',
+      currentTournamentName: '',
+      currentTournamentImg: '',
+      currentTournamentPlayers: [],
+      currentTournamentGames: []
     }
+    this.updateCurrentTournament = this.updateCurrentTournament.bind(this);
+    console.log("tournaments this state ", this.state);
   }
 
   componentDidMount() {
@@ -25,6 +34,17 @@ class TournamentList extends Component {
       })
   }
 
+  updateCurrentTournament(tournament) {
+    const { name, img, players, games, id } = tournament;
+
+    this.setState({
+      currentTournamentId:id,
+      currentTournamentName:name,
+      currentTournamentImg:img,
+      currentTournamentPlayers:players,
+      currentTournamentGames:games
+    });
+  }
 
   generateTournamentsList = () => {
     return this.state.tournaments.slice(0).reverse().map((oneTournament, i) => {
@@ -48,10 +68,11 @@ class TournamentList extends Component {
         <div >
           <Navbar />
           <div className="tournamentList">
-            <button><Link to="/tournaments/add-tournament">ADD A NEW TOURNAMENT</Link></button>
+            <button><Link to={{pathname:'/tournaments/add-tournament'}}>ADD A NEW TOURNAMENT</Link></button>
             <h2>TOURNAMENTS</h2>
             {this.generateTournamentsList()}
           </div>
+          <Footer/>
         </div>)
 
     } else { return <Redirect to="/error" /> };

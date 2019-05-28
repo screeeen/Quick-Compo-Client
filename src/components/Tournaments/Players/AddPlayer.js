@@ -1,32 +1,34 @@
 import React, { Component } from 'react';
-import { withAuth } from "../lib/AuthProvider";
-import calls from './helpers/Calls';
-import imageUploader from './helpers/ImageUploader'
-import userIcon from './../images/user.svg'
+import { withAuth } from "../../../lib/AuthProvider";
+import calls from './../../helpers/Calls';
+import imageUploader from './../../helpers/ImageUploader'
+import userIcon from './../../../images/user.svg'
 
 
 class AddPlayer extends Component {
   constructor(props) {
     super(props);
-    console.log('PLAYER props: ', props);
     this.state = {
       name: '',
       img: userIcon,
       position: -1,
       score: [],
       tournament: this.props.currentTournament,
+      // tournamentId: props.location.state,
       redirect: false,
       disable: false
     }
+    console.log('PLAYER state: ', this.state);
+    console.log('PLAYER props: ', props);
   }
 
   componentDidMount() {
     // let id = undefined;
-    // if (this.props.currentTournament)? id = this.props.currentTournament : id = this.props.location.state._id;
-    calls.getTournamentbyId(this.props.currentTournament)
+    // this.props.currentTournament? id = this.props.currentTournament : id = this.props.location.state.id;
+    calls.getTournamentbyId(this.state.tournament)
       .then(res => {
-        console.log(res.data);
         const { name, img, players, games, _id } = res.data;
+        console.log(res.data);
         this.setState({ tournamentName: name, tournamentImage: img, tournamentPlayers: players, tournamentGames: games, tournamentId: _id });
         console.log('updated state', this.state);
       })
@@ -80,7 +82,7 @@ class AddPlayer extends Component {
     return (
       <div>
         <img src={this.props.img} alt='' />
-        <div class="tournament-tally">
+        <div className="tournament-tally">
           <img className="tournament-image-small" src={this.state.tournamentImage} alt='' />
           <h2>{this.props.currentTournamentName}</h2>
         </div>
