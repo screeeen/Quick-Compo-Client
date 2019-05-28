@@ -9,12 +9,14 @@ import AddPlayer from '../AddPlayer';
 class PlayersList extends Component {
   constructor(props) {
     super(props);
-    console.log('PLAYER LIST props', props);
+    console.log('PLAYER LIST props', this.props);
+
     this.state = {
       loggedIn: true,
       tournament: this.props.currentTournament,
       playersIntoTournament: [],
     }
+    console.log('PLAYER LIST state', this.state);
   }
 
   componentDidMount() {
@@ -34,10 +36,8 @@ class PlayersList extends Component {
       const { name } = onePlayer;
       console.log(onePlayer, name)
       return <p>{name}</p>
-
     })
   }
-
 
   render() {
     const { players } = this.state.playersIntoTournament;
@@ -49,7 +49,6 @@ class PlayersList extends Component {
         <div>
           <h2>PLAYERS</h2>
           {players && players.map((item, i) => <PlayerCell key={i} name={item.name} img={item.img}/>
-
           )}
         </div>
       </div>

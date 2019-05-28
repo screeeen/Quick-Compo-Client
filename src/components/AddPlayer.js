@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { withAuth } from "../lib/AuthProvider";
 import calls from './helpers/Calls';
 import imageUploader from './helpers/ImageUploader'
+import userIcon from './../images/user.svg'
 
 
 class AddPlayer extends Component {
@@ -10,13 +11,26 @@ class AddPlayer extends Component {
     console.log('PLAYER props: ', props);
     this.state = {
       name: '',
-      img: '',
+      img: userIcon,
       position: -1,
       score: [],
       tournament: this.props.currentTournament,
       redirect: false,
       disable: false
     }
+  }
+
+  componentDidMount() {
+    // let id = undefined;
+    // if (this.props.currentTournament)? id = this.props.currentTournament : id = this.props.location.state._id;
+    calls.getTournamentbyId(this.props.currentTournament)
+      .then(res => {
+        console.log(res.data);
+        const { name, img, players, games, _id } = res.data;
+        this.setState({ tournamentName: name, tournamentImage: img, tournamentPlayers: players, tournamentGames: games, tournamentId: _id });
+        console.log('updated state', this.state);
+      })
+
   }
 
   // renderRedirect = () => {
@@ -32,8 +46,6 @@ class AddPlayer extends Component {
   // }
 
 
-  
-
   handleSubmit = (event) => {
     event.preventDefault();
     calls.handleFormSubmitAddPlayer(this.state)
@@ -42,7 +54,6 @@ class AddPlayer extends Component {
         this.setState({ name: "", img: "", redirect: false });
       })
   }
-
 
   handleChange = (event) => {
     const { name, value } = event.target;
@@ -69,7 +80,10 @@ class AddPlayer extends Component {
     return (
       <div>
         <img src={this.props.img} alt='' />
-        <h2>{this.props.currentTournamentName}</h2>
+        <div class="tournament-tally">
+          <img className="tournament-image-small" src={this.state.tournamentImage} alt='' />
+          <h2>{this.props.currentTournamentName}</h2>
+        </div>
 
         <h2>ADD A NEW PLAYER</h2>
         <form onSubmit={this.handleSubmit}>
@@ -80,7 +94,7 @@ class AddPlayer extends Component {
             placeholder='name of player'
             onChange={(e) => this.handleChange(e)} />
           <input type="file" onChange={this.fileOnchange}></input>
-          {this.disable ? <img src={this.state.img} alt=''  disabled /> : <img src={this.state.img} alt='' disabled />}
+          {this.disable ? <img src={this.state.img} alt='' disabled /> : <img className="tournament-image" src={this.state.img} alt='' disabled />}
           {this.disable ? <input type="submit" disabled></input> : <input type="submit"></input>}        </form>
       </div>
     )

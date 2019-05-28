@@ -7,7 +7,7 @@ function TournamentCell(props) {
     <div>
       <div className="tournament-cell">
         <img src={props.img} alt='pic' />
-        <Link to={{ pathname: "/players", state: props }}>
+        <Link to={{ pathname: `/players`, state: props._id}}>
           <p className="tournament-name">{props.name}</p>
         </Link>
         <p>PLAYERS IN: {props.players.length}</p>

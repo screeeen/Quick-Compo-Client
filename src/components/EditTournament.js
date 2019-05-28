@@ -34,9 +34,6 @@ class EditTournament extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-
-    const {name,img,players,games,tournamentId} = event.target;
-
     calls.editTournament(this.state.tournamentId,this.state)
       .then((updatedTournament) => {
         console.log('new torunament', updatedTournament);

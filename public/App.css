@@ -6,7 +6,7 @@
   height: 100vh;
   width: 100vw;
   font-family: 'Raleway', sans-serif;
-  background-color: #0d0d0d;
+  background-color: #002fa7;
   color: whitesmoke;
 }
 
@@ -42,13 +42,27 @@ label{
   margin: 10px;
 }
 
-
 .tournament-image{
   width: 30vw;
   margin: 10vw;
 }
 
+.tournament-image-small{
+  width: 10vw;
+  margin: 2vw;
+}
+
+.tournament-tally{
+  height: 10vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 0;
+}
+
 input[type='text'],
+input[type='file'],
 input[type='password'] {
   font-size: 1em;
   color: white;
@@ -111,6 +125,8 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: sticky;
+
 }
 
 .userDiv {
@@ -161,9 +177,9 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center; */
+  align-items: center;
   margin: auto 0;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .tournament-cell {
@@ -175,6 +191,7 @@ button {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
 }
 
 .tournament-cell p {

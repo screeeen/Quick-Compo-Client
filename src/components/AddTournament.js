@@ -31,7 +31,8 @@ class AddTournament extends Component {
 
   renderRedirect = () => {
     if (this.state.redirect) {
-      return <Redirect to='/players' />
+      return <Redirect to={{pathname:'/players', state:this.state}} />
+      // return <Redirect to='/players' />
     }
   }
 
@@ -58,7 +59,7 @@ class AddTournament extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
         {this.renderRedirect()}
         <Navbar />
         <h2>NEW TOURNAMENT</h2>
@@ -70,7 +71,7 @@ class AddTournament extends Component {
             onChange={(e) => this.handleChange(e)} />
           <input type="file" onChange={this.fileOnchange}></input>
           
-          {this.disable ? <img src={this.state.img} alt=''  disabled /> : <img src={this.state.img} alt='' disabled />}
+          {this.disable ? <img src={this.state.img} alt=''  disabled /> : <img className="tournament-image" src={this.state.img} alt='' disabled />}
           {this.disable ? <input type="submit" disabled></input> : <input type="submit"></input>}
         </form>
       </div>
