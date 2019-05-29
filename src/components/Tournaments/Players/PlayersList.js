@@ -4,7 +4,7 @@ import Navbar from '../../Navbar';
 import Footer from '../../Footer';
 import calls from './../../helpers/Calls'
 import PlayerCell from './PlayerCell'
-import AddPlayer from './AddPlayer';
+// import AddPlayer from './AddPlayer';
 
 
 class PlayersList extends Component {
@@ -22,36 +22,35 @@ class PlayersList extends Component {
   }
 
   componentDidMount() {
-    this.refreshList();
-  }
-
-  refreshList = () => {
-    // calls.getPlayersOfTournament(`${this.props.currentTournament}`)
-    //   .then(res => {
-    //     const playersIntoTournament = res.data;
-    //     this.setState({ playersIntoTournament });
-    //   }, () => { this.generatePlayersList() })
-
-
-    //patch for presentation
     calls.getPlayers()
       .then(res => {
         console.log(res.data);
         const playersIntoTournament = res.data;
         this.setState({ playersIntoTournament });
-      }, () => { this.generatePlayersList() })
+      })
   }
 
   generatePlayersList = () => {
-    this.state.playersIntoTournament.players && this.state.playersIntoTournament.players.map((onePlayer) => {
-      const { name } = onePlayer;
-      console.log(onePlayer, name)
-      return <p>{name}</p>
+    return this.state.playersIntoTournament.map((onePlayer,i) => {
+      const { name,img,position,score,_id } = onePlayer;
+      console.log(onePlayer)
+      return (
+        <PlayerCell 
+        className="fadeIn"
+        key={i}
+        name={name}
+        img={img}
+        position={position}
+        score={score}
+        _id={_id} 
+        />
+      )
     })
   }
 
   render() {
     const { players } = this.state.playersIntoTournament;
+    console.log(players)
     return (
       <div>
         <Navbar />
@@ -59,8 +58,7 @@ class PlayersList extends Component {
         {/* <PlayersList /> */}
         <div>
           <h2>PLAYERS</h2>
-          {players && players.map((item, i) => <PlayerCell key={i} name={item.name} img={item.img} />
-          )}
+          {this.generatePlayersList()}
         </div>
         <Footer />
 

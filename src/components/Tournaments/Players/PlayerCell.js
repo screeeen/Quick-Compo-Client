@@ -4,16 +4,13 @@ import { withAuth } from "../../../lib/AuthProvider";
 
 function PlayerCell(props) {
   return (
-    <div>
       <div className="tournament-cell">
-        <img src={props.img} alt='pic' />
-        <p className="tournament-name">{props.name}</p>
-        {/* <Link to={{ pathname: "/tournaments/edit-player", state: props }}>
-          <p>EDIT</p>
-        </Link>
-        <p>PLAYERS IN: {props.players.length}</p> */}
+        <img src={props.img} alt='pic'/>
+        <p>{props.name}</p>
+        {props.score>0?<p>SCORE: {props.score}</p>:<p>NO SCORES YET</p>}
+        
+        {/* <p className="tournament-name">{props.position[0]}</p> */}
       </div>
-    </div>
   )
 }
 export default withAuth(PlayerCell)

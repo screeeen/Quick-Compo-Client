@@ -201,6 +201,17 @@ button {
   align-items: center;
 }
 
+.game-cell{
+  width: 100vw;
+  height: 10vh;
+  border-bottom: 1px solid whitesmoke;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .tournament-cell p {
   font-weight: bold;
   margin: 0 20px;

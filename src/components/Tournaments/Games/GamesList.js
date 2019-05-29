@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { withAuth } from '../../../lib/AuthProvider';
 import Navbar from '../../Navbar';
 import Footer from '../../Footer';
-import calls from './../../helpers/Calls'
-
+import calls from './../../helpers/Calls';
+import GamesCell from './GamesCell';
 
 class GamesList extends Component {
   constructor(props) {
@@ -33,21 +33,29 @@ class GamesList extends Component {
   }
 
   generateList = () => {
-    this.state.games && this.state.games.map((oneGame) => {
-      const { name } = oneGame;
+    return this.state.games.map((oneGame,i) => {
+      const { player1,player2,winner,_id } = oneGame;
       console.log(oneGame)
-      return <p>{oneGame}</p>
+      return (
+      <GamesCell
+      key={i}
+          player1={player1}
+          player2={player2}
+          winner={winner}
+          _id={_id}
+      />
+      )
     })
   }
 
 
-render() {
-  return (
+  render() {
+    return (
       <div>
         <Navbar />
-      <h2>GAMES</h2>
-      generateList();
-      <Footer/>
+        <h2>GAMES</h2>
+        {this.generateList()}
+        <Footer />
       </div>
     )
   }
