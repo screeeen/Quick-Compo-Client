@@ -4,7 +4,7 @@ import Navbar from '../../Navbar';
 import Footer from '../../Footer';
 import calls from './../../helpers/Calls'
 import PlayerCell from './PlayerCell'
-// import AddPlayer from './AddPlayer';
+import AddPlayer from './AddPlayer';
 
 
 class PlayersList extends Component {
@@ -22,12 +22,17 @@ class PlayersList extends Component {
   }
 
   componentDidMount() {
-    calls.getPlayers()
-      .then(res => {
-        console.log(res.data);
-        const playersIntoTournament = res.data;
-        this.setState({ playersIntoTournament });
-      })
+    this.refreshPlayersList();
+  }
+
+
+  refreshPlayersList = () =>{
+    calls.getPlayersOfTournament(this.props.location.state.tournamentId)
+    .then(res => {
+      
+      const playersIntoTournament = res.data.players;
+      this.setState({ playersIntoTournament });
+    })
   }
 
   generatePlayersList = () => {
@@ -49,12 +54,12 @@ class PlayersList extends Component {
   }
 
   render() {
-    const { players } = this.state.playersIntoTournament;
-    console.log(players)
+    const { playersIntoTournament } = this.state;
+    console.log(playersIntoTournament)
     return (
       <div>
         <Navbar />
-        {/* <AddPlayer getPlayers={this.refreshList} /> */}
+        <AddPlayer getPlayers={this.refreshPlayersList}/>
         {/* <PlayersList /> */}
         <div>
           <h2>PLAYERS</h2>

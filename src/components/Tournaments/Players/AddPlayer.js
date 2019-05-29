@@ -3,6 +3,7 @@ import { withAuth } from "../../../lib/AuthProvider";
 import calls from './../../helpers/Calls';
 import imageUploader from './../../helpers/ImageUploader'
 import userIcon from './../../../images/user.svg'
+import { withRouter } from 'react-router-dom'
 
 
 
@@ -15,19 +16,15 @@ class AddPlayer extends Component {
       position: -1,
       score: [],
       tournament: this.props.currentTournament,
-      // tournamentId: props.location.state,
       redirect: false,
       disable: false
     }
-    console.log('PLAYER state: ', this.state);
-    console.log('PLAYER props: ', props);
   }
 
   componentDidMount() {
-    // let id = undefined;
-    // this.props.currentTournament? id = this.props.currentTournament : id = this.props.location.state.id;
-    calls.getTournamentbyId(this.state.tournament)
+    calls.getTournamentbyId(this.props.location.state.tournamentId)
       .then(res => {
+        console.log('res ', res);
         const { name, img, players, games, _id } = res.data;
         console.log(res.data);
         this.setState({ tournamentName: name, tournamentImage: img, tournamentPlayers: players, tournamentGames: games, tournamentId: _id });
@@ -36,22 +33,13 @@ class AddPlayer extends Component {
 
   }
 
-  // renderRedirect = () => {
-  //   if (this.state.redirect) {
-  //     return <Redirect to='/brackets' />
-  //   }
-  // }
-
-  // renderRefresh = () => {
-  //   if (this.state.redirect) {
-  //     return <Redirect to='/players' />
-  //   }
-  // }
-
-
   handleSubmit = (event) => {
     event.preventDefault();
-    calls.handleFormSubmitAddPlayer(this.state)
+    const { name, img, position, score } = this.state;
+    const { tournamentId } = this.props.location.state;
+    console.log("");
+
+    calls.addPlayer({ name, img, position, score, tournamentId })
       .then((data) => {
         this.props.getPlayers();
         this.setState({ name: "", img: "", redirect: false });
@@ -78,7 +66,6 @@ class AddPlayer extends Component {
       .catch((error) => console.log(error))
   }
 
-
   render() {
     return (
       <div>
@@ -98,13 +85,12 @@ class AddPlayer extends Component {
             onChange={(e) => this.handleChange(e)} />
           <input type="file" onChange={this.fileOnchange}></input>
           {this.disable ? <img src={this.state.img} alt='' disabled /> : <img className="tournament-image" src={this.state.img} alt='' disabled />}
-          {this.disable ? <input type="submit" disabled></input> : <input type="submit"></input>}   
-               </form>
-          {/* <Footer/> */}
+          {this.disable ? <input type="submit" disabled></input> : <input type="submit"></input>}
+        </form>
 
       </div>
     )
   }
 }
 
-export default withAuth(AddPlayer);
+export default withRouter(withAuth(AddPlayer));

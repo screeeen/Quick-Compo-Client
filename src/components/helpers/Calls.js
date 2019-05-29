@@ -17,7 +17,7 @@ class Calls {
       .catch((err) => console.log(err))
   }
 
-  handleFormSubmitAddPlayer(playerData) {
+  addPlayer(playerData) {
     return this.calls.post("/api/players/add-player", playerData)
       .then((data) => data)
       .catch((err) => console.log(err))
