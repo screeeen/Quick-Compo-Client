@@ -24,10 +24,11 @@ class GamesList extends Component {
   refreshList = () => {
     //patch for presentation
     const { tournament, players } = this.props.location.state;
+
     calls.getRounds(tournament.tournamentId, players)
       .then(res => {
-        console.log('this are the roudns?', res.data);
-        const games = res.data;
+        console.log('this are the rounds?', res.data);
+        const games = res.data.games;
         this.setState({ games });
       }, () => { this.generateList() })
   }
@@ -35,12 +36,11 @@ class GamesList extends Component {
   generateList = () => {
     return this.state.games.map((oneGame, i) => {
       const { player1, player2, winner, _id } = oneGame;
-      console.log(oneGame)
       return (
         <GamesCell
           key={i}
-          player1={player1}
-          player2={player2}
+          player1={player1.name}
+          player2={player2.name}
           winner={winner}
           _id={_id}
         />
@@ -54,7 +54,9 @@ class GamesList extends Component {
       <div>
         <Navbar />
         <h2>GAMES</h2>
-        {this.generateList()}
+        <div className="games-tables">
+          {this.generateList()}
+        </div>
         <Footer />
       </div>
     )

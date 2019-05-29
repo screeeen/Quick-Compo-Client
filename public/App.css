@@ -69,7 +69,7 @@ input[type='text'],
 input[type='file'],
 input[type='password'],
 input[type='submit'],
-input[class='button']  {
+input[class='button'] {
   font-size: 1em;
   color: white;
   background: #002070;
@@ -167,12 +167,11 @@ button {
   font-weight: 400;
 }
 
-.tournament-form{
+.tournament-form {
   height: 100vh;
   width: 100vw;
   margin-top: 14vh;
   margin-bottom: -14vh;
-
 }
 
 .tournamentList {
@@ -193,17 +192,6 @@ button {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
-}
-
-.game-cell {
-  width: 100vw;
-  height: 10vh;
-  border-bottom: 1px solid whitesmoke;
-  text-align: left;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -264,14 +252,52 @@ button {
   flex-direction: row;
   justify-content: space-between;
   /* border-right-color: 1px solid #002070; */
-
 }
 
-.start-button{
+.start-button {
   line-height: 80px;
   margin: 0 auto;
   /* position: fixed; */
   /* z-index: 100; */
   text-shadow: 1px solid grey;
-
 }
+
+/* .game-tables {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* justify-content: flex-start;
+  align-items: baseline;
+ } */
+
+
+.game-tables{
+  display: grid;
+  grid-template-columns: auto auto;
+  /* grid-template-rows: auto auto auto auto; */
+
+  grid-gap: 1px;
+  background-color: #002fa7;
+  /* padding: 10px; */
+}
+
+.game-cell{
+  background-color: #002fa7;
+  border: 1px solid black;
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+  /*margin: 20px; */
+  width: 30%;
+  height: 150px;
+}
+
+/* .game-cell {
+  width: 50%;
+  height: 150px;
+  /* box-sizing: border-box; */
+  /* border: 1px solid white; */
+  /* align-items: left; */
+  /* display: inline-block;
+  align-self: center;
+}  */
