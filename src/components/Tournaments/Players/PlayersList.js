@@ -5,6 +5,7 @@ import Footer from '../../Footer';
 import calls from './../../helpers/Calls'
 import PlayerCell from './PlayerCell'
 import AddPlayer from './AddPlayer';
+import { Link } from 'react-router-dom'
 
 
 class PlayersList extends Component {
@@ -26,30 +27,46 @@ class PlayersList extends Component {
   }
 
 
-  refreshPlayersList = () =>{
+  refreshPlayersList = () => {
     calls.getPlayersOfTournament(this.props.location.state.tournamentId)
-    .then(res => {
-      
-      const playersIntoTournament = res.data.players;
-      this.setState({ playersIntoTournament });
-    })
+      .then(res => {
+
+        const playersIntoTournament = res.data.players;
+        this.setState({ playersIntoTournament });
+      })
+  }
+
+  togglePlayButton = () => {
+    const playerNumber = this.state.playersIntoTournament.length;
+    if (playerNumber >= 4 && playerNumber % 2 === 0) {
+      const players = this.state.playersIntoTournament;
+      console.log('players into tournament', players, this.state.tournamentId);
+
+      return (
+        <Link to={{ pathname: `/games`, state: { tournament: this.state.tournamentId, players } }}>
+          <button>START GAMES</button>
+        </Link >
+
+      )
+    }
   }
 
   generatePlayersList = () => {
-    return this.state.playersIntoTournament.map((onePlayer,i) => {
-      const { name,img,position,score,_id } = onePlayer;
+    return this.state.playersIntoTournament.map((onePlayer, i) => {
+      const { name, img, position, score, _id } = onePlayer;
       console.log(onePlayer)
       return (
-        <PlayerCell 
-        className="fadeIn"
-        key={i}
-        name={name}
-        img={img}
-        position={position}
-        score={score}
-        _id={_id} 
+        <PlayerCell
+          className="fadeIn"
+          key={i}
+          name={name}
+          img={img}
+          position={position}
+          score={score}
+          _id={_id}
         />
       )
+
     })
   }
 
@@ -59,7 +76,8 @@ class PlayersList extends Component {
     return (
       <div>
         <Navbar />
-        <AddPlayer getPlayers={this.refreshPlayersList}/>
+        {this.togglePlayButton()}
+        <AddPlayer getPlayers={this.refreshPlayersList} />
         {/* <PlayersList /> */}
         <div>
           <h2>PLAYERS</h2>

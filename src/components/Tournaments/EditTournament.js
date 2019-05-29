@@ -24,7 +24,9 @@ class EditTournament extends Component {
   }
 
   componentDidMount() {
-    calls.getTournamentbyId(this.state.tournamentId)
+    console.log(this.state.tournamentId);
+  
+    calls.getTournamentbyId(this.props.location.state.tournamentId)
       .then(res => {
         const {name,img,players,games,_id} = res.data;
         this.setState({ name,img,players,games,tournamentId:_id });

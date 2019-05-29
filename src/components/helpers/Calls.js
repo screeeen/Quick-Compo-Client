@@ -1,6 +1,12 @@
 import axios from "axios";
 
 
+
+// Fallback solution
+// function getBaseURL(){
+//   const baseURL = (process.env.NODE_ENV === 'development') ? 'http://localhost:5000' : 'https://quick-compo.herokuapp.com/';
+// }
+
 class Calls {
   constructor() {
     this.calls = axios.create({
@@ -63,8 +69,17 @@ class Calls {
       .then((data) => data)
       .catch((err) => console.log(err))
   }
+
+  getRounds(tournamentId, players){
+    console.log('before: ',tournamentId, players);
+    return this.calls.post(`/api/games/add-all-games`, {tournamentId, players} ) 
+    .then((data) => data)
+    .catch((err) => console.log(err))
+  }
+
+
+
 }
 
 const calls = new Calls();
-
 export default calls;

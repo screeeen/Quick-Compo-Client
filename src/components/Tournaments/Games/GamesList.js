@@ -8,42 +8,42 @@ import GamesCell from './GamesCell';
 class GamesList extends Component {
   constructor(props) {
     super(props);
-    console.log('GAMES LIST props', props);
-
     this.state = {
       loggedIn: true,
       tournament: this.props.currentTournament,
       games: [],
     }
-    console.log('GAMES LIST state', this.state);
   }
 
   componentDidMount() {
     this.refreshList();
+    console.log('GAMES LIST props', this.props);
+
   }
 
   refreshList = () => {
     //patch for presentation
-    calls.getGames()
+    const { tournament, players } = this.props.location.state;
+    calls.getRounds(tournament.tournamentId, players)
       .then(res => {
-        console.log(res.data);
+        console.log('this are the roudns?', res.data);
         const games = res.data;
         this.setState({ games });
       }, () => { this.generateList() })
   }
 
   generateList = () => {
-    return this.state.games.map((oneGame,i) => {
-      const { player1,player2,winner,_id } = oneGame;
+    return this.state.games.map((oneGame, i) => {
+      const { player1, player2, winner, _id } = oneGame;
       console.log(oneGame)
       return (
-      <GamesCell
-      key={i}
+        <GamesCell
+          key={i}
           player1={player1}
           player2={player2}
           winner={winner}
           _id={_id}
-      />
+        />
       )
     })
   }

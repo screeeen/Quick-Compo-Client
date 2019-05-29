@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
-import court from './../images/court.gif'
+import court from './../images/anim.gif'
 
 class Login extends Component {
   state = {

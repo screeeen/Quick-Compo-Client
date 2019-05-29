@@ -31,6 +31,8 @@ class App extends Component {
             <PrivateRoute exact path="/tournaments/add-tournament" component={AddTournament} />
             <PrivateRoute exact path="/players" component={PlayersList} />
             <PrivateRoute exact path="/games" component={GamesList} />
+            {/* <PrivateRoute exact path="/games/add-all-games" component={GamesList} /> */}
+
           </Switch>
         </div>
       </AuthProvider>
