@@ -5,6 +5,7 @@ import imageUploader from './../../helpers/ImageUploader'
 import userIcon from './../../../images/user.svg'
 
 
+
 class AddPlayer extends Component {
   constructor(props) {
     super(props);
@@ -97,7 +98,10 @@ class AddPlayer extends Component {
             onChange={(e) => this.handleChange(e)} />
           <input type="file" onChange={this.fileOnchange}></input>
           {this.disable ? <img src={this.state.img} alt='' disabled /> : <img className="tournament-image" src={this.state.img} alt='' disabled />}
-          {this.disable ? <input type="submit" disabled></input> : <input type="submit"></input>}        </form>
+          {this.disable ? <input type="submit" disabled></input> : <input type="submit"></input>}   
+               </form>
+          {/* <Footer/> */}
+
       </div>
     )
   }

@@ -50,7 +50,7 @@ class TournamentList extends Component {
     return this.state.tournaments.slice(0).reverse().map((oneTournament, i) => {
       const { name, img, players, games, _id } = oneTournament;
       return (
-        <TournamentCell
+        <TournamentCell className="fadeIn"
           key={i}
           name={name}
           img={img}

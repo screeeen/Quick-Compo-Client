@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { withAuth } from "../../../lib/AuthProvider";
 import Navbar from '../../Navbar';
+import Footer from '../../Footer';
 import calls from './../../helpers/Calls'
 import PlayerCell from './PlayerCell'
 import AddPlayer from './AddPlayer';
@@ -25,8 +26,17 @@ class PlayersList extends Component {
   }
 
   refreshList = () => {
-    calls.getPlayersOfTournament(`${this.props.currentTournament}`)
+    // calls.getPlayersOfTournament(`${this.props.currentTournament}`)
+    //   .then(res => {
+    //     const playersIntoTournament = res.data;
+    //     this.setState({ playersIntoTournament });
+    //   }, () => { this.generatePlayersList() })
+
+
+    //patch for presentation
+    calls.getPlayers()
       .then(res => {
+        console.log(res.data);
         const playersIntoTournament = res.data;
         this.setState({ playersIntoTournament });
       }, () => { this.generatePlayersList() })
@@ -45,13 +55,15 @@ class PlayersList extends Component {
     return (
       <div>
         <Navbar />
-        <AddPlayer getPlayers={this.refreshList} />
+        {/* <AddPlayer getPlayers={this.refreshList} /> */}
         {/* <PlayersList /> */}
         <div>
           <h2>PLAYERS</h2>
-          {players && players.map((item, i) => <PlayerCell key={i} name={item.name} img={item.img}/>
+          {players && players.map((item, i) => <PlayerCell key={i} name={item.name} img={item.img} />
           )}
         </div>
+        <Footer />
+
       </div>
     )
   }

@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:100&display=swap');
 
-.container {
+
+
+.html {
   margin: 12vh;
   padding: 0;
   height: 100vh;
   width: 100vw;
+
+}
+
+.container{
   font-family: 'Raleway', sans-serif;
   background-color: #002fa7;
   color: whitesmoke;
@@ -103,37 +109,6 @@ a {
   text-decoration: none;
 }
 
-.footer {
-  background-color: whitesmoke;
-  color: black;
-  height: -12vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  /* z-index: -1; */
-}
-
-.footer-button{
-  height: -12vh;
-  background-color: whitesmoke;
-  margin:5px;
-  align-self: center;
-  justify-content: center;
-}
-
-.footer-button img{
-  max-width: 20%;
-  max-height: 20%;
-  margin: 10px auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 input {
   color: white;
   border: none;
@@ -163,35 +138,36 @@ button {
 .userDiv {
   display: flex;
   flex-direction: row;
-  margin: 10px;
 }
 
 .userPic {
-  height: 66px;
-  width: 66px;
-  margin-left: 10px;
+  height: 80%;
+  /* width: 66px; */
+  /* margin-left: 10px; */
+  margin: 10px -10px 0 0;
+
 }
 
 .nav-bar img {
   max-width: 100%;
   max-height: 100%;
-  margin: 20px;
 }
 
 .nav-bar p {
   font-weight: bold;
   font-size: 1.2em;
-  /* margin: 10px; */
+  margin: 10px;
 }
 
 .nav-bar button.back-button {
-  text-align: left;
+  /* text-align: left; */
   width: 20%;
   vertical-align: center;
   border: none;
   background-color: rgba(0, 0, 0, 0);
   margin: 0;
 }
+
 
 .nav-bar button img {
   height: 70px;
@@ -249,4 +225,36 @@ button {
   margin: 5px;
   padding: 10px;
   border-right: 1px solid whitesmoke;
+}
+
+
+.footer {
+  background-color: whitesmoke;
+  color: black;
+  height: -12vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  /* z-index: -1; */
+}
+
+.footer-button{
+  height: -12vh;
+  background-color: whitesmoke;
+  margin:5px;
+  align-self: center;
+  justify-content: center;
+}
+
+.footer-button img{
+  max-width: 20%;
+  max-height: 20%;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

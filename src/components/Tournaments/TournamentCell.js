@@ -3,7 +3,6 @@ import { withAuth } from "../../lib/AuthProvider";
 import { Link } from 'react-router-dom'
 
 function TournamentCell(props) {
-  console.log('prrrr',props.id);
   return (
     <div>
       <div className="tournament-cell">

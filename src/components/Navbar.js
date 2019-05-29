@@ -15,11 +15,9 @@ class Navbar extends Component {
     return (
       <div className="nav-bar">
         <button className="back-button" onClick={() => this.props.history.go(-1)}><img src={backIcon} alt='back' /></button>
-        {/* <p className="pageTitle">{this.constructor.name}</p> */}
         {isLoggedin ? (
-          <div className="userDiv">
+          <div >
             <p>{user.username}</p>
-            <img className="userPic" src={userIcon} alt='user' />
           </div>
         ) : null
         }
@@ -35,6 +33,8 @@ class Navbar extends Component {
             <Link to="/signup">Signup</Link>
           </>
         )} */}
+        <button className="back-button"><img src={userIcon} alt='user' /></button>
+
       </div>
     );
   }
