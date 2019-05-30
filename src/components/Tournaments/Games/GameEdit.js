@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { withAuth } from "../../../lib/AuthProvider";
+import { Redirect } from "react-router-dom";
 import Navbar from '../../Navbar';
 import Footer from '../../Footer';
 import calls from './../../helpers/Calls';
@@ -14,9 +15,18 @@ class GameEdit extends Component {
       player1Id: props.location.state.player1Id,
       player2Id: props.location.state.player2Id,
       player1Score: 0,
-      player2Score: 0
+      player2Score: 0,
+      redirect: false
     }
     console.log('game EDIT props ',props);
+  }
+
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return this.props.history.go(-1);
+
+      {/* <Redirect to={{pathname:'/games',state:{tournament:this.state.tournamen}}} /> */}
+    }
   }
 
   handleSubmit = (event) => {
@@ -28,7 +38,7 @@ class GameEdit extends Component {
     calls.modifyPlayer(player1Score,player1Id)
     .then((updatedScores) => {
       console.log('updatedScores', updatedScores);
-      this.setState({ player1Score: 0,  redirect: true });
+      this.setState({ player1Score: 0 });
     })
 
 
@@ -53,23 +63,23 @@ class GameEdit extends Component {
     // console.log(props.location.state.player1Score)
     return (
       <div>
+      {this.renderRedirect()}
         <Navbar/>
-
       <h2>EDIT SCORES</h2>
         <form onSubmit={this.handleSubmit}>
 
           <p>{this.props.location.state.player1}</p>
           <input type="number"
             name="player1Score"
-            value={this.props.location.state.player1Score}
-            placeholder={this.props.location.state.player1Score}
+            value={this.state.player1Score}
+            placeholder={this.state.player1Score}
             onChange={(e) => this.handleChange(e)} />
 
             <p>{this.props.location.state.player2}</p>
             <input type="number"
             name="player2Score"
-            value={this.props.location.state.player2Score}
-            placeholder={this.props.location.state.player2Score}
+            value={this.state.player2Score}
+            placeholder={this.state.player2Score}
             onChange={(e) => this.handleChange(e)} />
 
 

@@ -8,7 +8,7 @@ class GamesCell extends Component {
     this.state = {
       tournament: props.tournament,
     }
-    console.log('gamecell props ', props);
+    // console.log('gamecell props ', props);
   }
 
   render() {

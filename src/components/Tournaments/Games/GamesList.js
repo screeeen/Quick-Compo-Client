@@ -24,7 +24,7 @@ class GamesList extends Component {
   refreshList = () => {
     //patch for presentation
     const { tournament, players } = this.props.location.state;
-
+    console.log('tutututotu: ',tournament,players);
     calls.getRounds(tournament.tournamentId, players)
       .then(res => {
         const games = res.data.games;
