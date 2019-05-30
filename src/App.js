@@ -37,6 +37,7 @@ class App extends Component {
             <PrivateRoute exact path="/leaderboard" component={LeaderBoardList} />
 
           </Switch>
+          
         </div>
       </AuthProvider>
     );

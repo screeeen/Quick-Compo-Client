@@ -32,7 +32,7 @@ class LeaderBoardList extends Component {
     // console.log('my players', this.state.players);
     return this.state.players.sort(function(a, b){return b.score - a.score}).map((onePlayer, i) => {
 
-      const { name, img, score, _id } = onePlayer;
+      const { name, img, score } = onePlayer;
 
       return (
         <LeaderBoardCell

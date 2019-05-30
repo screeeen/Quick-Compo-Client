@@ -27,11 +27,11 @@ class Footer extends Component {
         </Link>
         </div>
 
-        <div className="footer-button">
+        {/* <div className="footer-button">
         <Link to={{ pathname: '/games' }}>
             <img src={pitchIcon} alt='user' />Games
         </Link>
-        </div>
+        </div> */}
 
         <div className="footer-button">
           <Link to={{ pathname: '/leaderboard'}}>
