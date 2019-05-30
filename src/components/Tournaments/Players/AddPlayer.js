@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withAuth } from "../../../lib/AuthProvider";
 import calls from './../../helpers/Calls';
 import imageUploader from './../../helpers/ImageUploader'
-import userIcon from './../../../images/user.svg'
+import uploadIcon from './../../../images/upload.svg'
 import { withRouter } from 'react-router-dom'
 
 
@@ -12,7 +12,7 @@ class AddPlayer extends Component {
     super(props);
     this.state = {
       name: '',
-      img: userIcon,
+      img: uploadIcon,
       position: -1,
       score: [],
       tournament: this.props.currentTournament,
@@ -70,10 +70,10 @@ class AddPlayer extends Component {
     return (
       <div>
         <img src={this.props.img} alt='' />
-        <div className="tournament-tally">
+        {/* <div className="tournament-tally">
           <img className="tournament-image-small" src={this.state.tournamentImage} alt='' />
-          <h2>{this.props.currentTournamentName}</h2>
-        </div>
+          <h2>{this.props.tournamentName}</h2>
+        </div> */}
 
         <h2>ADD A NEW PLAYER</h2>
         <form onSubmit={this.handleSubmit}>

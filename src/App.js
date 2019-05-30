@@ -12,6 +12,7 @@ import AddTournament from "./components/Tournaments/AddTournament.js";
 import EditTournament from "./components/Tournaments/EditTournament";
 import PlayersList from "./components/Tournaments/Players/PlayersList";
 import GamesList from "./components/Tournaments/Games/GamesList";
+import GameEdit from "./components/Tournaments/Games/GameEdit";
 import Brackets from "./components/Brackets";
 
 
@@ -31,7 +32,7 @@ class App extends Component {
             <PrivateRoute exact path="/tournaments/add-tournament" component={AddTournament} />
             <PrivateRoute exact path="/players" component={PlayersList} />
             <PrivateRoute exact path="/games" component={GamesList} />
-            {/* <PrivateRoute exact path="/games/add-all-games" component={GamesList} /> */}
+            <PrivateRoute exact path="/game-edit" component={GameEdit} />
 
           </Switch>
         </div>

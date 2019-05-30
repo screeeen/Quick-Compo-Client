@@ -27,7 +27,6 @@ class GamesList extends Component {
 
     calls.getRounds(tournament.tournamentId, players)
       .then(res => {
-        console.log('this are the rounds?', res.data);
         const games = res.data.games;
         this.setState({ games });
       }, () => { this.generateList() })
@@ -36,6 +35,8 @@ class GamesList extends Component {
   generateList = () => {
     return this.state.games.map((oneGame, i) => {
       const { player1, player2, winner, _id } = oneGame;
+      const { tournament } = this.props.location.state;
+
       return (
         <GamesCell
           key={i}
@@ -43,6 +44,7 @@ class GamesList extends Component {
           player2={player2.name}
           winner={winner}
           _id={_id}
+          tournament={tournament}
         />
       )
     })

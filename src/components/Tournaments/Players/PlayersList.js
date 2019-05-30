@@ -71,14 +71,13 @@ class PlayersList extends Component {
   }
 
   render() {
-    const { playersIntoTournament } = this.state;
-    console.log(playersIntoTournament)
+    {/* const { playersIntoTournament } = this.state;
+    console.log(playersIntoTournament) */}
     return (
       <div>
         <Navbar />
         {this.togglePlayButton()}
         <AddPlayer getPlayers={this.refreshPlayersList} />
-        {/* <PlayersList /> */}
         <div>
           <h2>PLAYERS</h2>
           {this.generatePlayersList()}
