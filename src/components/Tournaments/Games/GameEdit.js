@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { withAuth } from "../../../lib/AuthProvider";
 import Navbar from '../../Navbar';
 import Footer from '../../Footer';
-// import calls from './../../helpers/Calls';
+import calls from './../../helpers/Calls';
 
 
 
@@ -10,20 +10,47 @@ class GameEdit extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      tournament: props.tournament,
-      player1Score:0,
-      player2Score:0
+      tournament: props.location.state.tournament,
+      player1Id: props.location.state.player1Id,
+      player2Id: props.location.state.player2Id,
+      player1Score: 0,
+      player2Score: 0
     }
     console.log('game EDIT props ',props);
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+    
+    const  {player1Score , player2Score,player1Id,player2Id, tournament} = this.state;
+    console.log('sendind: ',player1Score,player2Score,player1Id,player2Id,tournament);
 
-  handleChange = (event) => {
-    // const { name, value } = event.target;
-    // this.setState({ [name]: value });
+    calls.modifyPlayer(player1Score,player1Id)
+    .then((updatedScores) => {
+      console.log('updatedScores', updatedScores);
+      this.setState({ player1Score: 0,  redirect: true });
+    })
+
+
+    calls.modifyPlayer(player2Score,player2Id)
+    .then((updatedScores) => {
+      console.log('updatedScores', updatedScores);
+      this.setState({ player2Score: 0, redirect: true });
+    })
   }
 
+
+  handleChange = (event) => {
+    const { name,value } = event.target;
+    // console.log('p  ',name,value);
+    this.setState({ [name]:value });
+    console.log('the state: ',this.state);
+  }
+
+  
+
   render() {
+    // console.log(props.location.state.player1Score)
     return (
       <div>
         <Navbar/>
@@ -33,20 +60,20 @@ class GameEdit extends Component {
 
           <p>{this.props.location.state.player1}</p>
           <input type="number"
-            name="score"
+            name="player1Score"
             value={this.props.location.state.player1Score}
             placeholder={this.props.location.state.player1Score}
             onChange={(e) => this.handleChange(e)} />
 
             <p>{this.props.location.state.player2}</p>
             <input type="number"
-            name="score"
-            value={this.props.location.state.player1Score}
-            placeholder={this.props.location.state.player1Score}
+            name="player2Score"
+            value={this.props.location.state.player2Score}
+            placeholder={this.props.location.state.player2Score}
             onChange={(e) => this.handleChange(e)} />
 
 
-            <button><input type="submit"></input></button>
+            <button onClick={(e) => this.handleSubmit(e)}><input type="submit"></input></button>
 
         </form>
 

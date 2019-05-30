@@ -42,6 +42,10 @@ class GamesList extends Component {
           key={i}
           player1={player1.name}
           player2={player2.name}
+          player1Id={player1._id}
+          player2Id={player2._id}
+          player1Score={player1.score}
+          player2Score={player2.score}
           winner={winner}
           _id={_id}
           tournament={tournament}

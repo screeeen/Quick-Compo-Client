@@ -35,6 +35,12 @@ class Calls {
       .catch((err) => console.log(err))
   }
 
+  modifyPlayer(score,id){
+    return this.calls.put(`/api/players/${id}`,{score})
+    .then((data) => data)
+    .catch((err) => console.log(err))
+  }
+
   //tournament
   getTournamentbyId(id) {
     return this.calls.get(`/api/tournaments/` + id)

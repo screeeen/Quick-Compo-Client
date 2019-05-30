@@ -8,12 +8,12 @@ class GamesCell extends Component {
     this.state = {
       tournament: props.tournament,
     }
-    // console.log('gamecell props ', props);
+    console.log('gamecell props ', props);
   }
 
   render() {
     return (
-      <Link to={{ pathname: `/game-edit/`, state: { tournament: this.props.tournament.tournamentId, player1: this.props.player1, player2: this.props.player2 } }}>
+      <Link to={{ pathname: `/game-edit/`, state: { tournament: this.props.tournament.tournamentId, player1Id:this.props.player1Id, player2Id:this.props.player2Id, player1: this.props.player1, player2: this.props.player2, player1Score:this.props.player1Score, player2Score:this.props.player2Score  } }}>
         <div className="game-cell" >
           {(this.props.player1 && this.props.player2) ?
             <table >
@@ -21,7 +21,7 @@ class GamesCell extends Component {
                 <tr>
                   <td>{this.props.player1} </td>
                   <td></td>
-                  <td>9</td>
+                  <td>SCORE: {this.props.player1Score}</td>
                 </tr>
                 <tr>
                   <td>VS.</td>
@@ -29,7 +29,7 @@ class GamesCell extends Component {
                 <tr>
                   <td>{this.props.player2}</td>
                   <td></td>
-                  <td>9</td>
+                  <td>SCORE: {this.props.player2Score}</td>
                 </tr>
               </tbody>
             </table>

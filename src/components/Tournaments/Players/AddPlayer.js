@@ -14,7 +14,7 @@ class AddPlayer extends Component {
       name: '',
       img: uploadIcon,
       position: -1,
-      score: [],
+      score: 0,
       tournament: this.props.currentTournament,
       redirect: false,
       disable: false

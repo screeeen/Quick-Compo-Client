@@ -54,7 +54,6 @@ class PlayersList extends Component {
   generatePlayersList = () => {
     return this.state.playersIntoTournament.map((onePlayer, i) => {
       const { name, img, position, score, _id } = onePlayer;
-      console.log(onePlayer)
       return (
         <PlayerCell
           className="fadeIn"
