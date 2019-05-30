@@ -44,6 +44,8 @@ class GamesList extends Component {
           player2={player2.name}
           player1Id={player1._id}
           player2Id={player2._id}
+          player1Img={player1.img}
+          player2Img={player2.img}
           player1Score={player1.score}
           player2Score={player2.score}
           winner={winner}
@@ -63,7 +65,7 @@ class GamesList extends Component {
         <div className="games-tables">
           {this.generateList()}
         </div>
-        <Footer />
+        <Footer tournament={this.props.currentTournament}/>
       </div>
     )
   }

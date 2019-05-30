@@ -72,7 +72,7 @@ class TournamentList extends Component {
             <h2>TOURNAMENTS</h2>
             {this.generateTournamentsList()}
           </div>
-          <Footer/>
+          <Footer tournament={this.props.currentTournament}/>
         </div>)
 
     } else { return <Redirect to="/error" /> };

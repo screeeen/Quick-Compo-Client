@@ -13,13 +13,13 @@ class GamesCell extends Component {
 
   render() {
     return (
-      <Link to={{ pathname: `/game-edit/`, state: { tournament: this.props.tournament.tournamentId, player1Id:this.props.player1Id, player2Id:this.props.player2Id, player1: this.props.player1, player2: this.props.player2, player1Score:this.props.player1Score, player2Score:this.props.player2Score  } }}>
+      <Link to={{ pathname: `/game-edit/`, state: { tournament: this.props.tournament.tournamentId, player1Id:this.props.player1Id, player2Id:this.props.player2Id, player1: this.props.player1, player2: this.props.player2, player1Score:this.props.player1Score, player2Score:this.props.player2Score, player1Img:this.props.player1Img, player2Img:this.props.player2Img  } }}>
         <div className="game-cell" >
           {(this.props.player1 && this.props.player2) ?
             <table >
               <tbody>
                 <tr>
-                  <td>{this.props.player1} </td>
+                  <td><img  className="tournament-image-small" src={this.props.player1Img} alt=''/>{this.props.player1} </td>
                   <td></td>
                   <td>SCORE: {this.props.player1Score}</td>
                 </tr>
@@ -27,7 +27,7 @@ class GamesCell extends Component {
                   <td>VS.</td>
                 </tr>
                 <tr>
-                  <td>{this.props.player2}</td>
+                  <td><img className="tournament-image-small" src={this.props.player2Img} alt=''/>{this.props.player2}</td>
                   <td></td>
                   <td>SCORE: {this.props.player2Score}</td>
                 </tr>

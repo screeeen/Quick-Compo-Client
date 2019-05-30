@@ -13,6 +13,8 @@ class GameEdit extends Component {
       tournament: props.location.state.tournament,
       player1Id: props.location.state.player1Id,
       player2Id: props.location.state.player2Id,
+      player1Img: props.location.state.player1Img,
+      player2Img: props.location.state.player2Img,
       player1Score: 0,
       player2Score: 0,
       redirect: false
@@ -66,7 +68,7 @@ class GameEdit extends Component {
         <Navbar/>
       <h2>EDIT SCORES</h2>
         <form onSubmit={this.handleSubmit}>
-
+        <img  className="tournament-image-small" src={this.props.location.state.player1Img} alt=''/>
           <p>{this.props.location.state.player1}</p>
           <input type="number"
             name="player1Score"
@@ -74,6 +76,7 @@ class GameEdit extends Component {
             placeholder={this.state.player1Score}
             onChange={(e) => this.handleChange(e)} />
 
+            <img  className="tournament-image-small" src={this.props.location.state.player2Img} alt=''/>
             <p>{this.props.location.state.player2}</p>
             <input type="number"
             name="player2Score"

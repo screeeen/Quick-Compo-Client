@@ -14,6 +14,7 @@ import PlayersList from "./components/Tournaments/Players/PlayersList";
 import GamesList from "./components/Tournaments/Games/GamesList";
 import GameEdit from "./components/Tournaments/Games/GameEdit";
 import Brackets from "./components/Brackets";
+import LeaderBoardList from "./components/Tournaments/LeaderBoard/LeaderBoardList";
 
 
 class App extends Component {
@@ -33,6 +34,7 @@ class App extends Component {
             <PrivateRoute exact path="/players" component={PlayersList} />
             <PrivateRoute exact path="/games" component={GamesList} />
             <PrivateRoute exact path="/game-edit" component={GameEdit} />
+            <PrivateRoute exact path="/leaderboard" component={LeaderBoardList} />
 
           </Switch>
         </div>
