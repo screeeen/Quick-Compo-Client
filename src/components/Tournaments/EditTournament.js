@@ -39,7 +39,7 @@ class EditTournament extends Component {
     calls.editTournament(this.state.tournamentId,this.state)
       .then((updatedTournament) => {
         console.log('new torunament', updatedTournament);
-        this.props.setCurrentTournament(updatedTournament.data._id, updatedTournament.name, 'set');
+        // this.props.setCurrentTournament(updatedTournament.data._id, updatedTournament.name, 'set');
         this.setState({ name: "", img: "", redirect: true });
       })
   }

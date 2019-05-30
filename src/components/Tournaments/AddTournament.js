@@ -25,7 +25,7 @@ class AddTournament extends Component {
     event.preventDefault();
     calls.handleFormSubmitAddTournament(this.state)
       .then((newTournament) => {
-        this.props.setCurrentTournament(newTournament.data._id, newTournament.data.name, 'set');
+        // this.props.setCurrentTournament(newTournament.data._id, newTournament.data.name, 'set');
         this.setState({ name: "", img: "", redirect: true });
         // this.props.updateCurrentTournament(newTournament);
       })

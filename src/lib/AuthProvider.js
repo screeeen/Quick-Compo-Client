@@ -12,9 +12,6 @@ export const withAuth = Comp => {
           {value => {
             return (
               <Comp
-                currentTournament={value.currentTournament}
-                currentTournamentName={value.currentTournamentName}
-                setCurrentTournament={value.setCurrentTournament}
                 login={value.login}
                 signup={value.signup}
                 user={value.user}
@@ -39,13 +36,6 @@ class AuthProvider extends Component {
     currentTournamentName: ''
   };
 
-  setCurrentTournament = (id, name, action) => {
-    if (action === 'set') {
-      this.setState({ currentTournament: id, currentTournamentName: name });
-    } else if (action === 'clear') {
-      this.setState({ currentTournament: undefined, currentTournamentName: '' });
-    }
-  }
 
   componentDidMount() {
     auth
@@ -108,7 +98,7 @@ class AuthProvider extends Component {
       .catch(() => { });
   };
   render() {
-    const { isLoading, isLoggedin, user, currentTournament, currentTournamentName } = this.state;
+    const { isLoading, isLoggedin, user } = this.state;
     return isLoading ? (
       <div>Loading</div>
     ) : (
@@ -116,9 +106,6 @@ class AuthProvider extends Component {
           value={{
             isLoggedin,
             user,
-            currentTournament,
-            currentTournamentName,
-            setCurrentTournament: this.setCurrentTournament,
             login: this.login,
             logout: this.logout,
             signup: this.signup

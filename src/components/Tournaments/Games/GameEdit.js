@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { withAuth } from "../../../lib/AuthProvider";
-import { Redirect } from "react-router-dom";
 import Navbar from '../../Navbar';
 import Footer from '../../Footer';
 import calls from './../../helpers/Calls';
