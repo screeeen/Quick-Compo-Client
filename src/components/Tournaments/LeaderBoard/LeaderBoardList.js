@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { withAuth } from "../../../lib/AuthProvider";
-import Navbar from '../../Navbar';
-import Footer from '../../Footer';
 import calls from '../../helpers/Calls';
 import LeaderBoardCell from './LeaderBoardCell';
 
@@ -49,12 +47,10 @@ class LeaderBoardList extends Component {
   render() {
     return (
       <div>
-        <Navbar />
         <h2>HALL OF FAME</h2>
         <div className="games-tables">
           {this.generateList()}
         </div>
-        <Footer tournament={this.props.currentTournament}/>
       </div>
     )
   }

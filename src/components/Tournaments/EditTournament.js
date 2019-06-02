@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { withAuth } from "../../lib/AuthProvider";
 import { Redirect } from "react-router-dom";
-import Navbar from './../Navbar';
-import Footer from '../Footer';
 import calls from './../helpers/Calls'
 import imageUploader from './../helpers/ImageUploader'
 
@@ -75,7 +73,6 @@ class EditTournament extends Component {
     return (
       <div>
         {this.renderRedirect()}
-        <Navbar />
         <h2>EDIT TOURNAMENT</h2>
 
         <form onSubmit={this.handleSubmit}>
@@ -89,9 +86,6 @@ class EditTournament extends Component {
           {this.disable ? <img src={this.state.img} alt=''  disabled /> : <img className="tournament-image" src={this.state.img} alt='' disabled />}
           {this.disable ? <input type="submit" disabled></input> : <input type="submit"></input>}
         </form>
-        <Footer/>
-
-
       </div>
     )
   }

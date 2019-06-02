@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { withAuth } from '../../../lib/AuthProvider';
-import Navbar from '../../Navbar';
-import Footer from '../../Footer';
 import calls from './../../helpers/Calls';
 import GamesCell from './GamesCell';
 
@@ -60,12 +58,10 @@ class GamesList extends Component {
   render() {
     return (
       <div>
-        <Navbar />
         <h2>GAMES</h2>
         <div className="games-tables">
           {this.generateList()}
         </div>
-        <Footer tournament={this.props.currentTournament}/>
       </div>
     )
   }

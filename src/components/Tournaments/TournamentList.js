@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import { withAuth } from "../../lib/AuthProvider";
 import { Route, Redirect } from 'react-router';
 import { Link } from "react-router-dom";
-import Navbar from '../Navbar';
-import Footer from '../Footer';
 import TournamentCell from './TournamentCell';
 import calls from './../helpers/Calls';
 
@@ -66,13 +64,11 @@ class TournamentList extends Component {
     if (this.state.loggedIn) {
       return (
         <div >
-          <Navbar />
           <div className="tournamentList">
             <button><Link to={{pathname:'/tournaments/add-tournament'}}>ADD A NEW TOURNAMENT</Link></button>
             <h2>TOURNAMENTS</h2>
             {this.generateTournamentsList()}
           </div>
-          <Footer tournament={this.props.currentTournament}/>
         </div>)
 
     } else { return <Redirect to="/error" /> };

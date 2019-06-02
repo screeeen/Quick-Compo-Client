@@ -4,6 +4,9 @@ import { Switch } from "react-router-dom";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+
 import PrivateRoute from "./components/PrivateRoute";
 import AnonRoute from "./lib/AnonRoute";
 import AuthProvider from "./lib/AuthProvider";
@@ -21,6 +24,8 @@ class App extends Component {
   render() {
     return (
       <AuthProvider>
+      <Navbar />
+
         <div className="container">
           <Switch>
             <AnonRoute exact path="/" component={Signup} />
@@ -39,6 +44,8 @@ class App extends Component {
           </Switch>
           
         </div>
+        <Footer tournament={this.props.currentTournament}/>
+
       </AuthProvider>
     );
   }

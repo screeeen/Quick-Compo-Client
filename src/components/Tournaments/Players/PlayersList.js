@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { withAuth } from "../../../lib/AuthProvider";
-import Navbar from '../../Navbar';
-import Footer from '../../Footer';
 import calls from './../../helpers/Calls'
 import PlayerCell from './PlayerCell'
 import AddPlayer from './AddPlayer';
@@ -70,18 +68,14 @@ class PlayersList extends Component {
   }
 
   render() {
-    {/* const { playersIntoTournament } = this.state;
-    console.log(playersIntoTournament) */}
     return (
       <div>
-        <Navbar />
         {this.togglePlayButton()}
         <AddPlayer getPlayers={this.refreshPlayersList} />
         <div>
           <h2>PLAYERS</h2>
           {this.generatePlayersList()}
         </div>
-        <Footer />
 
       </div>
     )

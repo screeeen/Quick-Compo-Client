@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { withAuth } from "../../../lib/AuthProvider";
-import Navbar from '../../Navbar';
-import Footer from '../../Footer';
 import calls from './../../helpers/Calls';
 
 
@@ -65,7 +63,6 @@ class GameEdit extends Component {
     return (
       <div>
       {this.renderRedirect()}
-        <Navbar/>
       <h2>EDIT SCORES</h2>
         <form onSubmit={this.handleSubmit}>
         <img  className="tournament-image-small" src={this.props.location.state.player1Img} alt=''/>
@@ -90,7 +87,6 @@ class GameEdit extends Component {
         </form>
 
 
-        <Footer />
       </div>
     )
   }
