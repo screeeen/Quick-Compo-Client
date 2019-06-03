@@ -64,7 +64,7 @@ class TournamentList extends Component {
     if (this.state.loggedIn) {
       return (
         <div >
-          <div className="tournamentList">
+          <div className="tournament-list">
             <button><Link to={{pathname:'/tournaments/add-tournament'}}>ADD A NEW TOURNAMENT</Link></button>
             <h2>TOURNAMENTS</h2>
             {this.generateTournamentsList()}

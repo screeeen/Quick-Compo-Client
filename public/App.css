@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:100&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
+
+
 .html {
   margin: 12vh;
   padding: 0;
@@ -18,8 +20,9 @@
 .login {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+  /* padding-bottom: 19vh; */
 }
 
 .splashImg {
@@ -27,13 +30,10 @@
 }
 
 .splashImg img {
-  margin-top: 10vh;
   max-width: 100%;
-  max-height: 100%;
 }
 
 form {
-  width: 90%;
   text-align: center;
   border-radius: 5px;
   border-color: whitesmoke;
@@ -159,12 +159,14 @@ button {
 .nav-bar {
   background-color: whitesmoke;
   color: black;
-  height: 12vh;
+  height: 10vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  position: unset;
   width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 
 .userDiv {
@@ -211,12 +213,11 @@ button {
 .tournament-form {
   height: 100vh;
   width: 100vw;
-  margin-top: 14vh;
-  margin-bottom: -14vh;
+  padding: 14vh 0;
 }
 
-.tournamentList {
-  margin: 12vh;
+.tournament-list {
+  padding-top: 18%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -268,7 +269,7 @@ button {
 .footer {
   background-color: whitesmoke;
   color: black;
-  height: -12vh;
+  height: -5vh;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -280,18 +281,15 @@ button {
 }
 
 .footer-button {
-  height: -12vh;
   background-color: whitesmoke;
-  margin: 5px;
-  align-self: center;
+    align-self: center;
   justify-content: center;
   /* border-right-color: 1px solid #002070; */
 }
 
 .footer-button img {
-  max-width: 20%;
-  max-height: 20%;
-  margin: 10px auto;
+  max-width: 12%;
+  margin: 5px auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

@@ -24,7 +24,7 @@ class App extends Component {
   render() {
     return (
       <AuthProvider>
-      <Navbar />
+      {/* <Navbar /> */}
 
         <div className="container">
           <Switch>
@@ -44,7 +44,7 @@ class App extends Component {
           </Switch>
           
         </div>
-        <Footer tournament={this.props.currentTournament}/>
+        {/* <Footer tournament={this.props.currentTournament}/> */}
 
       </AuthProvider>
     );
