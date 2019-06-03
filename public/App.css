@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:100&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
 
-
 .html {
   margin: 12vh;
   padding: 0;
@@ -85,6 +84,20 @@ input[class='button'] {
   height: 4vh;
 }
 
+input[type='submit'],
+input[class='button'] {
+  color: white;
+  border: none;
+  font-size: 1em;
+  color: white;
+  background: #ff0000;
+  padding: 8px;
+  border-radius: 5px;
+  margin: 5px;
+  width: 20%;
+  height: 4vh;
+}
+
 .inputfile {
   width: 0.1px;
   height: 0.1px;
@@ -98,20 +111,18 @@ input[class='button'] {
   font-size: 1.25em;
   font-weight: 700;
   color: white;
-  background-color: black;
+  background-color: #00a;
   display: inline-block;
   cursor: pointer;
   padding: 20px;
 }
 
-
 .inputfile:focus + label,
 .inputfile + label:hover {
   background-color: red;
   outline: 1px dotted #000;
-	outline: -webkit-focus-ring-color auto 5px;
+  outline: -webkit-focus-ring-color auto 5px;
 }
-
 
 h1 {
   font-size: 3em;
@@ -134,13 +145,13 @@ a {
 }
 
 button {
-  width: 90%;
-  height: 10vh;
+  width: 48%;
+  height: 6vh;
   border-color: #002070;
-  background-color: #002070;
+  background-color: #ff0000;
   border-radius: 10px;
   box-sizing: content-box;
-  margin: 20px;
+  margin: 40px 40px;
   color: white;
   font-size: 1.2em;
   box-shadow: 0 2px #999;
@@ -214,8 +225,17 @@ button {
   height: 100vh;
   width: 100vw;
   padding: 14vh 0;
+  marging: 0 auto;
 }
 
+.tournament-form-outline {
+  height: 30vh;
+  width: 60vw;
+  padding: 14vh 0;
+  border-radius: 45px;
+  border: 2px solid white;
+  margin: 0 auto;
+}
 .tournament-list {
   padding-top: 18%;
   display: flex;
@@ -282,7 +302,7 @@ button {
 
 .footer-button {
   background-color: whitesmoke;
-    align-self: center;
+  align-self: center;
   justify-content: center;
   /* border-right-color: 1px solid #002070; */
 }

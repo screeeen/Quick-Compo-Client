@@ -70,8 +70,9 @@ class AddTournament extends Component {
             onChange={(e) => this.handleChange(e)} />
 
             <input type="file" name="file" id="file" className="inputfile" onChange={this.fileOnchange} />
-            <label htmlFor="file">Choose a file</label>          
-          {this.disable ? <img src={this.state.img} alt=''  disabled /> : <img className="tournament-image" src={this.state.img} alt='' disabled />}
+            <label htmlFor="file"><img className="tournament-image" src={this.state.img} alt='' disabled /></label>     
+                
+          {this.disable ? <img src={this.state.img} alt=''  disabled /> : null}
           {this.disable ? <input type="submit" disabled></input> : <input type="submit"></input>}
         </form>
       </div>

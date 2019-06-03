@@ -68,7 +68,7 @@ class AddPlayer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="tournament-form">
         <img src={this.props.img} alt='' />
         {/* <div className="tournament-tally">
           <img className="tournament-image-small" src={this.state.tournamentImage} alt='' />
@@ -83,8 +83,9 @@ class AddPlayer extends Component {
             value={this.state.name}
             placeholder='name of player'
             onChange={(e) => this.handleChange(e)} />
-          <input type="file" onChange={this.fileOnchange}></input>
-          {this.disable ? <img src={this.state.img} alt='' disabled /> : <img className="tournament-image" src={this.state.img} alt='' disabled />}
+            <input type="file" name="file" id="file" className="inputfile" onChange={this.fileOnchange} />
+            <label htmlFor="file"><img className="tournament-image" src={this.state.img} alt='' disabled /></label>     
+          {this.disable ? <img src={this.state.img} alt='' disabled /> : null}
           {this.disable ? <input type="submit" disabled></input> : <input type="submit"></input>}
         </form>
 

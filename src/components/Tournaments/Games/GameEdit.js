@@ -61,9 +61,11 @@ class GameEdit extends Component {
   render() {
     // console.log(props.location.state.player1Score)
     return (
-      <div>
+      <div className="tournament-form">
       {this.renderRedirect()}
       <h2>EDIT SCORES</h2>
+      <div className="tournament-form-outline">
+
         <form onSubmit={this.handleSubmit}>
         <img  className="tournament-image-small" src={this.props.location.state.player1Img} alt=''/>
           <p>{this.props.location.state.player1}</p>
@@ -85,7 +87,7 @@ class GameEdit extends Component {
             <button onClick={(e) => this.handleSubmit(e)}><input type="submit"></input></button>
 
         </form>
-
+      </div>
 
       </div>
     )
