@@ -59,6 +59,7 @@
   left: 0;
   bottom: 0;
   width: 100%;
+  
 }
 
 .footer-button {
@@ -67,13 +68,42 @@
   justify-content: center;
 }
 
-.footer-button img+p  {
+.footer-button img {
   max-width: 12%;
   margin: 5px auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
+
+.footer-button p {
+  max-width: 12%;
+  font-size: 4vw;
+  margin: 5px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: black;
+  
+}
+
+.footer-button a:active{
+  text-decoration: none;
+}
+
+.footer-button a:active{
+  text-decoration: none;
+}
+
+input[type=checkbox] {
+  background: yellow;
+}
+
+input[type=checkbox]:checked ~ div {
+  background: red;
+}
+
+
 
 
 /* 
