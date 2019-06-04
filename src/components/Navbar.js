@@ -14,27 +14,18 @@ class Navbar extends Component {
     const { user, isLoggedin } = this.props;
     return (
       <div className="nav-bar">
-        <button className="back-button" onClick={() => this.props.history.go(-1)}><img src={backIcon} alt='back' /></button>
-        {isLoggedin ? (
-          <div >
-            <p>{user.username}</p>
-          </div>
-        ) : null
-        }
 
-        {/* {isLoggedin ? (
-          <>
-            <p>username: {user.username}</p>
-            <button onClick={logout}>Logout</button>
-          </>
-        ) : (
-          <>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Signup</Link>
-          </>
-        )} */}
-        <button className="back-button"><img src={userIcon} alt='user' /></button>
+        <div className="centered-div">
+          <img src={backIcon} alt='back' onClick={() => this.props.history.go(-1)} />
+        </div>
 
+        <div className="centered-div">
+          <p>{user.username}</p>
+        </div>
+
+        <div className="centered-div">
+          <img src={userIcon} alt='user' />
+        </div>
       </div>
     );
   }
@@ -42,3 +33,21 @@ class Navbar extends Component {
 
 const navbarWithRouter = withRouter(Navbar);
 export default withAuth(navbarWithRouter);
+
+
+
+// {isLoggedin ? (
+//   ) : null
+//   }
+
+//   {/* {isLoggedin ? (
+//     <>
+//       <p>username: {user.username}</p>
+//       <button onClick={logout}>Logout</button>
+//     </>
+//   ) : (
+//     <>
+//       <Link to="/login">Login</Link>
+//       <Link to="/signup">Signup</Link>
+//     </>
+//   )} */}

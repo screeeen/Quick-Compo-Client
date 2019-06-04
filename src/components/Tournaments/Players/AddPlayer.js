@@ -68,7 +68,7 @@ class AddPlayer extends Component {
 
   render() {
     return (
-      <div className="tournament-form">
+      <div className="tournament-form" >
         <img src={this.props.img} alt='' />
         {/* <div className="tournament-tally">
           <img className="tournament-image-small" src={this.state.tournamentImage} alt='' />
@@ -76,7 +76,7 @@ class AddPlayer extends Component {
         </div> */}
 
         <h2>ADD A NEW PLAYER</h2>
-        <form onSubmit={this.handleSubmit}>
+        <form className="tournament-form-outline" onSubmit={this.handleSubmit}>
           {/* <label>Player Name</label> */}
           <input type="text"
             name="name"

@@ -2,26 +2,86 @@
 @import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
 
 .html {
-  margin: 12vh;
   padding: 0;
   height: 100vh;
   width: 100vw;
   background-color: #002fa7;
+  left: 0;
+  top: 0;
 }
 
 .container {
-  /* font-family: 'Raleway', sans-serif; */
   font-family: 'Work Sans', sans-serif;
   background-color: #002fa7;
   color: whitesmoke;
+
 }
 
+.nav-bar {
+  background-color: whitesmoke;
+  color: #002fa7;
+  position: fixed;
+  width:100%;
+  max-width:100%;
+  left: 0;
+  top: 0;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.centered-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+}
+
+.nav-bar img {
+  max-width: 100%;
+  max-height: 100%;
+}
+ 
+.nav-bar p {
+  font-weight: bold;
+  font-size: 6vw; 
+}
+
+.footer {
+  background-color: whitesmoke;
+  color: black;
+  height: -5vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-button {
+  background-color: whitesmoke;
+  align-self: center;
+  justify-content: center;
+}
+
+.footer-button img+p  {
+  max-width: 12%;
+  margin: 5px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+/* 
 .login {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* padding-bottom: 19vh; */
 }
 
 .splashImg {
@@ -108,13 +168,13 @@ input[class='button'] {
 }
 
 .inputfile + label {
-  font-size: 1.25em;
   font-weight: 700;
   color: white;
   background-color: #00a;
   display: inline-block;
   cursor: pointer;
   padding: 20px;
+  border-radius: 10px;
 }
 
 .inputfile:focus + label,
@@ -145,7 +205,6 @@ a {
 }
 
 button {
-  width: 48%;
   height: 6vh;
   border-color: #002070;
   background-color: #ff0000;
@@ -155,6 +214,8 @@ button {
   color: white;
   font-size: 1.2em;
   box-shadow: 0 2px #999;
+  margin-top: 20vh;
+
 }
 
 .button:hover {
@@ -167,18 +228,14 @@ button {
   transform: translateY(-4px);
 }
 
-.nav-bar {
-  background-color: whitesmoke;
-  color: black;
-  height: 10vh;
+.start-button {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
+
 
 .userDiv {
   display: flex;
@@ -190,34 +247,6 @@ button {
   margin: 10px -10px 0 0;
 }
 
-.nav-bar img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.nav-bar p {
-  font-weight: bold;
-  font-size: 1.6em;
-  margin: 10px;
-  padding-top:4vh;
-}
-
-.nav-bar button.back-button {
-  /* text-align: left; */
-  width: 20%;
-  vertical-align: center;
-  border: none;
-  background-color: #00207000;
-  margin: 0;
-  box-shadow: none;
-}
-
-.nav-bar button img {
-  height: 70px;
-  width: 70px;
-  margin: 10px;
-}
-
 .pageTitle {
   font-size: 1.3em;
   font-weight: 400;
@@ -227,7 +256,7 @@ button {
   height: 100vh;
   width: 100vw;
   padding: 14vh 0;
-  marging: 0 auto;
+  margin: 0 auto;
 }
 
 .tournament-form-outline {
@@ -286,13 +315,12 @@ button {
   justify-content: center;
   align-items:center;
   padding: 10px; 
-  width:10%; /* or whatever width you want. */
-  max-width:10%; /* or whatever width you want. */
+  width:10%; 
+  max-width:10%; 
   min-width:10%;
   height: 100%;
   max-height: 100%;
   display: inline-block;
-    /* margin: 5px; */
   padding: 20px;
   border-right: 1px solid whitesmoke;
 }
@@ -303,35 +331,7 @@ button {
 
 }
 
-.footer {
-  background-color: whitesmoke;
-  color: black;
-  height: -5vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  /* z-index: -1; */
-}
 
-.footer-button {
-  background-color: whitesmoke;
-  align-self: center;
-  justify-content: center;
-  /* border-right-color: 1px solid #002070; */
-}
-
-.footer-button img {
-  max-width: 12%;
-  margin: 5px auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  /* border-right-color: 1px solid #002070; */
-}
 
 .game-tables {
   display: flex;
@@ -376,12 +376,9 @@ button {
 
 .player-card img {
   height: 50px;
-  /* display: inline; */
   text-align: left;
 }
 
 .player-card p {
-  /* height: 30px; */
-  /* display: inline; */
   text-align: right;
-}
+} */

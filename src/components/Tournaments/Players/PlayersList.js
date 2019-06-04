@@ -41,10 +41,11 @@ class PlayersList extends Component {
       console.log('players into tournament', players, this.state.tournamentId);
 
       return (
-        <Link to={{ pathname: `/games`, state: { tournament: this.state.tournamentId, players } }}>
-          <button>START GAMES</button>
-        </Link >
-
+        <div className="start-button">
+          <Link to={{ pathname: `/games`, state: { tournament: this.state.tournamentId, players } }}>
+            <button>START GAMES</button>
+          </Link >
+        </div>
       )
     }
   }

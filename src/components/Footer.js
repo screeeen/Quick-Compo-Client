@@ -9,9 +9,9 @@ import basketIcon from './../images/basket.svg'
 
 class Footer extends Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
+    this.state = {
       tournament: this.props.tournament
     }
     console.log('footer props', props);
@@ -23,8 +23,9 @@ class Footer extends Component {
 
         <div className="footer-button">
           <Link to={{ pathname: '/tournaments' }}>
-            <img src={basketIcon} alt='sports' />Tournaments
-        </Link>
+            <img src={basketIcon} alt='sports' />
+            <p>Tournaments</p>
+          </Link>
         </div>
 
         {/* <div className="footer-button">
@@ -34,14 +35,15 @@ class Footer extends Component {
         </div> */}
 
         <div className="footer-button">
-          <Link to={{ pathname: '/leaderboard'}}>
+          <Link to={{ pathname: '/leaderboard' }}>
+            <img src={badgeIcon} alt='user' />
+            <p>Users</p>
 
-            <img src={badgeIcon} alt='user' />Users
-        </Link>
+          </Link>
         </div>
 
 
-        </div>
+      </div>
     )
   }
 }
