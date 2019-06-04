@@ -3,7 +3,7 @@ import { withAuth } from "../../lib/AuthProvider";
 import { Redirect } from "react-router-dom";
 import calls from './../helpers/Calls'
 import imageUploader from './../helpers/ImageUploader'
-
+import Button_Images from './../Button_Images'
 
 class EditTournament extends Component {
   constructor(props) {
@@ -81,6 +81,7 @@ class EditTournament extends Component {
             value={this.state.name}
             placeholder={this.state.name}
             onChange={(e) => this.handleChange(e)} />
+            {/* <Button_Images onChange={this.fileOnchange} src={this.state.img}/> */}
             <input type="file" name="file" id="file" className="inputfile" onChange={this.fileOnchange} />
             <label htmlFor="file"><img className="tournament-image" src={this.state.img} alt='' disabled /></label>     
           {this.disable ? <img src={this.state.img} alt=''  disabled /> : <img className="tournament-image" src={this.state.img} alt='' disabled />}
