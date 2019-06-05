@@ -61,8 +61,12 @@ class AddTournament extends Component {
     return (
       <div className="container">
         {this.renderRedirect()}
-        <h2>NEW TOURNAMENT</h2>
-
+        <div class="non-semantic-protector"> 
+        <h1 className="ribbon">
+          <strong className="ribbon-content">NEW TOURNAMENT</strong>
+        </h1>
+        </div>
+        
         <form onSubmit={this.handleSubmit}>
           <div className="tournament-form-outline">
             <label>Name</label>

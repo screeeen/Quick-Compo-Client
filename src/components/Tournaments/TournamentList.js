@@ -65,7 +65,11 @@ class TournamentList extends Component {
       return (
         <div >
           <div className="container">
-            <h2>TOURNAMENTS</h2>
+          <div class="non-semantic-protector"> 
+        <h1 className="ribbon">
+          <strong className="ribbon-content">TOURNAMENTS</strong>
+        </h1>
+        </div>
             <Link to={{pathname:'/tournaments/add-tournament'}}>
             <p>ADD A NEW TOURNAMENT</p>
             </Link>
