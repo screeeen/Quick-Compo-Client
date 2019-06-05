@@ -31,7 +31,7 @@ class AddTournament extends Component {
 
   renderRedirect = () => {
     if (this.state.redirect) {
-      return <Redirect to={{pathname:'/tournaments', state:this.state}} />
+      return <Redirect to={{ pathname: '/tournaments', state: this.state }} />
       // return <Redirect to='/players' />
     }
   }
@@ -59,21 +59,24 @@ class AddTournament extends Component {
 
   render() {
     return (
-      <div className="tournament-form">
+      <div className="container">
         {this.renderRedirect()}
         <h2>NEW TOURNAMENT</h2>
+
         <form onSubmit={this.handleSubmit}>
-          <label>Name</label>
-          <input type="text"
-            name="name"
-            value={this.state.name}
-            onChange={(e) => this.handleChange(e)} />
+          <div className="tournament-form-outline">
+            <label>Name</label>
+            <input type="text"
+              name="name"
+              value={this.state.name}
+              onChange={(e) => this.handleChange(e)} />
 
             <input type="file" name="file" id="file" className="inputfile" onChange={this.fileOnchange} />
-            <label htmlFor="file"><img className="tournament-image" src={this.state.img} alt='' disabled /></label>     
-                
-          {this.disable ? <img src={this.state.img} alt=''  disabled /> : null}
-          {this.disable ? <input type="submit" disabled></input> : <input type="submit"></input>}
+            <label htmlFor="file"><img className="tournament-image" src={this.state.img} alt='' disabled /></label>
+
+            {this.disable ? <img src={this.state.img} alt='' disabled /> : null}
+            {this.disable ? <input type="submit" disabled></input> : <input type="submit"></input>}
+          </div>
         </form>
       </div>
     )

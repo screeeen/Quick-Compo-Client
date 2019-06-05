@@ -15,18 +15,19 @@
 }
 
 .container {
-  color: whitesmoke;
-  background-color: #002fa7;
+  color: #8AAD87;
+  background-color: #F9F4F7;
   left: 0;
   top: 0;
   height: 100vh;
   width: 100vw;
   padding: 6vh 0;
+  margin: 0 auto;
 }
 
 .nav-bar {
-  background-color: whitesmoke;
-  color: #002fa7;
+  background-color: #8AAD87;
+  color: #F9F4F7;
   position: fixed;
   width: 100%;
   max-width: 100%;
@@ -56,7 +57,7 @@
 }
 
 .footer {
-  background-color: whitesmoke;
+  background-color: #8AAD87;
   color: black;
   height: -8vh;
   left: 0;
@@ -70,7 +71,7 @@
 }
 
 .footer-button {
-  background-color: whitesmoke;
+  background-color: #8AAD87;
   align-self: center;
   justify-content: center;
 }
@@ -114,55 +115,18 @@ h2 {
 }
 
 
-/* 
-.login {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.splashImg {
-  background-color: white;
-}
-
-.splashImg img {
-  max-width: 100%;
-}
-
-form {
+a {
+  color: #8AAD87;
+  text-decoration: none;
+  font-size: 1.3em;
+  margin: 0 auto;
   text-align: center;
-  border-radius: 5px;
-  border-color: whitesmoke;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  display: block;
+  border-bottom: solid 1px #8AAD87
 }
 
-label {
-  margin: 10px;
-}
 
-.tournament-image {
-  width: auto;
-  height: 60px;
-  margin: 15px;
-}
-
-.tournament-image-small {
-  width: 10vw;
-  margin: 2vw;
-}
-
-.tournament-tally {
-  height: 4vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex: 0;
-}
+/* Forms */
 
 input[type='text'],
 input[type='number'],
@@ -170,11 +134,11 @@ input[type='file'],
 input[type='password'],
 input[type='submit'],
 input[class='button'] {
-  color: white;
+  color: #8AAD87;
   border: none;
   font-size: 1em;
-  color: white;
-  background: #002070;
+  color: #8AAD87;
+  background: #F9F4F7;
   padding: 8px;
   border-radius: 5px;
   margin: 5px;
@@ -182,19 +146,6 @@ input[class='button'] {
   height: 4vh;
 }
 
-input[type='submit'],
-input[class='button'] {
-  color: white;
-  border: none;
-  font-size: 1em;
-  color: white;
-  background: #ff0000;
-  padding: 8px;
-  border-radius: 5px;
-  margin: 5px;
-  width: 20%;
-  height: 4vh;
-}
 
 .inputfile {
   width: 0.1px;
@@ -207,8 +158,8 @@ input[class='button'] {
 
 .inputfile + label {
   font-weight: 700;
-  color: white;
-  background-color: #00a;
+  color: #8AAD87;
+  background-color: #8AAD87;
   display: inline-block;
   cursor: pointer;
   padding: 20px;
@@ -222,24 +173,118 @@ input[class='button'] {
   outline: -webkit-focus-ring-color auto 5px;
 }
 
-
-
-
-
-a {
-  color: whitesmoke;
-  text-decoration: none;
-  font-size: 1.3em;
+.tournament-form-outline {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  
+  height: 30vh;
+  width: 60vw;
+  /* padding: 14vh 0; */
+  border-radius: 45px;
+  border: 2px solid #8AAD87;
+  margin: 0 auto;
 }
+
+
+.tournament-image {
+  width: auto;
+  height: 60px;
+  margin: 15px;
+}
+
+.tournament-image-small {
+  width: 10vw;
+  margin: 2vw;
+}
+
+
+
+
+/* TOURNAMENT CELLS */
+
+.tournament-cell {
+  width: 100vw;
+  height: 10vh;
+  border-bottom: 1px solid #8AAD87;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F9F4F7;
+
+}
+
+.tournament-cell-section{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; 
+  max-width:10%; 
+  min-width:10%;
+  width:10%; 
+  max-height: 100%;
+  height: 100%;
+}
+
+.tournament-cell img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+
+/* 
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.splashImg {
+  background-color: #8AAD87;
+}
+
+.splashImg img {
+  max-width: 100%;
+}
+
+
+
+label {
+  margin: 10px;
+}
+
+
+
+.tournament-tally {
+  height: 4vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 0;
+}
+
+
+
+
+
+
 
 button {
   height: 6vh;
-  border-color: #002070;
+  border-color: #F9F4F7;
   background-color: #ff0000;
   border-radius: 10px;
   box-sizing: content-box;
   margin: 40px 40px;
-  color: white;
+  color: #8AAD87;
   font-size: 1.2em;
   box-shadow: 0 2px #999;
   margin-top: 20vh;
@@ -251,7 +296,7 @@ button {
 }
 
 .button:active {
-  background-color: #002070;
+  background-color: #F9F4F7;
   box-shadow: 0 5px #666;
   transform: translateY(-4px);
 }
@@ -280,85 +325,6 @@ button {
   font-weight: 400;
 }
 
-.tournament-form {
-  height: 100vh;
-  width: 100vw;
-  padding: 14vh 0;
-  margin: 0 auto;
-}
-
-.tournament-form-outline {
-  height: 30vh;
-  width: 60vw;
-  padding: 14vh 0;
-  border-radius: 45px;
-  border: 2px solid white;
-  margin: 0 auto;
-}
-.tournament-list {
-  padding-top: 18%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  margin: auto 0;
-  overflow: scroll;
-}
-
-.tournament-cell {
-  width: 100vw;
-  height: 10vh;
-  border-bottom: 1px solid whitesmoke;
-  text-align: left;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.tournament-cell p {
-  font-weight: bold;
-  margin: 0 20px;
-  font-size: 1em;
-  text-align: left;
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-.tournament-cell p {
-  font-weight: bold;
-  margin: 20px;
-  font-size: 1.4em;
-  font-weight: bold;
-  text-align: left;
-  margin: 5px;
-  padding: 15px;
-}
-
-.tournament-cell-pic{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items:center;
-  padding: 10px; 
-  width:10%; 
-  max-width:10%; 
-  min-width:10%;
-  height: 100%;
-  max-height: 100%;
-  display: inline-block;
-  padding: 20px;
-  border-right: 1px solid whitesmoke;
-}
-
-.tournament-cell img {
-  max-width: 90%;
-  max-height: 90%;
-
-}
-
 
 
 .game-tables {
@@ -367,7 +333,7 @@ button {
   justify-content: space-evenly;
   align-content: center;
   margin: 10px;
-  background-color: #002fa7;
+  background-color: #F9F4F7;
 }
 
 .scores-line {
@@ -384,7 +350,7 @@ button {
 
 .game-cell {
   background-color: #003ace88;
-  border: 1px solid white;
+  border: 1px solid #8AAD87;
   padding: 5px;
   margin: 20px auto;
   width: 80%;
@@ -409,4 +375,6 @@ button {
 
 .player-card p {
   text-align: right;
-} */
+} 
+
+*/
