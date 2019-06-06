@@ -57,8 +57,13 @@ class GamesList extends Component {
 
   render() {
     return (
-      <div>
-        <h2>GAMES</h2>
+      <div className="container">
+      <div className="non-semantic-protector"> 
+        <h1 className="ribbon">
+          <strong className="ribbon-content">GAMES LIST</strong>
+        </h1>
+        </div>
+
         <div className="games-tables">
           {this.generateList()}
         </div>

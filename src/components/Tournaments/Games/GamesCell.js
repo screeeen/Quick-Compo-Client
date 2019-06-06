@@ -25,24 +25,7 @@ class GamesCell extends Component {
                 <div className="gap"></div>
                 <div className="player-card scores-line">
                 <p>SCORE: {this.props.player1Score}</p><p>SCORE: {this.props.player2Score}</p>
-
               </div>
-              {/* <table >
-              <tbody>
-                <tr>
-                  <td><img  className="tournament-image-small" src={this.props.player1Img} alt=''/>{this.props.player1} </td>
-                  <td>SCORE: {this.props.player1Score}</td>
-                </tr>
-                <tr>
-                  <td>VS.</td>
-                </tr>
-                <tr>
-                  
-                  <td><img className="tournament-image-small" src={this.props.player2Img} alt=''/>{this.props.player2}</td>
-                  <td>SCORE: {this.props.player2Score}</td>
-                </tr>
-              </tbody>
-            </table> */}
             </div>
             :
             <p>NOT READY YET</p>

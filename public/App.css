@@ -22,13 +22,11 @@
   height: 100vh;
   width: 100vw;
   padding: 6vh 0;
-  margin: 0 auto;
 }
 
 .nav-bar {
   background-color: #8AAD87;
   color: #F9F4F7;
-  position: fixed;
   width: 100%;
   max-width: 100%;
   left: 0;
@@ -37,6 +35,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: fixed;
 }
 
 .centered-div {
@@ -59,7 +58,7 @@
 .footer {
   background-color: #8AAD87;
   color: black;
-  height: -8vh;
+  height: 8vh;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -67,7 +66,6 @@
   flex-direction: row;
   justify-content: space-evenly;
   position: fixed;
-  margin: 1vh 0;
 }
 
 .footer-button {
@@ -135,15 +133,23 @@ input[type='password'],
 input[type='submit'],
 input[class='button'] {
   color: #8AAD87;
-  border: none;
+  /* border: none; */
+  border: 1px solid #8AAD87;
   font-size: 1em;
   color: #8AAD87;
   background: #F9F4F7;
-  padding: 8px;
+  /* padding: 8px; */
   border-radius: 5px;
-  margin: 5px auto;
+  margin: 1vh auto;
   width: 50%;
   height: 4vh;
+}
+
+input[type='submit']:disabled{
+  color: whitesmoke;
+  border: 1px solid whitesmoke;
+
+
 }
 
 
@@ -159,32 +165,17 @@ input[class='button'] {
 .inputfile + label {
   font-weight: 700;
   color: #8AAD87;
-  background-color: #8AAD87;
   display: inline-block;
   cursor: pointer;
-  padding: 20px;
-  border-radius: 10px;
+  border-radius: 10px;  
+
 }
 
 .inputfile:focus + label,
 .inputfile + label:hover {
-  background-color: red;
   outline: 1px dotted #000;
   outline: -webkit-focus-ring-color auto 5px;
-}
 
-.tournament-form-outline {
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  
-  height: 30vh;
-  width: 60vw;
-  padding: 2vh 2vw;
-  border-radius: 10px;
-  border: 2px solid #8AAD87;
-  margin: 0 auto;
 }
 
 label {
@@ -206,6 +197,20 @@ label {
 
 
 /* TOURNAMENT CELLS */
+
+.tournament-form-outline {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  
+  height: 30vh;
+  width: 60vw;
+  /* padding: 2vh 2vw; */
+  border-radius: 10px;
+  border: 2px solid #8AAD87;
+  margin: 0 auto;
+}
 
 .tournament-cell {
   width: 100vw;
@@ -243,7 +248,11 @@ label {
 
 /* RIBBON */
 
-.non-semantic-protector { position: relative; z-index: 1; }
+.non-semantic-protector { 
+  position: relative; 
+  z-index: 1; 
+  margin: 5vh auto;
+}
 
 
 .ribbon {
@@ -251,13 +260,12 @@ label {
   /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
  
   width: 40%;
-     
   position: relative;
   background: #8AAD87;
   color: #fff;
   text-align: center;
   padding: 1em 2em; /* Adjust to suit */
-  margin: 0 auto 8em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+  margin: 0 auto 0; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
  }
  .ribbon:before, .ribbon:after {
   content: "";
@@ -295,6 +303,84 @@ label {
  }
 
 
+/* BUTTONS-------------  */
+
+
+button {
+  height: 3vh;
+  border: none;
+  /* background-color: none; */
+  /* border-color: #8AAD87; */
+  border-radius: 10px;
+  /* box-sizing: content-box; */
+  margin: 0 auto;
+  color: #8AAD87;
+  font-size: 1.2em;
+}
+
+.button:hover {
+  background-color: #011446;
+}
+
+.button:active {
+  transform: translateY(-4px);
+}
+
+
+
+/* PSEUDO BRACKETS --------------- */
+
+.game-tables {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  margin: 10px;
+  background-color: #F9F4F7;
+}
+
+.game-cell {
+  /* background-color: #003ace88; */
+  border: 1px solid #8AAD87;
+  padding: 5px;
+  margin: 20px auto;
+  width: 80%;
+  height: 150px;
+  border-radius: 10px;
+  /* box-shadow: 0 9px #999; */
+}
+
+
+.scores-line {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: center;
+  margin: 10px;
+}
+.gap {
+  height: 20px;
+  width: 100%;
+}
+
+.player-card {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: center;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.player-card img {
+  height: 50px;
+  text-align: left;
+}
+
+.player-card p {
+  text-align: right;
+} 
 
 /* 
 .login {
@@ -310,51 +396,6 @@ label {
 
 .splashImg img {
   max-width: 100%;
-}
-
-
-
-
-
-
-
-.tournament-tally {
-  height: 4vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex: 0;
-}
-
-
-
-
-
-
-
-button {
-  height: 6vh;
-  border-color: #F9F4F7;
-  background-color: #ff0000;
-  border-radius: 10px;
-  box-sizing: content-box;
-  margin: 40px 40px;
-  color: #8AAD87;
-  font-size: 1.2em;
-  box-shadow: 0 2px #999;
-  margin-top: 20vh;
-
-}
-
-.button:hover {
-  background-color: #011446;
-}
-
-.button:active {
-  background-color: #F9F4F7;
-  box-shadow: 0 5px #666;
-  transform: translateY(-4px);
 }
 
 .start-button {
@@ -392,45 +433,5 @@ button {
   background-color: #F9F4F7;
 }
 
-.scores-line {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-content: center;
-  margin: 10px;
-}
-.gap {
-  height: 20px;
-  width: 100%;
-}
-
-.game-cell {
-  background-color: #003ace88;
-  border: 1px solid #8AAD87;
-  padding: 5px;
-  margin: 20px auto;
-  width: 80%;
-  height: 150px;
-  box-shadow: 0 9px #999;
-}
-
-.player-card {
-  display: flex;
-  justify-content: space-evenly;
-  align-content: center;
-  height: 30px;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-}
-
-.player-card img {
-  height: 50px;
-  text-align: left;
-}
-
-.player-card p {
-  text-align: right;
-} 
 
 */

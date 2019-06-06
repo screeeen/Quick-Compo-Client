@@ -65,7 +65,7 @@ class TournamentList extends Component {
       return (
         <div >
           <div className="container">
-          <div class="non-semantic-protector"> 
+          <div className="non-semantic-protector"> 
         <h1 className="ribbon">
           <strong className="ribbon-content">TOURNAMENTS</strong>
         </h1>

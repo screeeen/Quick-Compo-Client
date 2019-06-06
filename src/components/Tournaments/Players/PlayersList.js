@@ -41,9 +41,9 @@ class PlayersList extends Component {
       console.log('players into tournament', players, this.state.tournamentId);
 
       return (
-        <div className="start-button">
+        <div>
           <Link to={{ pathname: `/games`, state: { tournament: this.state.tournamentId, players } }}>
-            <button>START GAMES</button>
+            <p>START GAMES</p>
           </Link >
         </div>
       )
@@ -70,11 +70,11 @@ class PlayersList extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         {this.togglePlayButton()}
         <AddPlayer getPlayers={this.refreshPlayersList} />
         <div>
-        <div class="non-semantic-protector"> 
+        <div className="non-semantic-protector"> 
         <h1 className="ribbon">
           <strong className="ribbon-content">CURRENT PLAYERS</strong>
         </h1>
