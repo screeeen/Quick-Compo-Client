@@ -74,7 +74,11 @@ class PlayersList extends Component {
         {this.togglePlayButton()}
         <AddPlayer getPlayers={this.refreshPlayersList} />
         <div>
-          <h2>PLAYERS</h2>
+        <div class="non-semantic-protector"> 
+        <h1 className="ribbon">
+          <strong className="ribbon-content">CURRENT PLAYERS</strong>
+        </h1>
+        </div>
           {this.generatePlayersList()}
         </div>
 

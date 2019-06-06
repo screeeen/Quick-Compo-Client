@@ -75,7 +75,11 @@ class AddPlayer extends Component {
           <h2>{this.props.tournamentName}</h2>
         </div> */}
 
-        <h2>ADD A NEW PLAYER</h2>
+        <div class="non-semantic-protector"> 
+        <h1 className="ribbon">
+          <strong className="ribbon-content">ADD A NEW PLAYER</strong>
+        </h1>
+        </div>
         <form className="tournament-form-outline" onSubmit={this.handleSubmit}>
           {/* <label>Player Name</label> */}
           <input type="text"

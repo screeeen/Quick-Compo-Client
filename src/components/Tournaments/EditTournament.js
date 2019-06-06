@@ -70,20 +70,28 @@ class EditTournament extends Component {
 
   render() {
     return (
-      <div className="tournament-form-outline">
+      <div className="container">
         {this.renderRedirect()}
-        <h2>EDIT TOURNAMENT</h2>
+        <div class="non-semantic-protector"> 
+        <h1 className="ribbon">
+          <strong className="ribbon-content">EDIT TOURNAMENT</strong>
+        </h1>
+        </div>
 
         <form onSubmit={this.handleSubmit}>
-          <input type="text"
-            name="name"
-            value={this.state.name}
-            placeholder={this.state.name}
-            onChange={(e) => this.handleChange(e)} />
+          <div className="tournament-form-outline">
+            <label>Name</label>
+            <input type="text"
+              name="name"
+              value={this.state.name}
+              onChange={(e) => this.handleChange(e)} />
+
             <input type="file" name="file" id="file" className="inputfile" onChange={this.fileOnchange} />
-            <label htmlFor="file"><img className="tournament-image" src={this.state.img} alt='' disabled /></label>     
-          {this.disable ? <img src={this.state.img} alt=''  disabled /> : <img className="tournament-image" src={this.state.img} alt='' disabled />}
-          {this.disable ? <input type="submit" disabled></input> : <input type="submit"></input>}
+            <label htmlFor="file"><img className="tournament-image" src={this.state.img} alt='' disabled /></label>
+
+            {this.disable ? <img src={this.state.img} alt='' disabled /> : <img src={this.state.img} alt='' disabled />}
+            {this.disable ? <input type="submit" disabled></input> : <input type="submit"></input>}
+          </div>
         </form>
       </div>
     )

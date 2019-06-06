@@ -66,7 +66,7 @@ class AddTournament extends Component {
           <strong className="ribbon-content">NEW TOURNAMENT</strong>
         </h1>
         </div>
-        
+
         <form onSubmit={this.handleSubmit}>
           <div className="tournament-form-outline">
             <label>Name</label>
@@ -78,7 +78,7 @@ class AddTournament extends Component {
             <input type="file" name="file" id="file" className="inputfile" onChange={this.fileOnchange} />
             <label htmlFor="file"><img className="tournament-image" src={this.state.img} alt='' disabled /></label>
 
-            {this.disable ? <img src={this.state.img} alt='' disabled /> : null}
+            {this.disable ? <img src={this.state.img} alt='' disabled /> : <img src={this.state.img} alt='' disabled />}
             {this.disable ? <input type="submit" disabled></input> : <input type="submit"></input>}
           </div>
         </form>
