@@ -1,11 +1,11 @@
+//form to enter player details: name and pic and hits the route to post the player
+
 import React, { Component } from 'react';
 import { withAuth } from "../../../lib/AuthProvider";
 import calls from './../../helpers/Calls';
 import imageUploader from './../../helpers/ImageUploader';
 import { withRouter } from 'react-router-dom';
 import uploadIcon from './../../../images/upload.svg';
-
-
 
 class AddPlayer extends Component {
   constructor(props) {
@@ -25,13 +25,9 @@ class AddPlayer extends Component {
   componentDidMount() {
     calls.getTournamentbyId(this.props.location.state.tournamentId)
       .then(res => {
-        console.log('res ', res);
         const { name, img, players, games, _id } = res.data;
-        console.log(res.data);
         this.setState({ tournamentName: name, tournamentImage: img, tournamentPlayers: players, tournamentGames: games, tournamentId: _id });
-        console.log('updated state', this.state);
       })
-
   }
 
   handleSubmit = (event) => {
@@ -69,9 +65,7 @@ class AddPlayer extends Component {
   render() {
     return (
       <div className="tournament-form" >
-        
         <img src={this.props.img} alt='' />
-
         <div className="non-semantic-protector">
           <h1 className="ribbon">
             <strong className="ribbon-content">ADD A NEW PLAYER</strong>
@@ -89,7 +83,6 @@ class AddPlayer extends Component {
           <label htmlFor="file">{this.state.disable ? <img className="tournament-image-small" src={uploadIcon} alt='Icon'/> : <img className="tournament-image-small" src={this.state.img} alt=''/>}</label>
           {this.state.disable ? <input type="submit" disabled></input> : <input type="submit"></input>}
         </form>
-
       </div>
     )
   }

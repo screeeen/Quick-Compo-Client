@@ -1,3 +1,9 @@
+// component to edit the tournament
+// from the lifecycle method retrieves the current tournament.
+// the id of this tournament is stored in the location.state (I find this very sketchy), so I can call via GET/ with param :id
+//  this tournament is passed to the state. The form is populated with the loaded state
+// when edited, the tournament is sent and modified in the server via PUT
+
 import React, { Component } from 'react'
 import { withAuth } from "../../lib/AuthProvider";
 import { Redirect } from "react-router-dom";
@@ -7,8 +13,6 @@ import imageUploader from './../helpers/ImageUploader'
 class EditTournament extends Component {
   constructor(props) {
     super(props);
-    console.log('EDIT TOURNAMENT props: ', props);
-
     this.state = {
       name: '',
       img: '',
@@ -17,17 +21,13 @@ class EditTournament extends Component {
       redirect: false,
       tournamentId: props.location.state
     }
-    console.log('EDIT TOURNAMENT state: ', this.state);
   }
 
   componentDidMount() {
-    console.log(this.state.tournamentId);
-  
     calls.getTournamentbyId(this.props.location.state.tournamentId)
       .then(res => {
         const {name,img,players,games,_id} = res.data;
         this.setState({ name,img,players,games,tournamentId:_id });
-        console.log('updated state',this.state);
       })
   }
 
@@ -35,8 +35,6 @@ class EditTournament extends Component {
     event.preventDefault();
     calls.editTournament(this.state.tournamentId,this.state)
       .then((updatedTournament) => {
-        console.log('new torunament', updatedTournament);
-        // this.props.setCurrentTournament(updatedTournament.data._id, updatedTournament.name, 'set');
         this.setState({ name: "", img: "", redirect: true });
       })
   }
@@ -56,8 +54,6 @@ class EditTournament extends Component {
     const file = event.target.files[0];
     const uploadData = new FormData()
     uploadData.append('photo', file)
-    console.log('shit', uploadData, file);
-
     imageUploader.uploadImage(uploadData)
       .then((img) => {
         this.setState({

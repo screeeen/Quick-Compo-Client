@@ -25,7 +25,6 @@ class App extends Component {
     return (
       <AuthProvider>
       <Navbar />
-
         <div className="container">
           <Switch>
             <AnonRoute exact path="/" component={Signup} />

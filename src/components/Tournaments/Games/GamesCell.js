@@ -1,3 +1,6 @@
+// component to display the game card with names and scores of each player
+//state passed via props from GamesList
+
 import React, { Component } from 'react'
 import { withAuth } from "../../../lib/AuthProvider";
 import { Link } from 'react-router-dom'
@@ -8,7 +11,6 @@ class GamesCell extends Component {
     this.state = {
       tournament: props.tournament,
     }
-    // console.log('gamecell props ', props);
   }
 
   render() {

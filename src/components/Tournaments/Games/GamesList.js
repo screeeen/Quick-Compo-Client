@@ -1,3 +1,8 @@
+// GamesList component that displays GamesCell. 
+// the games list is retrieved when init the component via lifecycle method
+// that calls the getRounds method. This method calculates the rounds
+// then populates each GamesCell component to be displayed in the UI
+
 import React, { Component } from 'react'
 import { withAuth } from '../../../lib/AuthProvider';
 import calls from './../../helpers/Calls';
@@ -15,14 +20,11 @@ class GamesList extends Component {
 
   componentDidMount() {
     this.refreshList();
-    console.log('GAMES LIST props', this.props);
-
   }
 
+  // there is sent the tournament and the players, the server returns the games object
   refreshList = () => {
-    //patch for presentation
     const { tournament, players } = this.props.location.state;
-    console.log('tutututotu: ',tournament,players);
     calls.getRounds(tournament.tournamentId, players)
       .then(res => {
         const games = res.data.games;
@@ -54,7 +56,6 @@ class GamesList extends Component {
     })
   }
 
-
   render() {
     return (
       <div className="container">
@@ -63,7 +64,6 @@ class GamesList extends Component {
           <strong className="ribbon-content">GAMES LIST</strong>
         </h1>
         </div>
-
         <div className="games-tables">
           {this.generateList()}
         </div>

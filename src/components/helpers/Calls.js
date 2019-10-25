@@ -1,3 +1,5 @@
+// HTTP request service
+
 import axios from "axios";
 
 // Fallback solution
@@ -67,7 +69,6 @@ class Calls {
   }
 
   //games
-
   getGames() {
     return this.calls.get(`/api/games`)
       .then((data) => data)
@@ -80,9 +81,6 @@ class Calls {
     .then((data) => data)
     .catch((err) => console.log(err))
   }
-
-
-
 }
 
 const calls = new Calls();

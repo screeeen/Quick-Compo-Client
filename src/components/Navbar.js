@@ -1,5 +1,7 @@
+//navbar with backbutton. The component state is stored in the props.history
+// I find this a bit hacky, I guess this should be solved with a store
+
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
 import { withRouter } from 'react-router'
 import { withAuth } from "../lib/AuthProvider";
 
@@ -7,8 +9,6 @@ import backIcon from './../images/back.svg'
 import userIcon from './../images/user.svg'
 
 class Navbar extends Component {
-
-
 
   render() {
     const { user, isLoggedin } = this.props;
@@ -22,7 +22,7 @@ class Navbar extends Component {
             <p>{user.username}</p>
           </div>
         ) : null
-        } 
+        }
         <div className="centered-div">
           <img src={userIcon} alt='user' />
         </div>

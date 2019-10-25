@@ -1,3 +1,5 @@
+// form for the tournament details and sends the tournament object to the server, ready to be populated. 
+
 import React, { Component } from 'react'
 import { withAuth } from "../../lib/AuthProvider";
 import { Redirect } from "react-router-dom";
@@ -7,7 +9,6 @@ import imageUploader from './../helpers/ImageUploader'
 class AddTournament extends Component {
   constructor(props) {
     super(props);
-    console.log('ADD TOURNAMENT props: ', props);
     this.state = {
       name: '',
       img: '',
@@ -15,7 +16,6 @@ class AddTournament extends Component {
       games: [],
       redirect: false,
       disable: false,
-
     }
   }
 
@@ -23,16 +23,13 @@ class AddTournament extends Component {
     event.preventDefault();
     calls.handleFormSubmitAddTournament(this.state)
       .then((newTournament) => {
-        // this.props.setCurrentTournament(newTournament.data._id, newTournament.data.name, 'set');
         this.setState({ name: "", img: "", redirect: true });
-        // this.props.updateCurrentTournament(newTournament);
       })
   }
 
   renderRedirect = () => {
     if (this.state.redirect) {
       return <Redirect to={{ pathname: '/tournaments', state: this.state }} />
-      // return <Redirect to='/players' />
     }
   }
 
@@ -41,12 +38,10 @@ class AddTournament extends Component {
     this.setState({ [name]: value });
   }
 
-
   fileOnchange = (event) => {
     const file = event.target.files[0];
     const uploadData = new FormData()
     uploadData.append('photo', file)
-
     imageUploader.uploadImage(uploadData)
       .then((img) => {
         this.setState({
@@ -74,10 +69,10 @@ class AddTournament extends Component {
               name="name"
               value={this.state.name}
               onChange={(e) => this.handleChange(e)} />
-
+            
             <input type="file" name="file" id="file" className="inputfile" onChange={this.fileOnchange} />
             <label htmlFor="file"><img className="tournament-image" src={this.state.img} alt='' disabled /></label>
-
+           
             {this.state.disable ? <img className="tournament-image-small" src={this.state.img} alt='' disabled /> : <img className="tournament-image-small" src={this.state.img} alt='' disabled />}
             {this.state.disable ? <input type="submit" disabled></input> : <input type="submit"></input>}
           </div>
