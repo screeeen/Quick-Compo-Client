@@ -2,7 +2,7 @@
 
 # Quick Tournament
 
-![noun_Tennis Court_1835472](https://github.com/screeeen/project-server/blob/master/img_readme/noun_Tennis_Court_1835472.png=50x50)
+![noun_Tennis Court_1835472](https://github.com/screeeen/project-server/blob/master/img_readme/noun_Tennis_Court_1835472.png)
 
 ## Description
 
