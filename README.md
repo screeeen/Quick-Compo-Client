@@ -2,7 +2,7 @@
 
 # Quick Tournament
 
-![noun_Tennis Court_1835472](https://github.com/screeeen/project-server/blob/master/img_readme/noun_Tennis_Court_1835472.png =100x)
+![noun_Tennis Court_1835472](https://github.com/screeeen/project-server/blob/master/img_readme/noun_Tennis_Court_1835472.png)
 
 ## Description
 
@@ -22,7 +22,7 @@ This is an app to manage unofficial tournaments within communities. The app help
 -  **Edit Games** As a user I can edit the games, so I can add scores
 -  **View Ranks** As a user I can see the ranks
 
-## ![IMG_4421](https://github.com/screeeen/project-server/blob/master/img_readme/IMG_4421.jpg =100x)
+## ![IMG_4421](https://github.com/screeeen/project-server/blob/master/img_readme/IMG_4421.jpg)
 
 
 
