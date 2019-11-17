@@ -13,6 +13,7 @@ import AuthProvider from "./lib/AuthProvider";
 import TournamentList from "./components/Tournaments/TournamentList";
 import AddTournament from "./components/Tournaments/AddTournament.js";
 import EditTournament from "./components/Tournaments/EditTournament";
+import DeleteTournament from "./components/Tournaments/DeleteTournament";
 import PlayersList from "./components/Tournaments/Players/PlayersList";
 import GamesList from "./components/Tournaments/Games/GamesList";
 import GameEdit from "./components/Tournaments/Games/GameEdit";
