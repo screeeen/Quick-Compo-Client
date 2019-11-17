@@ -33,19 +33,3 @@ class Navbar extends Component {
 
 const navbarWithRouter = withRouter(Navbar);
 export default withAuth(navbarWithRouter);
-
-
-
-
-
-{/* {isLoggedin ? (
-    <>
-      <p>username: {user.username}</p>
-      <button onClick={logout}>Logout</button>
-    </>
-  ) : (
-    <>
-      <Link to="/login">Login</Link>
-      <Link to="/signup">Signup</Link>
-    </>
-  )} */}

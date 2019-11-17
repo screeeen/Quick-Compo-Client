@@ -6,12 +6,19 @@
   color: #8aad87;
 }
 
+.colorforbg{
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);}
+
 .container {
+  background-color: white;
   text-align: center;
-  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 90vw;
+  height: 90vh;
+  margin: auto;
 }
 
 .nav-bar {

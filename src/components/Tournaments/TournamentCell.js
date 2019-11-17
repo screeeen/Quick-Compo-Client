@@ -1,5 +1,3 @@
-//displays one cell
-
 import React from 'react'
 import { withAuth } from "../../lib/AuthProvider";
 import { Link } from 'react-router-dom'

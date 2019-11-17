@@ -25,6 +25,7 @@ class App extends Component {
   render() {
     return (
       <AuthProvider>
+        <div className="colorforbg">
         <div className="container">
           <Navbar />
           <Switch>
@@ -36,13 +37,14 @@ class App extends Component {
 
             <PrivateRoute exact path="/tournaments/edit-tournament/:id" component={EditTournament} />
             <PrivateRoute exact path="/tournaments/add-tournament" component={AddTournament} />
-            <PrivateRoute exact path="/tournaments/delete-tournament" component={DeleteTournament} />
+            <PrivateRoute exact path="/tournaments/delete-tournament/:id" component={DeleteTournament} />
             <PrivateRoute exact path="/players" component={PlayersList} />
             <PrivateRoute exact path="/games" component={GamesList} />
             <PrivateRoute exact path="/game-edit" component={GameEdit} />
             <PrivateRoute exact path="/leaderboard" component={LeaderBoardList} />
           </Switch>
         <Footer tournament={this.props.currentTournament} />
+        </div>
         </div>
 
       </AuthProvider>

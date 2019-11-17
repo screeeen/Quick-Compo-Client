@@ -62,11 +62,10 @@ class TournamentList extends Component {
     })
   }
 
-
   checkIfLogged = () => {
     if (this.state.loggedIn) {
       return (
-        <div >
+        <div className="container">
             <div className="non-semantic-protector">
               <h1 className="ribbon">
                 <strong className="ribbon-content">TOURNAMENTS</strong>

@@ -1,9 +1,3 @@
-// component to edit the tournament
-// from the lifecycle method retrieves the current tournament.
-// the id of this tournament is stored in the location.state (I find this very sketchy), so I can call via GET/ with param :id
-//  this tournament is passed to the state. The form is populated with the loaded state
-// when edited, the tournament is sent and modified in the server via PUT
-
 import React, { Component } from 'react'
 import { withAuth } from "../../lib/AuthProvider";
 import { Redirect } from "react-router-dom";
@@ -68,7 +62,7 @@ class EditTournament extends Component {
     return (
       <div className="container">
         {this.renderRedirect()}
-        <div class="non-semantic-protector"> 
+        <div className="non-semantic-protector"> 
         <h1 className="ribbon">
           <strong className="ribbon-content">EDIT TOURNAMENT</strong>
         </h1>
