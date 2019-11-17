@@ -13,15 +13,20 @@ function TournamentCell(props) {
         </div>
         <div className="tournament-cell-section" >
           <Link to={{ pathname: `/players`, state: { tournamentId: props._id } }}>
-            {props.name}
+          <p>{props.name}</p> 
           </Link>
         </div>
         <div className="tournament-cell-section">
-          PLAYERS: {props.players.length}
+        <p>{props.players.length}</p> 
         </div>
         <div className="tournament-cell-section">
           <Link to={{ pathname: `/tournaments/edit-tournament/${props._id}`, state: { tournamentId: props._id } }}>
-            EDIT
+            <p>EDIT</p> 
+          </Link>
+        </div>
+        <div className="tournament-cell-section">
+          <Link to={{ pathname: `/tournaments/delete-tournament/${props._id}`, state: { tournamentId: props._id } }}>
+            <p>DEL</p> 
           </Link>
         </div>
       </div>

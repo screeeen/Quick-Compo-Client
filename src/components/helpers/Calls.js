@@ -50,8 +50,14 @@ class Calls {
 
 
   editTournament(id, thing) {
-    console.log('thing ', thing)
     return this.calls.put((`/api/tournaments/edit/` + id), thing)
+      .then((data) => data)
+      .catch((err) => console.log(err))
+  }
+
+  deleteTournament(id, thing) {
+    console.log('thing delete', thing)
+    return this.calls.delete((`/api/tournaments/delete/` + id), thing)
       .then((data) => data)
       .catch((err) => console.log(err))
   }

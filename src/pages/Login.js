@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
-import court from './../images/anim.gif'
+// import court from './../images/anim.gif'
 
 class Login extends Component {
   state = {
@@ -23,9 +23,9 @@ class Login extends Component {
     const { username, password } = this.state;
     return (
       <div className="container login">
-        <div className="splashImg">
+        {/* <div className="splashImg">
           <img src={court} alt='img' />
-        </div>
+        </div> */}
         <h1>Quick Compo</h1>
         <form onSubmit={this.handleFormSubmit}>
           <input className="input-field"

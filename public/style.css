@@ -1,48 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:100&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Work+Sans&display=swap');
 
-.html {
-  padding: 0;
-  margin: 0;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
-}
-
 * {
   font-family: 'Work Sans', sans-serif;
+  color: #8aad87;
 }
 
 .container {
-  color: #8AAD87;
-  background-color: #F9F4F7;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  width: 100vw;
-  padding: 6vh 0;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .nav-bar {
-  background-color: #8AAD87;
-  color: #F9F4F7;
+  background-color: #8aad87;
+  color: #f9f4f7;
   width: 100%;
-  max-width: 100%;
-  left: 0;
-  top: 0;
   height: 8vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  position: fixed;
-}
-
-.centered-div {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 10px;
 }
 
 .nav-bar img {
@@ -56,22 +35,18 @@
 }
 
 .footer {
-  background-color: #8AAD87;
+  background-color: #8aad87;
   color: black;
   height: 8vh;
-  left: 0;
-  bottom: 0;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  position: fixed;
+  position: relative;
 }
 
 .footer-button {
-  background-color: #8AAD87;
-  align-self: center;
-  justify-content: center;
+  background-color: #8aad87;
 }
 
 .footer-button img {
@@ -100,6 +75,15 @@
   text-decoration: none;
 }
 
+.centered-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* TEXT STYLES */
+
 h1 {
   font-size: 3wv;
   text-align: center;
@@ -112,17 +96,12 @@ h2 {
   text-align: center;
 }
 
-
 a {
-  color: #8AAD87;
   text-decoration: none;
   font-size: 1.3em;
   margin: 0 auto;
   text-align: center;
-  display: block;
-  border-bottom: solid 1px #8AAD87
 }
-
 
 /* Forms */
 
@@ -132,12 +111,12 @@ input[type='file'],
 input[type='password'],
 input[type='submit'],
 input[class='button'] {
-  color: #8AAD87;
+  color: #8aad87;
   /* border: none; */
-  border: 1px solid #8AAD87;
+  border: 1px solid #8aad87;
   font-size: 1em;
-  color: #8AAD87;
-  background: #F9F4F7;
+  color: #8aad87;
+  background: #f9f4f7;
   /* padding: 8px; */
   border-radius: 5px;
   margin: 1vh auto;
@@ -145,13 +124,10 @@ input[class='button'] {
   height: 4vh;
 }
 
-input[type='submit']:disabled{
+input[type='submit']:disabled {
   color: whitesmoke;
   border: 1px solid whitesmoke;
-
-
 }
-
 
 .inputfile {
   width: 0.1px;
@@ -164,18 +140,16 @@ input[type='submit']:disabled{
 
 .inputfile + label {
   font-weight: 700;
-  color: #8AAD87;
+  color: #8aad87;
   display: inline-block;
   cursor: pointer;
-  border-radius: 10px;  
-
+  border-radius: 10px;
 }
 
 .inputfile:focus + label,
 .inputfile + label:hover {
   outline: 1px dotted #000;
   outline: -webkit-focus-ring-color auto 5px;
-
 }
 
 label {
@@ -193,118 +167,116 @@ label {
   margin: 2vw;
 }
 
-
-
-
 /* TOURNAMENT CELLS */
 
 .tournament-form-outline {
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  
+
   height: 30vh;
   width: 60vw;
   /* padding: 2vh 2vw; */
   border-radius: 10px;
-  border: 2px solid #8AAD87;
+  border: 2px solid #8aad87;
   margin: 0 auto;
+  text-decoration: none;
+
 }
 
 .tournament-cell {
-  width: 100vw;
-  height: 10vh;
-  border-bottom: 1px solid #8AAD87;
   text-align: left;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: #F9F4F7;
+  text-decoration: none;
 
 }
 
-.tournament-cell-section{
+.tournament-cell-section {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  padding: 20px; 
-  max-width:10%; 
-  min-width:10%;
-  width:10%; 
-  max-height: 100%;
-  height: 100%;
+  align-items: left;
+  max-width: 50%;
+  max-height: 5%;
+  padding: 5px 5px;
+  width: 100%;
+  border: 1px solid black;
+  text-decoration: none;
+
 }
 
 .tournament-cell img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 50%;
+  max-height: 50%;
 }
 
-
+.tournament-cell a {
+text-decoration: none;
+}
 
 /* RIBBON */
 
-.non-semantic-protector { 
-  position: relative; 
-  z-index: 1; 
+.non-semantic-protector {
+  position: relative;
+  z-index: 1;
   margin: 5vh auto;
 }
-
 
 .ribbon {
   font-size: 2vw;
   /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
- 
+
   width: 40%;
   position: relative;
-  background: #8AAD87;
+  background: #8aad87;
   color: #fff;
   text-align: center;
   padding: 1em 2em; /* Adjust to suit */
   margin: 0 auto 0; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
- }
- .ribbon:before, .ribbon:after {
-  content: "";
+}
+.ribbon:before,
+.ribbon:after {
+  content: '';
   position: absolute;
   display: block;
   bottom: -1em;
-  border: 1.5em solid #8AAD87;
+  border: 1.5em solid #8aad87;
   z-index: -1;
- }
- .ribbon:before {
+}
+.ribbon:before {
   left: -2em;
   border-right-width: 1.5em;
   border-left-color: transparent;
- }
- .ribbon:after {
+}
+.ribbon:after {
   right: -2em;
   border-left-width: 1.5em;
   border-right-color: transparent;
- }
- .ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
-  content: "";
+}
+.ribbon .ribbon-content:before,
+.ribbon .ribbon-content:after {
+  content: '';
   position: absolute;
   display: block;
   border-style: solid;
   border-color: #804f7c transparent transparent transparent;
   bottom: -1em;
- }
- .ribbon .ribbon-content:before {
+}
+.ribbon .ribbon-content:before {
   left: 0;
   border-width: 1em 0 0 1em;
- }
- .ribbon .ribbon-content:after {
+}
+.ribbon .ribbon-content:after {
   right: 0;
   border-width: 1em 1em 0 0;
- }
-
+}
 
 /* BUTTONS-------------  */
-
 
 button {
   height: 3vh;
@@ -314,7 +286,7 @@ button {
   border-radius: 10px;
   /* box-sizing: content-box; */
   margin: 0 auto;
-  color: #8AAD87;
+  color: #8aad87;
   font-size: 1.2em;
 }
 
@@ -326,8 +298,6 @@ button {
   transform: translateY(-4px);
 }
 
-
-
 /* PSEUDO BRACKETS --------------- */
 
 .game-tables {
@@ -336,12 +306,12 @@ button {
   justify-content: space-evenly;
   align-content: center;
   margin: 10px;
-  background-color: #F9F4F7;
+  background-color: #f9f4f7;
 }
 
 .game-cell {
   /* background-color: #003ace88; */
-  border: 1px solid #8AAD87;
+  border: 1px solid #8aad87;
   padding: 5px;
   margin: 20px auto;
   width: 80%;
@@ -349,7 +319,6 @@ button {
   border-radius: 10px;
   /* box-shadow: 0 9px #999; */
 }
-
 
 .scores-line {
   display: flex;
@@ -380,58 +349,4 @@ button {
 
 .player-card p {
   text-align: right;
-} 
-
-/* 
-.login {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
-
-.splashImg {
-  background-color: #8AAD87;
-}
-
-.splashImg img {
-  max-width: 100%;
-}
-
-.start-button {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-
-
-.userDiv {
-  display: flex;
-  flex-direction: row;
-}
-
-.userPic {
-  height: 80%;
-  margin: 10px -10px 0 0;
-}
-
-.pageTitle {
-  font-size: 1.3em;
-  font-weight: 400;
-}
-
-
-
-.game-tables {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-content: center;
-  margin: 10px;
-  background-color: #F9F4F7;
-}
-
-
-*/

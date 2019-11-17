@@ -4,7 +4,7 @@
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 import badgeIcon from './../images/badge.svg'
-import pitchIcon from './../images/pitch.svg'
+// import pitchIcon from './../images/pitch.svg'
 import basketIcon from './../images/basket.svg'
 
 class Footer extends Component {

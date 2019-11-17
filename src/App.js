@@ -24,8 +24,8 @@ class App extends Component {
   render() {
     return (
       <AuthProvider>
-      <Navbar />
         <div className="container">
+          <Navbar />
           <Switch>
             <AnonRoute exact path="/" component={Signup} />
             <AnonRoute exact path="/signup" component={Signup} />
@@ -35,15 +35,14 @@ class App extends Component {
 
             <PrivateRoute exact path="/tournaments/edit-tournament/:id" component={EditTournament} />
             <PrivateRoute exact path="/tournaments/add-tournament" component={AddTournament} />
+            <PrivateRoute exact path="/tournaments/delete-tournament" component={DeleteTournament} />
             <PrivateRoute exact path="/players" component={PlayersList} />
             <PrivateRoute exact path="/games" component={GamesList} />
             <PrivateRoute exact path="/game-edit" component={GameEdit} />
             <PrivateRoute exact path="/leaderboard" component={LeaderBoardList} />
-
           </Switch>
-          
+        <Footer tournament={this.props.currentTournament} />
         </div>
-        <Footer tournament={this.props.currentTournament}/>
 
       </AuthProvider>
     );

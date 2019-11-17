@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
-import court from './../images/court.gif'
+// import court from './../images/court.gif'
 
 
 class Signup extends Component {
@@ -24,10 +24,10 @@ class Signup extends Component {
   render() {
     const { username, password } = this.state;
     return (
-      <div className="container login">
-      <div className="splashImg">
+      <div className="login">
+      {/* <div className="splashImg">
           <img src={court} alt='img' />
-        </div>
+        </div> */}
         <form onSubmit={this.handleFormSubmit}>
           <label >Username:</label>
           <input className="input-field"

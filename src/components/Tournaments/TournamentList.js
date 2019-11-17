@@ -67,7 +67,6 @@ class TournamentList extends Component {
     if (this.state.loggedIn) {
       return (
         <div >
-          <div className="container">
             <div className="non-semantic-protector">
               <h1 className="ribbon">
                 <strong className="ribbon-content">TOURNAMENTS</strong>
@@ -79,7 +78,6 @@ class TournamentList extends Component {
 
             {this.generateTournamentsList()}
 
-          </div>
         </div>)
     } else { return <Redirect to="/error" /> };
   }
