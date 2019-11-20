@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
-// import court from './../images/court.gif'
 
 
 class Signup extends Component {
@@ -24,31 +23,30 @@ class Signup extends Component {
   render() {
     const { username, password } = this.state;
     return (
-      <div className="login">
-      {/* <div className="splashImg">
-          <img src={court} alt='img' />
-        </div> */}
+      <div className="container credentials">
+        <h1>Quick Compo</h1>
         <form onSubmit={this.handleFormSubmit}>
+        <h2>Signup</h2>
           <label >Username:</label>
-          <input className="input-field"
+          <input
             type="text"
             name="username"
             value={username}
             onChange={this.handleChange}
           />
           <label>Password:</label>
-          <input className="input-field"
+          <input
             type="password"
             name="password"
             value={password}
             onChange={this.handleChange}
           />
           <input className="button" type="submit" value="Signup" />
-        </form>
-        <p>
+          <p>
           Already have account?
           <Link to={"/login"}> Login</Link>
         </p>
+        </form>
       </div>
     );
   }

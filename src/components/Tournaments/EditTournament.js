@@ -3,6 +3,7 @@ import { withAuth } from "../../lib/AuthProvider";
 import { Redirect } from "react-router-dom";
 import calls from './../helpers/Calls'
 import imageUploader from './../helpers/ImageUploader'
+import Ribbon from './../Ribbon';
 
 class EditTournament extends Component {
   constructor(props) {
@@ -62,11 +63,8 @@ class EditTournament extends Component {
     return (
       <div className="container">
         {this.renderRedirect()}
-        <div className="non-semantic-protector"> 
-        <h1 className="ribbon">
-          <strong className="ribbon-content">EDIT TOURNAMENT</strong>
-        </h1>
-        </div>
+        <Ribbon name="EDIT TOURNAMENT" />
+
 
         <form onSubmit={this.handleSubmit}>
           <div className="tournament-form-outline">

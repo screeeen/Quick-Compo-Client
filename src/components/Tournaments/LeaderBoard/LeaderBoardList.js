@@ -4,12 +4,13 @@ import React, { Component } from 'react'
 import { withAuth } from "../../../lib/AuthProvider";
 import calls from '../../helpers/Calls';
 import LeaderBoardCell from './LeaderBoardCell';
+import Ribbon from './../../Ribbon';
 
 class LeaderBoardList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      players:[]
+      players: []
     }
   }
 
@@ -26,7 +27,7 @@ class LeaderBoardList extends Component {
   }
 
   generateList = () => {
-    return this.state.players.sort(function(a, b){return b.score - a.score}).map((onePlayer, i) => {
+    return this.state.players.sort(function (a, b) { return b.score - a.score }).map((onePlayer, i) => {
       const { name, img, score } = onePlayer;
       return (
         <LeaderBoardCell
@@ -41,8 +42,8 @@ class LeaderBoardList extends Component {
 
   render() {
     return (
-      <div>
-        <h2>HALL OF FAME</h2>
+      <div className="container-tournaments">
+        <Ribbon name="HALL OF FAME" />
         <div className="games-tables">
           {this.generateList()}
         </div>

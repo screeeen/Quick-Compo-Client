@@ -3,8 +3,9 @@
 import React, { Component } from 'react'
 import { withAuth } from "../../lib/AuthProvider";
 import { Route, Redirect } from 'react-router';
-import { Link } from "react-router-dom";
 import TournamentCell from './TournamentCell';
+import Ribbon from './../Ribbon';
+import BtnAddTournament from './BtnAddTournament';
 import calls from './../helpers/Calls';
 
 class TournamentList extends Component {
@@ -65,18 +66,10 @@ class TournamentList extends Component {
   checkIfLogged = () => {
     if (this.state.loggedIn) {
       return (
-        <div className="container">
-            <div className="non-semantic-protector">
-              <h1 className="ribbon">
-                <strong className="ribbon-content">TOURNAMENTS</strong>
-              </h1>
-            </div>
-            <Link to={{ pathname: '/tournaments/add-tournament' }}>
-              <p>ADD A NEW TOURNAMENT</p>
-            </Link>
-
-            {this.generateTournamentsList()}
-
+        <div className="container-tournaments">
+          <Ribbon name="TOURNAMENTS" />
+<BtnAddTournament />
+          {this.generateTournamentsList()}
         </div>)
     } else { return <Redirect to="/error" /> };
   }

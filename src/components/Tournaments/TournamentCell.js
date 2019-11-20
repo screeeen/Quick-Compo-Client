@@ -11,7 +11,7 @@ function TournamentCell(props) {
         </div>
         <div className="tournament-cell-section" >
           <Link to={{ pathname: `/players`, state: { tournamentId: props._id } }}>
-          <p>{props.name}</p> 
+          <p className="player-name">{props.name}</p> 
           </Link>
         </div>
         <div className="tournament-cell-section">

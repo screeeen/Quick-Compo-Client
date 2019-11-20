@@ -25,7 +25,6 @@ class App extends Component {
   render() {
     return (
       <AuthProvider>
-        <div className="colorforbg">
         <div className="container">
           <Navbar />
           <Switch>
@@ -45,8 +44,6 @@ class App extends Component {
           </Switch>
         <Footer tournament={this.props.currentTournament} />
         </div>
-        </div>
-
       </AuthProvider>
     );
   }

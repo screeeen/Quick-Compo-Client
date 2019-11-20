@@ -5,6 +5,7 @@ import { withAuth } from "../../lib/AuthProvider";
 import { Redirect } from "react-router-dom";
 import calls from './../helpers/Calls'
 import imageUploader from './../helpers/ImageUploader'
+import Ribbon from './../Ribbon';
 
 class AddTournament extends Component {
   constructor(props) {
@@ -56,11 +57,7 @@ class AddTournament extends Component {
     return (
       <div className="container">
         {this.renderRedirect()}
-        <div class="non-semantic-protector"> 
-        <h1 className="ribbon">
-          <strong className="ribbon-content">NEW TOURNAMENT</strong>
-        </h1>
-        </div>
+ <Ribbon name="ADD NEW TOURNAMENT" />
 
         <form onSubmit={this.handleSubmit}>
           <div className="tournament-form-outline">
