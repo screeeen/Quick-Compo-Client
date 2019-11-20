@@ -51,9 +51,9 @@ class DeleteTournament extends Component {
             <label>{this.state.name}</label>
             <label htmlFor="file"><img className="tournament-image" src={this.state.img} alt='' /></label>
             <img className="tournament-image-small" src={this.state.img} alt='' />
-            <button className="button red-bg" type="submit">delete</button>
             <p>Warning! you will lose your data</p>
           </div>
+            <button className="button red-bg" type="submit">delete</button>
         </form>
       </div>
     )
