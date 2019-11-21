@@ -1,0 +1,19 @@
+
+h1 {
+  font-size: 3wv;
+  text-align: center;
+  font-weight: bolder;
+}
+
+h2 {
+  font-size: 3wv;
+  font-weight: bolder;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.3em;
+  margin: 0 auto;
+  text-align: center;
+}

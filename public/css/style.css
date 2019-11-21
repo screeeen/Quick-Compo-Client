@@ -90,26 +90,6 @@
   text-decoration: none;
 }
 
-/* TEXT STYLES */
-
-h1 {
-  font-size: 3wv;
-  text-align: center;
-  font-weight: bolder;
-}
-
-h2 {
-  font-size: 3wv;
-  font-weight: bolder;
-  text-align: center;
-}
-
-a {
-  text-decoration: none;
-  font-size: 1.3em;
-  margin: 0 auto;
-  text-align: center;
-}
 
 /* Forms */
 
@@ -123,15 +103,9 @@ input[type='password'] {
   border: none !important;
   background-color: rgba(255, 255, 255, 0) !important;
   margin: 1vh auto;
-  width: 50%;
   height: 4vh;
   padding: 2%;
 }
-/* 
-input[type='submit']:disabled {
-  color: whitesmoke;
-  border: 1px solid whitesmoke;
-} */
 
 .inputfile {
   width: 0.1px;
@@ -158,15 +132,19 @@ input[type='submit']:disabled {
 
 .credentials {
   text-align: center;
+  margin: auto;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-between; */
 }
 
 .credentials label {
   text-align: center;
   display: block;
-  /* flex-direction: column; */
+}
+
+.credentials .button {
+  text-align: center;
+  display: block;
 }
 
 .tournament-image {
@@ -203,6 +181,7 @@ input[type='submit']:disabled {
   border-radius: 4px;
   background-color: orange;
   margin: 8px;
+  height: 6vh;
 }
 
 .tournament-cell-section {
@@ -217,85 +196,25 @@ input[type='submit']:disabled {
 
 .tournament-cell img {
   margin: auto;
-  max-width: 60%;
   padding: 2px;
-  /* max-height: 60%; */
+  max-width: 50%;
+  /* height: 100%; */
+  /* object-fit: cover; */
 }
 
 .tournament-cell a {
   text-decoration: none;
 }
 
-/* RIBBON */
-
-.ribbon-wrap {
-  height: 10vh;
-  width: 100%;
-  background-color: yellow;
-  /* padding: 20px; */
-  z-index: 1;
-  margin: 5vh auto;
-  position: relative;
-}
-
-.ribbon {
-  font-size: 12px;
-  /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
-  width: 30%;
-  height: 24px;
-  position: relative;
-  background: rgb(238, 174, 202);
-  color: #fff;
-  text-align: center;
-  padding: 1em 2em; /* Adjust to suit */
-  margin: 0 auto; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
-}
-.ribbon:before,
-.ribbon:after {
-  content: '';
-  position: absolute;
-  display: block;
-  bottom: -1em;
-  border: 1.5em solid rgb(238, 174, 202);
-  z-index: -1;
-}
-.ribbon:before {
-  left: -2em;
-  border-right-width: 1.5em;
-  border-left-color: transparent;
-}
-.ribbon:after {
-  right: -2em;
-  border-left-width: 1.5em;
-  border-right-color: transparent;
-}
-.ribbon .ribbon-content:before,
-.ribbon .ribbon-content:after {
-  content: '';
-  position: absolute;
-  display: block;
-  border-style: solid;
-  border-color: #804f7c transparent transparent transparent;
-  bottom: -1em;
-}
-.ribbon .ribbon-content:before {
-  left: 0;
-  border-width: 1em 0 0 1em;
-}
-.ribbon .ribbon-content:after {
-  right: 0;
-  border-width: 1em 1em 0 0;
-}
-
 /* BUTTONS-------------  */
 
-button {
+.button {
   height: 6vh;
-  /* width: 20vw; */
+  width: 100%;
   border: none;
   box-shadow: 2px 2px teal;
   text-shadow: 1px 1px teal;
-  border-radius: 5px;
+  border-radius: 30px;
   margin: 0 auto;
   color: whitesmoke;
   font-size: 12px;
