@@ -144,7 +144,7 @@ label {
 
 .tournament-cell {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   cursor: pointer;
   flex-shrink: 1;
   border-radius: 4px;
@@ -152,6 +152,11 @@ label {
   height: 6vh;
   background-color: rgba(60, 69, 201, 0.945);
   /* box-shadow: 1px solid white; */
+}
+
+.no-background{
+  background-color: rgba(60, 69, 201, 0);
+
 }
 
 .tournament-cell-section {

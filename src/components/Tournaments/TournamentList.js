@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import { withAuth } from "../../lib/AuthProvider";
 import { Route, Redirect } from 'react-router';
 import TournamentCell from './TournamentCell';
+import TournamentLabels from './TournamentLabels';
 import Ribbon from './../Ribbon';
 import BtnAddTournament from './BtnAddTournament';
 import calls from './../helpers/Calls';
@@ -68,7 +69,8 @@ class TournamentList extends Component {
       return (
         <div className="container-tournaments">
           <Ribbon name="TOURNAMENTS" />
-<BtnAddTournament />
+          <BtnAddTournament />
+          <TournamentLabels />
           {this.generateTournamentsList()}
         </div>)
     } else { return <Redirect to="/error" /> };

@@ -2,7 +2,7 @@ import React from 'react'
 import { withAuth } from "../../lib/AuthProvider";
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEdit,faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faEdit,faTrash,faUserPlus } from '@fortawesome/free-solid-svg-icons'
 
 function TournamentCell(props) {
   return (
@@ -12,12 +12,17 @@ function TournamentCell(props) {
           <img src={props.img} alt='pic' />
         </div>
         <div className="tournament-cell-section" >
-          <Link to={{ pathname: `/players`, state: { tournamentId: props._id } }}>
           <p className="player-name">{props.name}</p> 
+        </div>
+        <div className="tournament-cell-section">
+        <Link to={{ pathname: `/players`, state: { tournamentId: props._id } }}>
+          <FontAwesomeIcon icon={faUserPlus} />                      
           </Link>
         </div>
         <div className="tournament-cell-section">
         <p>{props.players.length}</p> 
+        </div>
+        <div className="tournament-cell-section">
         </div>
         <div className="tournament-cell-section">
           <Link to={{ pathname: `/tournaments/edit-tournament/${props._id}`, state: { tournamentId: props._id } }}>
