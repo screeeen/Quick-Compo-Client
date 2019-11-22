@@ -54,7 +54,7 @@ input[type='password'] {
   color: whitesmoke;
   /* border: none !important; */
   box-shadow: 10px solid black inset;
-  background-color: rgba(0,0,0, .5) !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
   margin: 1vh auto;
   height: 4vh;
   padding: 2%;
@@ -150,13 +150,21 @@ label {
   border-radius: 4px;
   margin: 8px;
   height: 6vh;
-  background-color: rgba(60, 69, 201, 0.945);
+  background-color: rgba(60, 69, 201, 0.2);
   /* box-shadow: 1px solid white; */
 }
 
-.no-background{
+.no-background {
   background-color: rgba(60, 69, 201, 0);
+  padding: 0;
+}
 
+.no-background p {
+  color: teal;
+}
+
+.no-background>div {
+  margin-top: 25px;
 }
 
 .tournament-cell-section {
@@ -166,15 +174,12 @@ label {
 
 .player-name {
   margin: auto;
-  font-size: 14px;
 }
 
 .tournament-cell img {
   margin: auto;
   padding: 2px;
   max-width: 50%;
-  /* height: 100%; */
-  /* object-fit: cover; */
 }
 
 .tournament-cell a {
