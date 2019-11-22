@@ -14,16 +14,16 @@ class Navbar extends Component {
     const { user, isLoggedin } = this.props;
     return (
       <div className="nav-bar">
-        <div className="centered-div">
+        <div>
           <img src={backIcon} alt='back' onClick={() => this.props.history.go(-1)} />
         </div>
         {isLoggedin ? (
-          <div className="centered-div">
+          <div>
             <p>{user.username}</p>
           </div>
         ) : null
         }
-        <div className="centered-div">
+        <div>
           <img src={userIcon} alt='user' />
         </div>
       </div>

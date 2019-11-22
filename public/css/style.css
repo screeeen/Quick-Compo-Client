@@ -3,24 +3,38 @@
 
 * {
   font-family: 'Work Sans', sans-serif;
-  color: whitesmoke;
   text-shadow: #000;
 }
 
+/* MOBILE FIRST */
 .container {
-  background: rgb(238, 174, 202);
-  background: radial-gradient(
-    circle,
-    rgba(238, 174, 202, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
-  );
+  background: #2c2c54;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow: hidden;
+}
+
+/* TABLET */
+@media (min-width: 600px) {
+  body {
+    background: #2c2c2c;
+    height: 100%;
+  }
+  .container {
+    background: #2c2c54;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+    width: 50%;
+    height: 98vh;
+    margin: auto;
+  }
 }
 
 .container-tournaments {
@@ -28,86 +42,25 @@
   box-sizing: content-box;
 }
 
-.nav-bar {
-  background-color: rgba(255, 255, 255, 0.5);
-  color: rgba(255, 255, 255, 0.5);
-  width: 100vw;
-  height: 8vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.nav-bar img {
-  max-width: 20%;
-  max-height: 20%;
-}
-
-.nav-bar p {
-  font-weight: bold;
-  font-size: 5vw;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.footer {
-  background-color: rgba(255, 255, 255, 0);
-  color: rgba(255, 255, 255, 0.5);
-  color: #f9f4f7;
-  height: 8vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-content: center;
-  position: relative;
-}
-
-.footer-button {
-  background-color: rgba(255, 255, 255, 0.5);
-  color: rgba(255, 255, 255, 0.5);
-  color: #f9f4f7;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-}
-
-.footer-button img {
-  max-width: 12%;
-  margin: 5px auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-}
-
-.footer-button a:active {
-  text-decoration: none;
-}
-
-.footer-button a:active {
-  text-decoration: none;
-}
-
-
 /* Forms */
 
 input[type='text'],
-textarea,
 input[type='number'],
 input[type='file'],
+input[type='submit'],
 input[type='password'] {
   font-size: 1em;
+  text-align: center;
   color: whitesmoke;
-  border: none !important;
-  background-color: rgba(255, 255, 255, 0) !important;
+  /* border: none !important; */
+  box-shadow: 10px solid black inset;
+  background-color: rgba(0,0,0, .5) !important;
   margin: 1vh auto;
   height: 4vh;
   padding: 2%;
 }
 
-.inputfile {
+/* .inputfile {
   width: 0.1px;
   height: 0.1px;
   opacity: 0;
@@ -118,16 +71,32 @@ input[type='password'] {
 
 .inputfile + label {
   font-weight: 700;
-  color: #8aad87;
   display: inline-block;
   cursor: pointer;
   border-radius: 10px;
+}  */
+
+input[type='file'] {
+  /* color:yellow; */
+  border: 1px solid white;
+}
+
+input[type='file'] label {
+  color: white;
 }
 
 .inputfile:focus + label,
 .inputfile + label:hover {
   outline: 1px dotted #000;
   outline: -webkit-focus-ring-color auto 5px;
+}
+
+label {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  padding: 0 5%;
 }
 
 .credentials {
@@ -161,14 +130,14 @@ input[type='password'] {
 /* TOURNAMENT CELLS */
 
 .tournament-form-outline {
-  background-color: orange;
-  box-shadow: 1px 1px teal;
+  box-shadow: 1px 5px 10px black;
+  background-color: teal;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   height: 30vh;
-  width: 80vw;
+  width: 80%;
   border-radius: 4px;
   margin: 0 auto;
 }
@@ -179,9 +148,10 @@ input[type='password'] {
   cursor: pointer;
   flex-shrink: 1;
   border-radius: 4px;
-  background-color: orange;
   margin: 8px;
   height: 6vh;
+  background-color: rgba(60, 69, 201, 0.945);
+  /* box-shadow: 1px solid white; */
 }
 
 .tournament-cell-section {
@@ -206,32 +176,6 @@ input[type='password'] {
   text-decoration: none;
 }
 
-/* BUTTONS-------------  */
-
-.button {
-  height: 6vh;
-  width: 100%;
-  border: none;
-  box-shadow: 2px 2px teal;
-  text-shadow: 1px 1px teal;
-  border-radius: 30px;
-  margin: 0 auto;
-  color: whitesmoke;
-  font-size: 12px;
-}
-
-.red-bg {
-  background-color: red !important;
-}
-
-.button:hover {
-  background: rgb(238, 174, 202);
-}
-
-.button:active {
-  transform: translateY(-4px);
-}
-
 /* PSEUDO BRACKETS --------------- */
 
 .game-tables {
@@ -240,12 +184,11 @@ input[type='password'] {
   justify-content: space-evenly;
   align-content: center;
   margin: 10px;
-  background-color: #f9f4f7;
 }
 
 .game-cell {
   /* background-color: #003ace88; */
-  border: 1px solid #8aad87;
+  border: 1px solid black;
   padding: 5px;
   margin: 20px auto;
   width: 80%;
@@ -283,26 +226,4 @@ input[type='password'] {
 
 .player-card p {
   text-align: right;
-}
-
-
-@media (min-width: 1200px) {
-  
-  .container {
-    /* background: rgb(238, 174, 202);
-    background: radial-gradient(
-      circle,
-      rgba(238, 174, 202, 1) 0%,
-      rgba(148, 187, 233, 1) 100%
-    );
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    height: 100vh;
-    overflow: hidden; */
-    width: 40vw;
-    margin: auto;
-  }
-  
 }

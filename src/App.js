@@ -26,24 +26,24 @@ class App extends Component {
     return (
       <AuthProvider>
         <div className="container">
-          <Navbar />
-          <Switch>
-            <AnonRoute exact path="/" component={Signup} />
-            <AnonRoute exact path="/signup" component={Signup} />
-            <AnonRoute exact path="/login" component={Login} />
-            <PrivateRoute exact path="/tournaments" component={TournamentList} />
-            <PrivateRoute exact path="/brackets" component={Brackets} />
+            <Navbar />
+            <Switch>
+              <AnonRoute exact path="/" component={Signup} />
+              <AnonRoute exact path="/signup" component={Signup} />
+              <AnonRoute exact path="/login" component={Login} />
+              <PrivateRoute exact path="/tournaments" component={TournamentList} />
+              <PrivateRoute exact path="/brackets" component={Brackets} />
 
-            <PrivateRoute exact path="/tournaments/edit-tournament/:id" component={EditTournament} />
-            <PrivateRoute exact path="/tournaments/add-tournament" component={AddTournament} />
-            <PrivateRoute exact path="/tournaments/delete-tournament/:id" component={DeleteTournament} />
-            <PrivateRoute exact path="/players" component={PlayersList} />
-            <PrivateRoute exact path="/games" component={GamesList} />
-            <PrivateRoute exact path="/game-edit" component={GameEdit} />
-            <PrivateRoute exact path="/leaderboard" component={LeaderBoardList} />
-          </Switch>
-        <Footer tournament={this.props.currentTournament} />
-        </div>
+              <PrivateRoute exact path="/tournaments/edit-tournament/:id" component={EditTournament} />
+              <PrivateRoute exact path="/tournaments/add-tournament" component={AddTournament} />
+              <PrivateRoute exact path="/tournaments/delete-tournament/:id" component={DeleteTournament} />
+              <PrivateRoute exact path="/players" component={PlayersList} />
+              <PrivateRoute exact path="/games" component={GamesList} />
+              <PrivateRoute exact path="/game-edit" component={GameEdit} />
+              <PrivateRoute exact path="/leaderboard" component={LeaderBoardList} />
+            </Switch>
+            <Footer tournament={this.props.currentTournament} />
+          </div>
       </AuthProvider>
     );
   }
