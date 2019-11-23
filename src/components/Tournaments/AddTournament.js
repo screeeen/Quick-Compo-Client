@@ -6,6 +6,8 @@ import { Redirect } from "react-router-dom";
 import calls from './../helpers/Calls'
 import imageUploader from './../helpers/ImageUploader'
 import Ribbon from './../Ribbon';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUpload } from '@fortawesome/free-solid-svg-icons'
 
 class AddTournament extends Component {
   constructor(props) {
@@ -57,22 +59,21 @@ class AddTournament extends Component {
     return (
       <div className="container">
         {this.renderRedirect()}
- <Ribbon name="ADD NEW TOURNAMENT" />
+        <Ribbon name="ADD NEW TOURNAMENT" />
 
-        <form onSubmit={this.handleSubmit}>
-          <div className="tournament-form-outline">
-            <label>Name</label>
-            <input type="text"
-              name="name"
-              value={this.state.name}
-              onChange={(e) => this.handleChange(e)} />
-            
-            <input type="file" name="file" id="file" className="inputfile" onChange={this.fileOnchange} />
-            <label htmlFor="file"><img className="tournament-image" src={this.state.img} alt='' disabled /></label>
-           
-            {this.state.disable ? <img className="tournament-image-small" src={this.state.img} alt='' disabled /> : <img className="tournament-image-small" src={this.state.img} alt='' disabled />}
-            {this.state.disable ? <input type="submit" disabled></input> : <input type="submit"></input>}
-          </div>
+        <form className="tournament-form-outline" onSubmit={this.handleSubmit}>
+          <input type="text"
+            name="name"
+            placeholder="your team name"
+            value={this.state.name}
+            onChange={(e) => this.handleChange(e)} />
+
+          
+          <input type="file" name="file" id="file" className="inputfile" onChange={this.fileOnchange} />
+          <label htmlFor="file" className="inputfile-icon"><FontAwesomeIcon  className="inputfile-icon fa-3x" icon={faUpload} /><img className="tournament-image" src={this.state.img} alt='' disabled /></label>
+
+          {this.state.disable ? <FontAwesomeIcon  className="inputfile-icon fa-3x" icon={faUpload} disabled /> : <FontAwesomeIcon  className="inputfile-icon fa-3x" icon={faUpload} />}
+          {this.state.disable ? <input type="submit" disabled></input> : <input type="submit"></input>}
         </form>
       </div>
     )

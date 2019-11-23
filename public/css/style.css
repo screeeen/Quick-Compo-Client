@@ -54,34 +54,52 @@ input[type='password'] {
   color: whitesmoke;
   /* border: none !important; */
   box-shadow: 10px solid black inset;
+  border: none;
   background-color: rgba(0, 0, 0, 0.5) !important;
   margin: 1vh auto;
   height: 4vh;
   padding: 2%;
 }
 
-/* .inputfile {
-  width: 0.1px;
-  height: 0.1px;
+input[type='text']::placeholder{
+  color:gray;
+  font-size: 16px;
+}
+
+
+.inputfile {
+  width: 100px;
+  height: 100px;
   opacity: 0;
   overflow: hidden;
   position: absolute;
   z-index: -1;
 }
 
+.inputfile-icon{
+  margin: auto;
+  padding-left: 15px;
+}
+
+
 .inputfile + label {
   font-weight: 700;
   display: inline-block;
   cursor: pointer;
   border-radius: 10px;
-}  */
-
-input[type='file'] {
-  /* color:yellow; */
-  border: 1px solid white;
 }
 
-input[type='file'] label {
+input[type='file'] {
+  width: 50%;
+  /* color:yellow; */
+  /* border: 1px solid white; */
+}
+
+/* input[type='file'] label {
+  color: white;
+} */
+
+input[type='file']::placeholder {
   color: white;
 }
 
@@ -137,7 +155,7 @@ label {
   justify-content: center;
   align-content: center;
   height: 30vh;
-  width: 80%;
+  width: 100%;
   border-radius: 4px;
   margin: 0 auto;
 }
@@ -163,7 +181,7 @@ label {
   color: teal;
 }
 
-.no-background>div {
+.no-background > div {
   margin-top: 25px;
 }
 
