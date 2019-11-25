@@ -4,8 +4,10 @@ import React, { Component } from 'react';
 import { withAuth } from "../../../lib/AuthProvider";
 import calls from './../../helpers/Calls';
 import imageUploader from './../../helpers/ImageUploader';
+import Ribbon from './../../Ribbon';
 import { withRouter } from 'react-router-dom';
-import uploadIcon from './../../../images/upload.svg';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCameraRetro } from '@fortawesome/free-solid-svg-icons'
 
 class AddPlayer extends Component {
   constructor(props) {
@@ -18,7 +20,7 @@ class AddPlayer extends Component {
       tournament: this.props.currentTournament,
       redirect: false,
       disable: true,
-      uploadIcon: uploadIcon
+      uploadIcon: faCameraRetro
     }
   }
 
@@ -66,22 +68,17 @@ class AddPlayer extends Component {
     return (
       <div className="tournament-form" >
         <img src={this.props.img} alt='' />
-        <div className="non-semantic-protector">
-          <h1 className="ribbon">
-            <strong className="ribbon-content">ADD A NEW PLAYER</strong>
-          </h1>
-        </div>
-
-        <form className="tournament-form-outline" onSubmit={this.handleSubmit}>
-          <label>ENTER THE PLAYERS </label>
+        <Ribbon name="add a new player" />
+        <form className="pop-up-form" onSubmit={this.handleSubmit}>
+          <label>enter player details</label>
           <input type="text"
             name="name"
             value={this.state.name}
             placeholder='name of player'
             onChange={(e) => this.handleChange(e)} />
           <input type="file" name="file" id="file" className="inputfile" onChange={this.fileOnchange} />
-          <label htmlFor="file">{this.state.disable ? <img className="tournament-image-small" src={uploadIcon} alt='Icon'/> : <img className="tournament-image-small" src={this.state.img} alt=''/>}</label>
-          {this.state.disable ? <input type="submit" disabled></input> : <input type="submit"></input>}
+          <label htmlFor="file">{this.state.disable ? <FontAwesomeIcon className="inputfile-icon fa-3x" icon={faCameraRetro} disabled={this.state.disable} /> : <img className="tournament-image-small" src={this.state.img} alt='' />}</label>
+          {this.state.disable ? <></> : <input className="button" type="submit" value="add"></input>}
         </form>
       </div>
     )

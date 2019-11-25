@@ -3,9 +3,8 @@
 
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
-import badgeIcon from './../images/badge.svg'
-// import pitchIcon from './../images/pitch.svg'
-import basketIcon from './../images/basket.svg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBasketballBall,faTrophy } from '@fortawesome/free-solid-svg-icons';
 
 class Footer extends Component {
 
@@ -19,16 +18,16 @@ class Footer extends Component {
   render() {
     return (
       <div className="footer" >
-        <div className="footer-button">
+        {/* <div className="footer-button"> */}
           <Link to={{ pathname: '/tournaments' }}>
-            <img src={basketIcon} alt='sports' />
+          <FontAwesomeIcon icon={faBasketballBall} className="fa-2x" color="white"/>
           </Link>
-        </div>
-        <div className="footer-button">
+        {/* </div> */}
+        {/* <div className="footer-button"> */}
           <Link to={{ pathname: '/leaderboard' }}>
-            <img src={badgeIcon} alt='user' />
+          <FontAwesomeIcon icon={faTrophy} className="fa-2x" color="white"/>
           </Link>
-        </div>
+        
       </div>
     )
   }

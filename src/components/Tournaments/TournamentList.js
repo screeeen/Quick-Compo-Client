@@ -70,7 +70,7 @@ class TournamentList extends Component {
         <div className="container-tournaments">
           <Ribbon name="TOURNAMENTS" />
           <BtnAddTournament />
-          <TournamentLabels />
+          <TournamentLabels secondTitle="team" thirdTitle="add" fourthTitle="players" sixthTitle="edit" seventhTitle="delete" />
           {this.generateTournamentsList()}
         </div>)
     } else { return <Redirect to="/error" /> };

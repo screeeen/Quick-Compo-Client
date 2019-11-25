@@ -48,7 +48,7 @@ class GameEdit extends Component {
       <div className="tournament-form">
         {this.renderRedirect()}
         <h2>EDIT SCORES</h2>
-        <div className="tournament-form-outline">
+        <div className="pop-up-form">
           <form onSubmit={this.handleSubmit}>
             <img className="tournament-image-small" src={this.props.location.state.player1Img} alt='' />
             <p>{this.props.location.state.player1}</p>

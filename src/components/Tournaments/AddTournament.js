@@ -18,7 +18,7 @@ class AddTournament extends Component {
       players: [],
       games: [],
       redirect: false,
-      disable: false,
+      disable: true,
     }
   }
 
@@ -61,7 +61,7 @@ class AddTournament extends Component {
         {this.renderRedirect()}
         <Ribbon name="ADD NEW TOURNAMENT" />
 
-        <form className="tournament-form-outline" onSubmit={this.handleSubmit}>
+        <form className="pop-up-form" onSubmit={this.handleSubmit}>
           <input type="text"
             name="name"
             placeholder="your team name"
@@ -70,10 +70,10 @@ class AddTournament extends Component {
 
           
           <input type="file" name="file" id="file" className="inputfile" onChange={this.fileOnchange} />
-          <label htmlFor="file" className="inputfile-icon"><FontAwesomeIcon  className="inputfile-icon fa-3x" icon={faUpload} /><img className="tournament-image" src={this.state.img} alt='' disabled /></label>
+          <label htmlFor="file" className="inputfile-icon"><FontAwesomeIcon  className="inputfile-icon fa-3x" icon={faUpload} disabled ={!this.state.disable}/><img className="tournament-image" src={this.state.img} alt='' disabled ={!this.state.disable} /></label>
 
-          {this.state.disable ? <FontAwesomeIcon  className="inputfile-icon fa-3x" icon={faUpload} disabled /> : <FontAwesomeIcon  className="inputfile-icon fa-3x" icon={faUpload} />}
-          {this.state.disable ? <input type="submit" disabled></input> : <input type="submit"></input>}
+          {/* {this.state.disable ? <FontAwesomeIcon  className="inputfile-icon fa-3x" icon={faUpload} disabled /> : <FontAwesomeIcon  className="inputfile-icon fa-3x" icon={faUpload} />} */}
+          {this.state.disable ? <></> : <input type="submit" className="button" value="create team"></input>}
         </form>
       </div>
     )

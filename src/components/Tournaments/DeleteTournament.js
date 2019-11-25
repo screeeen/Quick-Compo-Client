@@ -46,7 +46,7 @@ class DeleteTournament extends Component {
         <Ribbon name="DELETE TOURNAMENT" />
 
         <form onSubmit={this.handleSubmit}>
-          <div className="tournament-form-outline">
+          <div className="pop-up-form">
             <label>Tournament Name:</label>
             <label>{this.state.name}</label>
             <label htmlFor="file"><img className="tournament-image" src={this.state.img} alt='' /></label>

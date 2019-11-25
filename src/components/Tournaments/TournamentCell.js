@@ -6,7 +6,6 @@ import { faEdit,faTrash,faUserPlus } from '@fortawesome/free-solid-svg-icons'
 
 function TournamentCell(props) {
   return (
-    <div>
       <div className="tournament-cell">
         <div className="tournament-cell-section">
           <img src={props.img} alt='pic' />
@@ -35,7 +34,6 @@ function TournamentCell(props) {
           </Link>
         </div>
       </div>
-    </div >
   )
 }
 export default withAuth(TournamentCell)

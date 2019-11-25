@@ -2,15 +2,24 @@
 
 import React from 'react'
 import { withAuth } from "../../../lib/AuthProvider";
-// import { Link } from 'react-router-dom'
 
 function PlayerCell(props) {
   return (
-      <div className="tournament-cell">
-        <img src={props.img} alt='pic'/>
-        <p>{props.name}</p>
-        {props.score>0?<p>SCORE: {props.score}</p>:<p>NO SCORES YET</p>}
+    <div className="tournament-cell">
+      <div className="tournament-cell-section" >
+        <img src={props.img} alt='pic' />
       </div>
+      <div className="tournament-cell-section" >
+        <p>{props.name}</p>
+      </div>
+      <p></p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <div className="tournament-cell-section" >
+        <p>{props.score}</p>
+      </div>
+    </div>
   )
 }
 export default withAuth(PlayerCell)

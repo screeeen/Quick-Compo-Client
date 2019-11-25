@@ -12,7 +12,11 @@ function LeaderBoardCell(props) {
         <Link to={{ pathname: `/players`, state: {tournamentId: props._id} }}>
           <p className="tournament-name">{props.name}</p>
         </Link>
-        <p className="tournament-name">SCORE: {props.score}</p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p className="tournament-name">{props.score}</p>
       </div>
     </div>
   )

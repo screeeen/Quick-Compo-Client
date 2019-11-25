@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import { withAuth } from "../../../lib/AuthProvider";
 import calls from '../../helpers/Calls';
 import LeaderBoardCell from './LeaderBoardCell';
+import TournamentLabels from './../TournamentLabels';
 import Ribbon from './../../Ribbon';
 
 class LeaderBoardList extends Component {
@@ -44,6 +45,7 @@ class LeaderBoardList extends Component {
     return (
       <div className="container-tournaments">
         <Ribbon name="HALL OF FAME" />
+        <TournamentLabels secondTitle="player" seventhTitle="score" />
         <div className="games-tables">
           {this.generateList()}
         </div>

@@ -5,24 +5,25 @@ function TournamentLabels(props) {
     <div>
       <div className="tournament-cell no-background">
         <div>
-          <p>pic</p>
+          <p>{props.firstTitle}</p>
         </div>
         <div  >
-          <p>team</p>
+          <p>{props.secondTitle}</p>
         </div>
         <div >
-          <p>add</p>
+          <p>{props.thirdTitle}</p>
         </div>
         <div >
-          <p>players</p>
+          <p>{props.fourthTitle}</p>
         </div>
         <div >
+          <p>{props.fifthTitle}</p>
         </div>
         <div >
-          <p>edit</p>
+          <p>{props.sixthTitle}</p>
         </div>
         <div >
-          <p>delete</p>
+          <p>{props.seventhTitle}</p>
         </div>
       </div>
     </div>

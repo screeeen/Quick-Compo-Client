@@ -8,6 +8,8 @@ import { withAuth } from "../../../lib/AuthProvider";
 import calls from './../../helpers/Calls'
 import PlayerCell from './PlayerCell'
 import AddPlayer from './AddPlayer';
+import Ribbon from './../../Ribbon';
+import TournamentLabel from './../TournamentLabels';
 import { Link } from 'react-router-dom'
 
 class PlayersList extends Component {
@@ -69,12 +71,9 @@ class PlayersList extends Component {
       <div className="container">
         {this.togglePlayButton()}
         <AddPlayer getPlayers={this.refreshPlayersList} />
-        <div>
-          <div className="non-semantic-protector">
-            <h1 className="ribbon">
-              <strong className="ribbon-content">CURRENT PLAYERS</strong>
-            </h1>
-          </div>
+        < Ribbon name="current players" />
+        <TournamentLabel secondTitle="name" seventhTitle="score" />
+        <div className="container-tournaments">
           {this.generatePlayersList()}
         </div>
       </div>

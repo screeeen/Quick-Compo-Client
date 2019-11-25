@@ -67,7 +67,7 @@ class EditTournament extends Component {
 
 
         <form onSubmit={this.handleSubmit}>
-          <div className="tournament-form-outline">
+          <div className="pop-up-form">
             <label>Name</label>
             <input type="text"
               name="name"
