@@ -68,7 +68,7 @@ class AddPlayer extends Component {
     return (
       <div className="tournament-form" >
         <img src={this.props.img} alt='' />
-        <Ribbon name="add a new player" />
+        {/* <Ribbon name="add a new player" /> */}
         <form className="pop-up-form" onSubmit={this.handleSubmit}>
           <label>enter player details</label>
           <input type="text"

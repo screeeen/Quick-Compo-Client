@@ -21,6 +21,7 @@ class PlayersList extends Component {
       tournamentId: this.props.location.state,
       playersIntoTournament: [],
     }
+    console.log("el state", this.state);
   }
 
   componentDidMount() {
@@ -42,7 +43,7 @@ class PlayersList extends Component {
       return (
         <div>
           <Link to={{ pathname: `/games`, state: { tournament: this.state.tournamentId, players } }}>
-            <p>START GAMES</p>
+            <button className="button">START GAMES</button>
           </Link >
         </div>
       )
@@ -69,13 +70,13 @@ class PlayersList extends Component {
   render() {
     return (
       <div className="container">
-        {this.togglePlayButton()}
-        <AddPlayer getPlayers={this.refreshPlayersList} />
         < Ribbon name="current players" />
         <TournamentLabel secondTitle="name" seventhTitle="score" />
         <div className="container-tournaments">
           {this.generatePlayersList()}
         </div>
+        <AddPlayer getPlayers={this.refreshPlayersList} />
+        {this.togglePlayButton()}
       </div>
     )
   }

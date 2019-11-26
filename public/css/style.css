@@ -30,7 +30,7 @@
 }
 
 /* TABLET */
-@media (min-width: 600px) {
+@media (min-width: 1200px) {
   body {
     background: #2c2c2c;
     height: 100%;
@@ -141,6 +141,7 @@ label {
 .credentials .button {
   text-align: center;
   display: block;
+  margin: 10px auto;
 }
 
 .tournament-image {

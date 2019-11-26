@@ -3,6 +3,7 @@
 import React, { Component } from 'react'
 import { withAuth } from "../../../lib/AuthProvider";
 import calls from './../../helpers/Calls';
+import Ribbon from './../../Ribbon';
 
 class GameEdit extends Component {
   constructor(props) {
@@ -45,29 +46,32 @@ class GameEdit extends Component {
 
   render() {
     return (
-      <div className="tournament-form">
-        {this.renderRedirect()}
-        <h2>EDIT SCORES</h2>
-        <div className="pop-up-form">
-          <form onSubmit={this.handleSubmit}>
-            <img className="tournament-image-small" src={this.props.location.state.player1Img} alt='' />
-            <p>{this.props.location.state.player1}</p>
+      <div className="container">
+        <div className="container-tournaments">
+          {this.renderRedirect()}
+          <Ribbon name="edit scores" />
+          <div className="">
+            <form onSubmit={this.handleSubmit}>
 
-            <input type="number"
-              name="player1Score"
-              value={this.state.player1Score}
-              placeholder={this.state.player1Score}
-              onChange={(e) => this.handleChange(e)} />
-            <img className="tournament-image-small" src={this.props.location.state.player2Img} alt='' />
-            <p>{this.props.location.state.player2}</p>
-            <input type="number"
-              name="player2Score"
-              value={this.state.player2Score}
-              placeholder={this.state.player2Score}
-              onChange={(e) => this.handleChange(e)} />
+              <img className="tournament-image-small" src={this.props.location.state.player1Img} alt='' />
+              <p>{this.props.location.state.player1}</p>
+              <input type="number"
+                name="player1Score"
+                value={this.state.player1Score}
+                placeholder={this.state.player1Score}
+                onChange={(e) => this.handleChange(e)} />
+                
+              <img className="tournament-image-small" src={this.props.location.state.player2Img} alt='' />
+              <p>{this.props.location.state.player2}</p>
+              <input type="number"
+                name="player2Score"
+                value={this.state.player2Score}
+                placeholder={this.state.player2Score}
+                onChange={(e) => this.handleChange(e)} />
 
-            <button onClick={(e) => this.handleSubmit(e)}><input type="submit"></input></button>
-          </form>
+              <button onClick={(e) => this.handleSubmit(e)}><input type="submit"></input></button>
+            </form>
+          </div>
         </div>
       </div>
     )

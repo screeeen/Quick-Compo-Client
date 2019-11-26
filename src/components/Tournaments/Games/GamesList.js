@@ -7,13 +7,14 @@ import React, { Component } from 'react'
 import { withAuth } from '../../../lib/AuthProvider';
 import calls from './../../helpers/Calls';
 import GamesCell from './GamesCell';
+import Ribbon from './../../Ribbon';
 
 class GamesList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       loggedIn: true,
-      tournament: this.props.currentTournament,
+      // tournament: this.props.currentTournament,
       games: [],
     }
   }
@@ -57,13 +58,10 @@ class GamesList extends Component {
   }
 
   render() {
+    console.log("games list state", this.state);
     return (
       <div className="container">
-      <div className="non-semantic-protector"> 
-        <h1 className="ribbon">
-          <strong className="ribbon-content">GAMES LIST</strong>
-        </h1>
-        </div>
+        < Ribbon name="GAMES" />
         <div className="games-tables">
           {this.generateList()}
         </div>

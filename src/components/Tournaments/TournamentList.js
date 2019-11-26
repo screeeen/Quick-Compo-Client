@@ -1,5 +1,3 @@
-// displays a list of cells
-
 import React, { Component } from 'react'
 import { withAuth } from "../../lib/AuthProvider";
 import { Route, Redirect } from 'react-router';
@@ -24,7 +22,6 @@ class TournamentList extends Component {
     this.updateCurrentTournament = this.updateCurrentTournament.bind(this);
   }
 
-  //lifecycle: calls the available tournaments and sets the state with the retrieved data
   componentDidMount() {
     calls.getTournaments()
       .then(res => {
@@ -33,9 +30,10 @@ class TournamentList extends Component {
       })
   }
 
-  // updates the state with curent tournament data
   updateCurrentTournament(tournament) {
     const { name, img, players, games, id } = tournament;
+    console.log("hoola?? update current tournament?");
+    
     this.setState({
       currentTournamentId: id,
       currentTournamentName: name,
@@ -44,9 +42,6 @@ class TournamentList extends Component {
       currentTournamentGames: games
     });
   }
-
-  // gets the list of available tournaments and populates each TournamentCell component.
-  // returns them to the front end UI 
 
   generateTournamentsList = () => {
     return this.state.tournaments.slice(0).reverse().map((oneTournament, i) => {
@@ -70,13 +65,14 @@ class TournamentList extends Component {
         <div className="container-tournaments">
           <Ribbon name="TOURNAMENTS" />
           <BtnAddTournament />
-          <TournamentLabels secondTitle="team" thirdTitle="add" fourthTitle="players" sixthTitle="edit" seventhTitle="delete" />
+          <TournamentLabels secondTitle="tournament" thirdTitle="add" fourthTitle="players" sixthTitle="edit" seventhTitle="delete" />
           {this.generateTournamentsList()}
         </div>)
     } else { return <Redirect to="/error" /> };
   }
 
   render() {
+    console.log("tournament list",this.state);
     return (<Route exact path="/tournaments" render={this.checkIfLogged} />)
   }
 }

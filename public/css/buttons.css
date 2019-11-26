@@ -6,10 +6,11 @@
   box-shadow: 2px 2px teal;
   text-shadow: 1px 1px teal;
   border-radius: 30px;
-  margin: 0 auto;
+  margin: 10px auto;
   font-size: 12px;
   background-color: rgb(161, 165, 240);
   color: whitesmoke;
+  
 }
 
 .red-bg {
