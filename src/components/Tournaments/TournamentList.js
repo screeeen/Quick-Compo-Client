@@ -3,9 +3,9 @@ import { withAuth } from "../../lib/AuthProvider";
 import { Route, Redirect } from 'react-router';
 import TournamentCell from './TournamentCell';
 import TournamentLabels from './TournamentLabels';
-import Ribbon from './../Ribbon';
+import Ribbon from '../Ribbon';
 import BtnAddTournament from './BtnAddTournament';
-import calls from './../helpers/Calls';
+import calls from '../helpers/Calls';
 
 class TournamentList extends Component {
   constructor(props) {
@@ -62,9 +62,10 @@ class TournamentList extends Component {
   checkIfLogged = () => {
     if (this.state.loggedIn) {
       return (
+
         <div className="container-tournaments">
-          <Ribbon name="TOURNAMENTS" />
           <BtnAddTournament />
+          <Ribbon name="TOURNAMENTS" />
           <TournamentLabels secondTitle="tournament" thirdTitle="add" fourthTitle="players" sixthTitle="edit" seventhTitle="delete" />
           {this.generateTournamentsList()}
         </div>)

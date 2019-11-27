@@ -26,7 +26,7 @@ class App extends Component {
     return (
       <AuthProvider>
         <div className="container-wrapper">
-            <Navbar />
+            <PrivateRoute path="/" component={Navbar} />
             <Switch>
               <AnonRoute exact path="/" component={Signup} />
               <AnonRoute exact path="/signup" component={Signup} />
@@ -42,7 +42,7 @@ class App extends Component {
               <PrivateRoute exact path="/game-edit" component={GameEdit} />
               <PrivateRoute exact path="/leaderboard" component={LeaderBoardList} />
             </Switch>
-            <Footer tournament={this.props.currentTournament} />
+            <PrivateRoute path="/" component={Footer} />
           </div>
       </AuthProvider>
     );

@@ -1,7 +1,6 @@
-//footer bar hitting routes for pages, tournaments and leaderboard
-
-
 import React, { Component } from 'react'
+import { withRouter } from 'react-router'
+import { withAuth } from "../lib/AuthProvider";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBasketballBall, faTrophy } from '@fortawesome/free-solid-svg-icons';
@@ -43,4 +42,5 @@ class Footer extends Component {
   }
 }
 
-export default Footer;
+const footerWithRouter = withRouter(Footer);
+export default withAuth(footerWithRouter);
