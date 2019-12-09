@@ -4,7 +4,7 @@ import axios from "axios";
 
 // Fallback solution
 // function getBaseURL(){
-//   const baseURL = (process.env.NODE_ENV === 'development') ? 'http://localhost:5000' : 'https://quick-compo.herokuapp.com/';
+//   return (process.env.NODE_ENV === 'development') ? 'http://localhost:5000' : 'https://quick-compo.herokuapp.com/';
 // }
 
 class Calls {
