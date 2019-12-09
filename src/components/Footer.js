@@ -17,14 +17,17 @@ class Footer extends Component {
   }
 
   toggleCompetitionButton = () => {
-    this.setState({ disable: false });
+    this.state.disable ?
+      this.setState({ disable: false }) :
+      this.setState({ disable: true })
   }
+
 
   render() {
     return (
       <div className="footer" >
-        <Link to={{ pathname: `/tournaments` }}>
-          <FontAwesomeIcon icon={faBasketballBall} className="fa-2x" color="white" />
+        <Link to={{ pathname: `/tournaments` }} onClick={this.toggleCompetitionButton}>
+          {!this.state.disable ? <FontAwesomeIcon icon={faBasketballBall} className="fa-2x" color="white" /> : <FontAwesomeIcon icon={faBasketballBall} className="fa-2x" color="grey" />}
         </Link>
 
         {/* {this.state.disable ?
@@ -33,8 +36,8 @@ class Footer extends Component {
           </Link> :
           <></>} */}
 
-        <Link to={{ pathname: `/leaderboard` }}>
-          <FontAwesomeIcon icon={faTrophy} className="fa-2x" color="white" />
+        <Link to={{ pathname: `/leaderboard` }} onClick={this.toggleCompetitionButton}>
+        {this.state.disable ? <FontAwesomeIcon icon={faTrophy} className="fa-2x" color="white" /> : <FontAwesomeIcon icon={faTrophy} className="fa-2x" color="grey" />} 
         </Link>
 
       </div>

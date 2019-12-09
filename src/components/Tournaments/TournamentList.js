@@ -73,7 +73,7 @@ class TournamentList extends Component {
   }
 
   render() {
-    console.log("tournament list",this.state);
+    // console.log("tournament list",this.state);
     return (<Route exact path="/tournaments" render={this.checkIfLogged} />)
   }
 }

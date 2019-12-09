@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-
 import Credentials from "../components/Credentials";
+import { Link } from "react-router-dom";
 
 
 class Signup extends Component {
